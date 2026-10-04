@@ -1,0 +1,133 @@
+{
+ "name": "re_printing",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_message"
+   }
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"正在恢复打印...\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Возобновление печати...\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Resuming the print...\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"印刷を再開しています...\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"Reprise de l'impression...\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"Druck wird fortgesetzt...\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"Ripresa della stampa...\"",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"Reanudando la impresión...\"",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"출력을 재개하는 중입니다...\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"Retomando a impressão...\"",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"جارٍ استئناف الطباعة...\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"Baskı sürdürülüyor...\"",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"ממשיך את ההדפסה...\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 77,
+    "w": 256,
+    "h": 234,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Resuming the print...",
+    "txt_maxl": 300,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

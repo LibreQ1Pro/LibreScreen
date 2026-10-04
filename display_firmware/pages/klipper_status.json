@@ -1,0 +1,858 @@
+{
+ "name": "klipper_status",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  restart_klip.txt=\"重启 Klipper\"",
+    "  restart_fw.txt=\"重启固件\"",
+    "  msg.txt=\"提示:系统正常。\"",
+    "  export_logs.txt=\"导出日志\"",
+    "  title.txt=\"系统信息\"",
+    "}else if(lang==1)",
+    "{",
+    "  restart_klip.txt=\"Перезапуск Klipper\"",
+    "  restart_fw.txt=\"Перезапуск прошивки\"",
+    "  msg.txt=\"Klipper готов к работе.\"",
+    "  export_logs.txt=\"Экспорт журналов\"",
+    "  title.txt=\"Статус Klipper\"",
+    "}else if(lang==2)",
+    "{",
+    "  restart_klip.txt=\"Restart Klipper\"",
+    "  restart_fw.txt=\"Restart Firmware\"",
+    "  msg.txt=\"Klipper is ready.\"",
+    "  export_logs.txt=\"Export Logs\"",
+    "  title.txt=\"Klipper Status\"",
+    "}else if(lang==3)",
+    "{",
+    "  restart_klip.txt=\"Klipperを再起動\"",
+    "  restart_fw.txt=\"ファームウェアを再起動\"",
+    "  msg.txt=\"Klipperは準備完了です。\"",
+    "  export_logs.txt=\"ログをエクスポート\"",
+    "  title.txt=\"Klipperステータス\"",
+    "}else if(lang==4)",
+    "{",
+    "  restart_klip.txt=\"Redémarrer Klipper\"",
+    "  restart_fw.txt=\"Redémarrer le firmware\"",
+    "  msg.txt=\"Klipper est prêt.\"",
+    "  export_logs.txt=\"Exporter les journaux\"",
+    "  title.txt=\"État de Klipper\"",
+    "}else if(lang==5)",
+    "{",
+    "  restart_klip.txt=\"Klipper neu starten\"",
+    "  restart_fw.txt=\"Firmware neu starten\"",
+    "  msg.txt=\"Klipper ist bereit.\"",
+    "  export_logs.txt=\"Protokolle exportieren\"",
+    "  title.txt=\"Klipper-Status\"",
+    "}else if(lang==6)",
+    "{",
+    "  restart_klip.txt=\"Riavvia Klipper\"",
+    "  restart_fw.txt=\"Riavvia il firmware\"",
+    "  msg.txt=\"Klipper è pronto.\"",
+    "  export_logs.txt=\"Esporta log\"",
+    "  title.txt=\"Stato di Klipper\"",
+    "}else if(lang==7)",
+    "{",
+    "  restart_klip.txt=\"Reiniciar Klipper\"",
+    "  restart_fw.txt=\"Reiniciar el firmware\"",
+    "  msg.txt=\"Klipper está listo.\"",
+    "  export_logs.txt=\"Exportar registros\"",
+    "  title.txt=\"Estado de Klipper\"",
+    "}else if(lang==8)",
+    "{",
+    "  restart_klip.txt=\"Klipper 재시작\"",
+    "  restart_fw.txt=\"펌웨어 재시작\"",
+    "  msg.txt=\"Klipper가 준비되었습니다.\"",
+    "  export_logs.txt=\"로그 내보내기\"",
+    "  title.txt=\"Klipper 상태\"",
+    "}else if(lang==9)",
+    "{",
+    "  restart_klip.txt=\"Reiniciar o Klipper\"",
+    "  restart_fw.txt=\"Reiniciar o firmware\"",
+    "  msg.txt=\"O Klipper está pronto.\"",
+    "  export_logs.txt=\"Exportar registros\"",
+    "  title.txt=\"Status do Klipper\"",
+    "}else if(lang==10)",
+    "{",
+    "  restart_klip.txt=\"إعادة تشغيل Klipper\"",
+    "  restart_fw.txt=\"إعادة تشغيل البرنامج الثابت\"",
+    "  msg.txt=\"Klipper جاهز.\"",
+    "  export_logs.txt=\"تصدير السجلات\"",
+    "  title.txt=\"حالة Klipper\"",
+    "}else if(lang==11)",
+    "{",
+    "  restart_klip.txt=\"Klipper'ı yeniden başlat\"",
+    "  restart_fw.txt=\"Yazılımı yeniden başlat\"",
+    "  msg.txt=\"Klipper hazır.\"",
+    "  export_logs.txt=\"Günlükleri dışa aktar\"",
+    "  title.txt=\"Klipper durumu\"",
+    "}else if(lang==12)",
+    "{",
+    "  restart_klip.txt=\"הפעל מחדש את Klipper\"",
+    "  restart_fw.txt=\"הפעל מחדש את הקושחה\"",
+    "  msg.txt=\"Klipper מוכן.\"",
+    "  export_logs.txt=\"ייצוא לוגים\"",
+    "  title.txt=\"מצב Klipper\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "touch",
+   "type": "touch_capture",
+   "attributes": {
+    "objname": "touch",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [
+     "sleep_counts=0",
+     "dim=max_dim"
+    ],
+    "codesup": []
+   }
+  },
+  {
+   "key": "sleep_counter",
+   "type": "timer",
+   "attributes": {
+    "objname": "sleep_counter",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "sleep_counts+=1",
+     "if(sleep_counts==sleep_time)",
+     "{",
+     "  prints 0x65,1",
+     "  prints 4,1",
+     "  prints 1,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "back_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "back_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 0,
+    "w": 272,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:keypad_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:keypad_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 48,
+    "y": 0,
+    "w": 212,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t19"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Klipper Status",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click back_btn,1"
+    ],
+    "codesup": [
+     "click back_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "bg6",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg6",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 48,
+    "w": 272,
+    "h": 2,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:keypad_decor_2"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bg7",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg7",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 56,
+    "w": 248,
+    "h": 148,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:klipper_status_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 157,
+    "w": 224,
+    "h": 22,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Klipper is ready.",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "export_logs",
+   "type": "button",
+   "attributes": {
+    "objname": "export_logs",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 212,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:unload_choose_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:unload_choose_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Export Logs",
+    "txt_maxl": 101,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "restart_klip",
+   "type": "button",
+   "attributes": {
+    "objname": "restart_klip",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 266,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:unload_choose_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:unload_choose_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Restart Klipper",
+    "txt_maxl": 98,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "restart_fw",
+   "type": "button",
+   "attributes": {
+    "objname": "restart_fw",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 320,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:klipper_status_restart_fw"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:klipper_status_restart_fw_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 64626,
+    "pco2": 64626,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Restart Firmware",
+    "txt_maxl": 161,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "bg21",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg21",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 424,
+    "w": 272,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:filament_decor_5"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nav_main",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_main",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:filament_nav_main"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:filament_nav_main_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 30,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_adjust",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_adjust",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 68,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:file_list_nav_adjust"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:file_list_nav_adjust_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 31,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_files",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_files",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:filament_nav_files"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:filament_nav_files_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 32,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 204,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:calibration_nav_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:calibration_nav_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 33,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  }
+ ]
+}

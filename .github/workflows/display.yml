@@ -1,0 +1,25 @@
+name: display
+
+on:
+  push:
+    paths: [display_firmware/**, .github/workflows/display.yml]
+  workflow_dispatch:
+
+jobs:
+  hmi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python display_firmware/tools/lint_program.py
+          python display_firmware/tools/lint_frames.py
+          python display_firmware/tools/lint_page_ids.py
+          python display_firmware/tools/lint_faces.py
+          python display_firmware/tools/check_host_names.py
+      - uses: ponywka/hmi-builder@main
+        with:
+          project-dir: display_firmware
+          output: display_firmware/out/display.HMI

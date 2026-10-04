@@ -1,0 +1,4996 @@
+{
+  "format": "usart-hmi-project-v2",
+  "portable": true,
+  "project": {
+    "header": "fd4155ae600000000142210403185500a888a3380000000060000000b601000060ea0000030000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000",
+    "index_order": [
+      "i",
+      "zi",
+      "gmov",
+      "pa"
+    ]
+  },
+  "layouts": {
+    "121": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "up",
+        1
+      ],
+      [
+        "down",
+        1
+      ],
+      [
+        "left",
+        1
+      ],
+      [
+        "right",
+        1
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "pic",
+        2
+      ]
+    ],
+    "51": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "tim",
+        2
+      ],
+      [
+        "en",
+        1
+      ]
+    ],
+    "52": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "txt",
+        "t"
+      ],
+      [
+        "txt_maxl",
+        2
+      ],
+      [
+        "val",
+        4
+      ]
+    ],
+    "116": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "style",
+        1
+      ],
+      [
+        "key",
+        1
+      ],
+      [
+        "borderc",
+        2
+      ],
+      [
+        "borderw",
+        1
+      ],
+      [
+        "font",
+        1
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "picc",
+        2
+      ],
+      [
+        "pic",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "xcen",
+        1
+      ],
+      [
+        "ycen",
+        1
+      ],
+      [
+        "pw",
+        1
+      ],
+      [
+        "txt",
+        "t"
+      ],
+      [
+        "txt_maxl",
+        2
+      ],
+      [
+        "isbr",
+        1
+      ],
+      [
+        "spax",
+        1
+      ],
+      [
+        "spay",
+        1
+      ]
+    ],
+    "98": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "style",
+        1
+      ],
+      [
+        "borderc",
+        2
+      ],
+      [
+        "borderw",
+        1
+      ],
+      [
+        "font",
+        1
+      ],
+      [
+        "pic",
+        2
+      ],
+      [
+        "picc",
+        2
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "pic2",
+        2
+      ],
+      [
+        "picc2",
+        2
+      ],
+      [
+        "bco2",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "pco2",
+        2
+      ],
+      [
+        "xcen",
+        1
+      ],
+      [
+        "ycen",
+        1
+      ],
+      [
+        "val",
+        1
+      ],
+      [
+        "txt",
+        "t"
+      ],
+      [
+        "txt_maxl",
+        2
+      ],
+      [
+        "isbr",
+        1
+      ],
+      [
+        "spax",
+        1
+      ],
+      [
+        "spay",
+        1
+      ]
+    ],
+    "113": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "picc",
+        2
+      ]
+    ],
+    "2": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "from",
+        1
+      ],
+      [
+        "vid",
+        2
+      ],
+      [
+        "path",
+        "t"
+      ],
+      [
+        "path_m",
+        2
+      ],
+      [
+        "en",
+        1
+      ],
+      [
+        "loop",
+        1
+      ],
+      [
+        "dis",
+        2
+      ],
+      [
+        "tim",
+        4
+      ],
+      [
+        "stim",
+        4
+      ],
+      [
+        "qty",
+        4
+      ],
+      [
+        "molloc_s",
+        4
+      ],
+      [
+        "molloc",
+        4
+      ]
+    ],
+    "54": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "style",
+        1
+      ],
+      [
+        "key",
+        1
+      ],
+      [
+        "borderc",
+        2
+      ],
+      [
+        "borderw",
+        1
+      ],
+      [
+        "font",
+        1
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "picc",
+        2
+      ],
+      [
+        "pic",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "xcen",
+        1
+      ],
+      [
+        "ycen",
+        1
+      ],
+      [
+        "val",
+        4
+      ],
+      [
+        "lenth",
+        1
+      ],
+      [
+        "format",
+        1
+      ],
+      [
+        "isbr",
+        1
+      ],
+      [
+        "spax",
+        1
+      ],
+      [
+        "spay",
+        1
+      ]
+    ],
+    "5": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "val",
+        1
+      ]
+    ],
+    "70": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "write",
+        4
+      ],
+      [
+        "close",
+        4
+      ],
+      [
+        "buffsize",
+        4
+      ],
+      [
+        "buff",
+        4
+      ]
+    ],
+    "60": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "path",
+        "t"
+      ],
+      [
+        "path_m",
+        2
+      ]
+    ],
+    "106": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "dez",
+        1
+      ],
+      [
+        "val",
+        1
+      ],
+      [
+        "dis",
+        1
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "bpic",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "ppic",
+        2
+      ]
+    ],
+    "1": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "mode",
+        1
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "psta",
+        1
+      ],
+      [
+        "wid",
+        1
+      ],
+      [
+        "hig",
+        1
+      ],
+      [
+        "dis",
+        1
+      ],
+      [
+        "pic",
+        2
+      ],
+      [
+        "picc",
+        2
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "pic1",
+        2
+      ],
+      [
+        "picc1",
+        2
+      ],
+      [
+        "bco1",
+        2
+      ],
+      [
+        "pic2",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "val",
+        2
+      ],
+      [
+        "maxval",
+        2
+      ],
+      [
+        "minval",
+        2
+      ],
+      [
+        "ch",
+        1
+      ]
+    ],
+    "109": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ]
+    ],
+    "62": [
+      [
+        "type",
+        1
+      ],
+      [
+        "id",
+        1
+      ],
+      [
+        "objname",
+        "t"
+      ],
+      [
+        "vscope",
+        1
+      ],
+      [
+        "drag",
+        1
+      ],
+      [
+        "sendkey",
+        1
+      ],
+      [
+        "aph",
+        1
+      ],
+      [
+        "movex",
+        2
+      ],
+      [
+        "movey",
+        2
+      ],
+      [
+        "x",
+        2
+      ],
+      [
+        "y",
+        2
+      ],
+      [
+        "w",
+        2
+      ],
+      [
+        "h",
+        2
+      ],
+      [
+        "endx",
+        2
+      ],
+      [
+        "endy",
+        2
+      ],
+      [
+        "effect",
+        1
+      ],
+      [
+        "first",
+        1
+      ],
+      [
+        "time",
+        2
+      ],
+      [
+        "lockobj",
+        1
+      ],
+      [
+        "groupid0",
+        4
+      ],
+      [
+        "groupid1",
+        4
+      ],
+      [
+        "sta",
+        1
+      ],
+      [
+        "style",
+        1
+      ],
+      [
+        "key",
+        1
+      ],
+      [
+        "borderc",
+        2
+      ],
+      [
+        "borderw",
+        1
+      ],
+      [
+        "font",
+        1
+      ],
+      [
+        "bco",
+        2
+      ],
+      [
+        "picc",
+        2
+      ],
+      [
+        "pic",
+        2
+      ],
+      [
+        "pco",
+        2
+      ],
+      [
+        "xcen",
+        1
+      ],
+      [
+        "leftshow",
+        1
+      ],
+      [
+        "left",
+        1
+      ],
+      [
+        "ch",
+        1
+      ],
+      [
+        "txt",
+        "t"
+      ],
+      [
+        "txt_maxl",
+        2
+      ],
+      [
+        "isbr",
+        1
+      ],
+      [
+        "spax",
+        1
+      ],
+      [
+        "spay",
+        1
+      ],
+      [
+        "path",
+        "t"
+      ],
+      [
+        "path_m",
+        2
+      ],
+      [
+        "maxval_y",
+        4
+      ],
+      [
+        "val_y",
+        4
+      ]
+    ]
+  },
+  "pages": [
+    {
+      "key": "boot_logo",
+      "content": {
+        "mode": "json",
+        "path": "pages/boot_logo.json"
+      }
+    },
+    {
+      "key": "update_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/update_done.json"
+      }
+    },
+    {
+      "key": "restart_needed",
+      "content": {
+        "mode": "json",
+        "path": "pages/restart_needed.json"
+      }
+    },
+    {
+      "key": "shutting_down",
+      "content": {
+        "mode": "json",
+        "path": "pages/shutting_down.json"
+      }
+    },
+    {
+      "key": "screen_asleep",
+      "content": {
+        "mode": "json",
+        "path": "pages/screen_asleep.json"
+      }
+    },
+    {
+      "key": "setup_language",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_language.json"
+      }
+    },
+    {
+      "key": "setup_lang_2",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_lang_2.json"
+      }
+    },
+    {
+      "key": "setup_skip",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_skip.json"
+      }
+    },
+    {
+      "key": "setup_unbox_1",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_unbox_1.json"
+      }
+    },
+    {
+      "key": "setup_warning",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_warning.json"
+      }
+    },
+    {
+      "key": "setup_unbox_2",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_unbox_2.json"
+      }
+    },
+    {
+      "key": "setup_spool",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_spool.json"
+      }
+    },
+    {
+      "key": "setup_insert",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_insert.json"
+      }
+    },
+    {
+      "key": "setup_heat",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_heat.json"
+      }
+    },
+    {
+      "key": "setup_extrude",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_extrude.json"
+      }
+    },
+    {
+      "key": "setup_wait",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_wait.json"
+      }
+    },
+    {
+      "key": "setup_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/setup_done.json"
+      }
+    },
+    {
+      "key": "home",
+      "content": {
+        "mode": "json",
+        "path": "pages/home.json"
+      }
+    },
+    {
+      "key": "emergency_stop",
+      "content": {
+        "mode": "json",
+        "path": "pages/emergency_stop.json"
+      }
+    },
+    {
+      "key": "filament",
+      "content": {
+        "mode": "json",
+        "path": "pages/filament.json"
+      }
+    },
+    {
+      "key": "preheat",
+      "content": {
+        "mode": "json",
+        "path": "pages/preheat.json"
+      }
+    },
+    {
+      "key": "keypad",
+      "content": {
+        "mode": "json",
+        "path": "pages/keypad.json"
+      }
+    },
+    {
+      "key": "filament_cold",
+      "content": {
+        "mode": "json",
+        "path": "pages/filament_cold.json"
+      }
+    },
+    {
+      "key": "level_cold",
+      "content": {
+        "mode": "json",
+        "path": "pages/level_cold.json"
+      }
+    },
+    {
+      "key": "unload_choose",
+      "content": {
+        "mode": "json",
+        "path": "pages/unload_choose.json"
+      }
+    },
+    {
+      "key": "unload_steps",
+      "content": {
+        "mode": "json",
+        "path": "pages/unload_steps.json"
+      }
+    },
+    {
+      "key": "unload_auto",
+      "content": {
+        "mode": "json",
+        "path": "pages/unload_auto.json"
+      }
+    },
+    {
+      "key": "unload_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/unload_done.json"
+      }
+    },
+    {
+      "key": "load_steps",
+      "content": {
+        "mode": "json",
+        "path": "pages/load_steps.json"
+      }
+    },
+    {
+      "key": "move",
+      "content": {
+        "mode": "json",
+        "path": "pages/move.json"
+      }
+    },
+    {
+      "key": "move_range",
+      "content": {
+        "mode": "json",
+        "path": "pages/move_range.json"
+      }
+    },
+    {
+      "key": "move_unhomed",
+      "content": {
+        "mode": "json",
+        "path": "pages/move_unhomed.json"
+      }
+    },
+    {
+      "key": "file_list",
+      "content": {
+        "mode": "json",
+        "path": "pages/file_list.json"
+      }
+    },
+    {
+      "key": "file_preview",
+      "content": {
+        "mode": "json",
+        "path": "pages/file_preview.json"
+      }
+    },
+    {
+      "key": "closed_chamber",
+      "content": {
+        "mode": "json",
+        "path": "pages/closed_chamber.json"
+      }
+    },
+    {
+      "key": "doors_cover",
+      "content": {
+        "mode": "json",
+        "path": "pages/doors_cover.json"
+      }
+    },
+    {
+      "key": "printing",
+      "content": {
+        "mode": "json",
+        "path": "pages/printing.json"
+      }
+    },
+    {
+      "key": "print_adjust",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_adjust.json"
+      }
+    },
+    {
+      "key": "print_filament",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_filament.json"
+      }
+    },
+    {
+      "key": "print_keypad",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_keypad.json"
+      }
+    },
+    {
+      "key": "print_z_offset",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_z_offset.json"
+      }
+    },
+    {
+      "key": "print_stop",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_stop.json"
+      }
+    },
+    {
+      "key": "print_stopping",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_stopping.json"
+      }
+    },
+    {
+      "key": "resume_print",
+      "content": {
+        "mode": "json",
+        "path": "pages/resume_print.json"
+      }
+    },
+    {
+      "key": "print_resuming",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_resuming.json"
+      }
+    },
+    {
+      "key": "no_filament",
+      "content": {
+        "mode": "json",
+        "path": "pages/no_filament.json"
+      }
+    },
+    {
+      "key": "print_tangle",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_tangle.json"
+      }
+    },
+    {
+      "key": "print_cold",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_cold.json"
+      }
+    },
+    {
+      "key": "print_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/print_done.json"
+      }
+    },
+    {
+      "key": "calibration",
+      "content": {
+        "mode": "json",
+        "path": "pages/calibration.json"
+      }
+    },
+    {
+      "key": "calib_warning",
+      "content": {
+        "mode": "json",
+        "path": "pages/calib_warning.json"
+      }
+    },
+    {
+      "key": "level_preheat",
+      "content": {
+        "mode": "json",
+        "path": "pages/level_preheat.json"
+      }
+    },
+    {
+      "key": "level_progress",
+      "content": {
+        "mode": "json",
+        "path": "pages/level_progress.json"
+      }
+    },
+    {
+      "key": "level_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/level_done.json"
+      }
+    },
+    {
+      "key": "z_offset_table",
+      "content": {
+        "mode": "json",
+        "path": "pages/z_offset_table.json"
+      }
+    },
+    {
+      "key": "ref_point",
+      "content": {
+        "mode": "json",
+        "path": "pages/ref_point.json"
+      }
+    },
+    {
+      "key": "nut_adjust",
+      "content": {
+        "mode": "json",
+        "path": "pages/nut_adjust.json"
+      }
+    },
+    {
+      "key": "nut_choose",
+      "content": {
+        "mode": "json",
+        "path": "pages/nut_choose.json"
+      }
+    },
+    {
+      "key": "bed_moving",
+      "content": {
+        "mode": "json",
+        "path": "pages/bed_moving.json"
+      }
+    },
+    {
+      "key": "shaping_run",
+      "content": {
+        "mode": "json",
+        "path": "pages/shaping_run.json"
+      }
+    },
+    {
+      "key": "shaping_done",
+      "content": {
+        "mode": "json",
+        "path": "pages/shaping_done.json"
+      }
+    },
+    {
+      "key": "leveling_error",
+      "content": {
+        "mode": "json",
+        "path": "pages/leveling_error.json"
+      }
+    },
+    {
+      "key": "settings",
+      "content": {
+        "mode": "json",
+        "path": "pages/settings.json"
+      }
+    },
+    {
+      "key": "language",
+      "content": {
+        "mode": "json",
+        "path": "pages/language.json"
+      }
+    },
+    {
+      "key": "language_2",
+      "content": {
+        "mode": "json",
+        "path": "pages/language_2.json"
+      }
+    },
+    {
+      "key": "screen",
+      "content": {
+        "mode": "json",
+        "path": "pages/screen.json"
+      }
+    },
+    {
+      "key": "klipper_status",
+      "content": {
+        "mode": "json",
+        "path": "pages/klipper_status.json"
+      }
+    },
+    {
+      "key": "klipper_error",
+      "content": {
+        "mode": "json",
+        "path": "pages/klipper_error.json"
+      }
+    },
+    {
+      "key": "factory_reset",
+      "content": {
+        "mode": "json",
+        "path": "pages/factory_reset.json"
+      }
+    },
+    {
+      "key": "logs_exported",
+      "content": {
+        "mode": "json",
+        "path": "pages/logs_exported.json"
+      }
+    },
+    {
+      "key": "logs_failed",
+      "content": {
+        "mode": "json",
+        "path": "pages/logs_failed.json"
+      }
+    },
+    {
+      "key": "network_info",
+      "content": {
+        "mode": "json",
+        "path": "pages/network_info.json"
+      }
+    },
+    {
+      "key": "wifi_list",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_list.json"
+      }
+    },
+    {
+      "key": "wifi_none",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_none.json"
+      }
+    },
+    {
+      "key": "wifi_keyboard",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_keyboard.json"
+      }
+    },
+    {
+      "key": "wifi_connect",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_connect.json"
+      }
+    },
+    {
+      "key": "wifi_connected",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_connected.json"
+      }
+    },
+    {
+      "key": "wifi_failed",
+      "content": {
+        "mode": "json",
+        "path": "pages/wifi_failed.json"
+      }
+    },
+    {
+      "key": "saved_networks",
+      "content": {
+        "mode": "json",
+        "path": "pages/saved_networks.json"
+      }
+    },
+    {
+      "key": "network_detail",
+      "content": {
+        "mode": "json",
+        "path": "pages/network_detail.json"
+      }
+    },
+    {
+      "key": "forget_network",
+      "content": {
+        "mode": "json",
+        "path": "pages/forget_network.json"
+      }
+    },
+    {
+      "key": "error",
+      "content": {
+        "mode": "json",
+        "path": "pages/error.json"
+      }
+    },
+    {
+      "key": "gcode_error",
+      "content": {
+        "mode": "json",
+        "path": "pages/gcode_error.json"
+      }
+    },
+    {
+      "key": "memory_full",
+      "content": {
+        "mode": "json",
+        "path": "pages/memory_full.json"
+      }
+    }
+  ],
+  "pictures": [
+    {
+      "key": "boot_logo",
+      "source": {
+        "png": "pictures/boot_logo.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_10",
+      "source": {
+        "png": "pictures/z_offset_table_decor_10.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_5",
+      "source": {
+        "png": "pictures/z_offset_table_decor_5.png"
+      }
+    },
+    {
+      "key": "setup_skip_decor",
+      "source": {
+        "png": "pictures/setup_skip_decor.png"
+      }
+    },
+    {
+      "key": "update_done_decor",
+      "source": {
+        "png": "pictures/update_done_decor.png"
+      }
+    },
+    {
+      "key": "filament_cold_decor",
+      "source": {
+        "png": "pictures/filament_cold_decor.png"
+      }
+    },
+    {
+      "key": "leveling_error_decor",
+      "source": {
+        "png": "pictures/leveling_error_decor.png"
+      }
+    },
+    {
+      "key": "setup_warning_decor",
+      "source": {
+        "png": "pictures/setup_warning_decor.png"
+      }
+    },
+    {
+      "key": "setup_done_decor",
+      "source": {
+        "png": "pictures/setup_done_decor.png"
+      }
+    },
+    {
+      "key": "keypad_back_btn",
+      "source": {
+        "png": "pictures/keypad_back_btn.png"
+      }
+    },
+    {
+      "key": "keypad_back_btn_press",
+      "source": {
+        "png": "pictures/keypad_back_btn_press.png"
+      }
+    },
+    {
+      "key": "keypad_decor_2",
+      "source": {
+        "png": "pictures/keypad_decor_2.png"
+      }
+    },
+    {
+      "key": "wifi_none_decor",
+      "source": {
+        "png": "pictures/wifi_none_decor.png"
+      }
+    },
+    {
+      "key": "filament_decor_5",
+      "source": {
+        "png": "pictures/filament_decor_5.png"
+      }
+    },
+    {
+      "key": "filament_nav_main",
+      "source": {
+        "png": "pictures/filament_nav_main.png"
+      }
+    },
+    {
+      "key": "filament_nav_main_press",
+      "source": {
+        "png": "pictures/filament_nav_main_press.png"
+      }
+    },
+    {
+      "key": "file_list_nav_adjust",
+      "source": {
+        "png": "pictures/file_list_nav_adjust.png"
+      }
+    },
+    {
+      "key": "file_list_nav_adjust_press",
+      "source": {
+        "png": "pictures/file_list_nav_adjust_press.png"
+      }
+    },
+    {
+      "key": "filament_nav_files",
+      "source": {
+        "png": "pictures/filament_nav_files.png"
+      }
+    },
+    {
+      "key": "filament_nav_files_press",
+      "source": {
+        "png": "pictures/filament_nav_files_press.png"
+      }
+    },
+    {
+      "key": "calibration_nav_settings",
+      "source": {
+        "png": "pictures/calibration_nav_settings.png"
+      }
+    },
+    {
+      "key": "calibration_nav_settings_press",
+      "source": {
+        "png": "pictures/calibration_nav_settings_press.png"
+      }
+    },
+    {
+      "key": "klipper_error_decor",
+      "source": {
+        "png": "pictures/klipper_error_decor.png"
+      }
+    },
+    {
+      "key": "filament_decor_4",
+      "source": {
+        "png": "pictures/filament_decor_4.png"
+      }
+    },
+    {
+      "key": "calibration_decor",
+      "source": {
+        "png": "pictures/calibration_decor.png"
+      }
+    },
+    {
+      "key": "klipper_status_decor",
+      "source": {
+        "png": "pictures/klipper_status_decor.png"
+      }
+    },
+    {
+      "key": "nut_choose_decor",
+      "source": {
+        "png": "pictures/nut_choose_decor.png"
+      }
+    },
+    {
+      "key": "network_detail_decor",
+      "source": {
+        "png": "pictures/network_detail_decor.png"
+      }
+    },
+    {
+      "key": "forget_network_decor",
+      "source": {
+        "png": "pictures/forget_network_decor.png"
+      }
+    },
+    {
+      "key": "network_info_decor_2",
+      "source": {
+        "png": "pictures/network_info_decor_2.png"
+      }
+    },
+    {
+      "key": "network_info_decor_1",
+      "source": {
+        "png": "pictures/network_info_decor_1.png"
+      }
+    },
+    {
+      "key": "unload_steps_decor",
+      "source": {
+        "png": "pictures/unload_steps_decor.png"
+      }
+    },
+    {
+      "key": "move_decor_2",
+      "source": {
+        "png": "pictures/move_decor_2.png"
+      }
+    },
+    {
+      "key": "home_bed_icon_off",
+      "source": {
+        "png": "pictures/home_bed_icon_off.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_7",
+      "source": {
+        "png": "pictures/z_offset_table_decor_7.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_9",
+      "source": {
+        "png": "pictures/z_offset_table_decor_9.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_8",
+      "source": {
+        "png": "pictures/z_offset_table_decor_8.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_6",
+      "source": {
+        "png": "pictures/z_offset_table_decor_6.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_11",
+      "source": {
+        "png": "pictures/z_offset_table_decor_11.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_1",
+      "source": {
+        "png": "pictures/z_offset_table_decor_1.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_4",
+      "source": {
+        "png": "pictures/z_offset_table_decor_4.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_3",
+      "source": {
+        "png": "pictures/z_offset_table_decor_3.png"
+      }
+    },
+    {
+      "key": "z_offset_table_decor_2",
+      "source": {
+        "png": "pictures/z_offset_table_decor_2.png"
+      }
+    },
+    {
+      "key": "setup_heat_nozzle_icon_off",
+      "source": {
+        "png": "pictures/setup_heat_nozzle_icon_off.png"
+      }
+    },
+    {
+      "key": "home_chamber_icon_off",
+      "source": {
+        "png": "pictures/home_chamber_icon_off.png"
+      }
+    },
+    {
+      "key": "move_step_seg_s10",
+      "source": {
+        "png": "pictures/move_step_seg_s10.png"
+      }
+    },
+    {
+      "key": "filament_step_seg_s50",
+      "source": {
+        "png": "pictures/filament_step_seg_s50.png"
+      }
+    },
+    {
+      "key": "move_step_seg_s100",
+      "source": {
+        "png": "pictures/move_step_seg_s100.png"
+      }
+    },
+    {
+      "key": "filament_nav_adjust",
+      "source": {
+        "png": "pictures/filament_nav_adjust.png"
+      }
+    },
+    {
+      "key": "filament_nav_adjust_press",
+      "source": {
+        "png": "pictures/filament_nav_adjust_press.png"
+      }
+    },
+    {
+      "key": "filament_nav_settings",
+      "source": {
+        "png": "pictures/filament_nav_settings.png"
+      }
+    },
+    {
+      "key": "filament_nav_settings_press",
+      "source": {
+        "png": "pictures/filament_nav_settings_press.png"
+      }
+    },
+    {
+      "key": "move_decor_3",
+      "source": {
+        "png": "pictures/move_decor_3.png"
+      }
+    },
+    {
+      "key": "move_decor_1",
+      "source": {
+        "png": "pictures/move_decor_1.png"
+      }
+    },
+    {
+      "key": "preheat_decor",
+      "source": {
+        "png": "pictures/preheat_decor.png"
+      }
+    },
+    {
+      "key": "setup_heat_decor_1",
+      "source": {
+        "png": "pictures/setup_heat_decor_1.png"
+      }
+    },
+    {
+      "key": "keypad_decor_1",
+      "source": {
+        "png": "pictures/keypad_decor_1.png"
+      }
+    },
+    {
+      "key": "keybdB_decor_3",
+      "source": {
+        "png": "pictures/keybdB_decor_3.png"
+      }
+    },
+    {
+      "key": "keybdB_decor_2",
+      "source": {
+        "png": "pictures/keybdB_decor_2.png"
+      }
+    },
+    {
+      "key": "keybdB_decor_1",
+      "source": {
+        "png": "pictures/keybdB_decor_1.png"
+      }
+    },
+    {
+      "key": "printing_decor_1",
+      "source": {
+        "png": "pictures/printing_decor_1.png"
+      }
+    },
+    {
+      "key": "printing_decor_2",
+      "source": {
+        "png": "pictures/printing_decor_2.png"
+      }
+    },
+    {
+      "key": "print_adjust_fan1_btn",
+      "source": {
+        "png": "pictures/print_adjust_fan1_btn.png"
+      }
+    },
+    {
+      "key": "print_z_offset_decor",
+      "source": {
+        "png": "pictures/print_z_offset_decor.png"
+      }
+    },
+    {
+      "key": "print_z_offset_back_btn",
+      "source": {
+        "png": "pictures/print_z_offset_back_btn.png"
+      }
+    },
+    {
+      "key": "print_z_offset_back_btn_press",
+      "source": {
+        "png": "pictures/print_z_offset_back_btn_press.png"
+      }
+    },
+    {
+      "key": "file_list_nav_files",
+      "source": {
+        "png": "pictures/file_list_nav_files.png"
+      }
+    },
+    {
+      "key": "file_list_nav_files_press",
+      "source": {
+        "png": "pictures/file_list_nav_files_press.png"
+      }
+    },
+    {
+      "key": "file_preview_decor_1",
+      "source": {
+        "png": "pictures/file_preview_decor_1.png"
+      }
+    },
+    {
+      "key": "file_preview_decor_2",
+      "source": {
+        "png": "pictures/file_preview_decor_2.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_decor",
+      "source": {
+        "png": "pictures/wifi_keyboard_decor.png"
+      }
+    },
+    {
+      "key": "restart_needed_static",
+      "source": {
+        "png": "pictures/restart_needed_static.png"
+      }
+    },
+    {
+      "key": "shutting_down_static",
+      "source": {
+        "png": "pictures/shutting_down_static.png"
+      }
+    },
+    {
+      "key": "home_usb_icon",
+      "source": {
+        "png": "pictures/home_usb_icon.png"
+      }
+    },
+    {
+      "key": "home_usb_icon_on",
+      "source": {
+        "png": "pictures/home_usb_icon_on.png"
+      }
+    },
+    {
+      "key": "home_wifi_icon",
+      "source": {
+        "png": "pictures/home_wifi_icon.png"
+      }
+    },
+    {
+      "key": "home_wifi_icon_on",
+      "source": {
+        "png": "pictures/home_wifi_icon_on.png"
+      }
+    },
+    {
+      "key": "home_thumb_empty",
+      "source": {
+        "png": "pictures/home_thumb_empty.png"
+      }
+    },
+    {
+      "key": "home_nozzle_card",
+      "source": {
+        "png": "pictures/home_nozzle_card.png"
+      }
+    },
+    {
+      "key": "home_bed_icon_on",
+      "source": {
+        "png": "pictures/home_bed_icon_on.png"
+      }
+    },
+    {
+      "key": "home_chamber_icon_on",
+      "source": {
+        "png": "pictures/home_chamber_icon_on.png"
+      }
+    },
+    {
+      "key": "home_nav_main",
+      "source": {
+        "png": "pictures/home_nav_main.png"
+      }
+    },
+    {
+      "key": "home_nav_main_press",
+      "source": {
+        "png": "pictures/home_nav_main_press.png"
+      }
+    },
+    {
+      "key": "home_nav_adjust",
+      "source": {
+        "png": "pictures/home_nav_adjust.png"
+      }
+    },
+    {
+      "key": "home_nav_adjust_press",
+      "source": {
+        "png": "pictures/home_nav_adjust_press.png"
+      }
+    },
+    {
+      "key": "home_nav_files",
+      "source": {
+        "png": "pictures/home_nav_files.png"
+      }
+    },
+    {
+      "key": "home_nav_files_press",
+      "source": {
+        "png": "pictures/home_nav_files_press.png"
+      }
+    },
+    {
+      "key": "home_nav_settings",
+      "source": {
+        "png": "pictures/home_nav_settings.png"
+      }
+    },
+    {
+      "key": "home_nav_settings_press",
+      "source": {
+        "png": "pictures/home_nav_settings_press.png"
+      }
+    },
+    {
+      "key": "home_ver_panel",
+      "source": {
+        "png": "pictures/home_ver_panel.png"
+      }
+    },
+    {
+      "key": "ref_point_decor",
+      "source": {
+        "png": "pictures/ref_point_decor.png"
+      }
+    },
+    {
+      "key": "nut_adjust_decor_1",
+      "source": {
+        "png": "pictures/nut_adjust_decor_1.png"
+      }
+    },
+    {
+      "key": "nut_adjust_decor_2",
+      "source": {
+        "png": "pictures/nut_adjust_decor_2.png"
+      }
+    },
+    {
+      "key": "setup_unbox_1_decor",
+      "source": {
+        "png": "pictures/setup_unbox_1_decor.png"
+      }
+    },
+    {
+      "key": "home_nozzle_icon_on",
+      "source": {
+        "png": "pictures/home_nozzle_icon_on.png"
+      }
+    },
+    {
+      "key": "unload_auto_steps_bar_unload_0",
+      "source": {
+        "png": "pictures/unload_auto_steps_bar_unload_0.png"
+      }
+    },
+    {
+      "key": "settings_lang_btn",
+      "source": {
+        "png": "pictures/settings_lang_btn.png"
+      }
+    },
+    {
+      "key": "settings_lang_btn_press",
+      "source": {
+        "png": "pictures/settings_lang_btn_press.png"
+      }
+    },
+    {
+      "key": "settings_sysinfo_btn",
+      "source": {
+        "png": "pictures/settings_sysinfo_btn.png"
+      }
+    },
+    {
+      "key": "settings_sysinfo_btn_press",
+      "source": {
+        "png": "pictures/settings_sysinfo_btn_press.png"
+      }
+    },
+    {
+      "key": "settings_reset_btn_oobe_off",
+      "source": {
+        "png": "pictures/settings_reset_btn_oobe_off.png"
+      }
+    },
+    {
+      "key": "settings_reset_btn_oobe_off_press",
+      "source": {
+        "png": "pictures/settings_reset_btn_oobe_off_press.png"
+      }
+    },
+    {
+      "key": "settings_reset_btn_oobe_on",
+      "source": {
+        "png": "pictures/settings_reset_btn_oobe_on.png"
+      }
+    },
+    {
+      "key": "settings_reset_btn_oobe_on_press",
+      "source": {
+        "png": "pictures/settings_reset_btn_oobe_on_press.png"
+      }
+    },
+    {
+      "key": "setup_skip_ok",
+      "source": {
+        "png": "pictures/setup_skip_ok.png"
+      }
+    },
+    {
+      "key": "setup_skip_ok_press",
+      "source": {
+        "png": "pictures/setup_skip_ok_press.png"
+      }
+    },
+    {
+      "key": "setup_skip_cancel",
+      "source": {
+        "png": "pictures/setup_skip_cancel.png"
+      }
+    },
+    {
+      "key": "setup_skip_cancel_press",
+      "source": {
+        "png": "pictures/setup_skip_cancel_press.png"
+      }
+    },
+    {
+      "key": "update_done_ok",
+      "source": {
+        "png": "pictures/update_done_ok.png"
+      }
+    },
+    {
+      "key": "update_done_ok_press",
+      "source": {
+        "png": "pictures/update_done_ok_press.png"
+      }
+    },
+    {
+      "key": "emergency_stop_ok",
+      "source": {
+        "png": "pictures/emergency_stop_ok.png"
+      }
+    },
+    {
+      "key": "emergency_stop_ok_press",
+      "source": {
+        "png": "pictures/emergency_stop_ok_press.png"
+      }
+    },
+    {
+      "key": "setup_language_prev_page",
+      "source": {
+        "png": "pictures/setup_language_prev_page.png"
+      }
+    },
+    {
+      "key": "setup_language_prev_page_press",
+      "source": {
+        "png": "pictures/setup_language_prev_page_press.png"
+      }
+    },
+    {
+      "key": "setup_language_next_page",
+      "source": {
+        "png": "pictures/setup_language_next_page.png"
+      }
+    },
+    {
+      "key": "setup_language_next_page_press",
+      "source": {
+        "png": "pictures/setup_language_next_page_press.png"
+      }
+    },
+    {
+      "key": "setup_language_skip",
+      "source": {
+        "png": "pictures/setup_language_skip.png"
+      }
+    },
+    {
+      "key": "setup_language_skip_press",
+      "source": {
+        "png": "pictures/setup_language_skip_press.png"
+      }
+    },
+    {
+      "key": "setup_language_next",
+      "source": {
+        "png": "pictures/setup_language_next.png"
+      }
+    },
+    {
+      "key": "setup_language_next_press",
+      "source": {
+        "png": "pictures/setup_language_next_press.png"
+      }
+    },
+    {
+      "key": "setup_lang_2_prev_page",
+      "source": {
+        "png": "pictures/setup_lang_2_prev_page.png"
+      }
+    },
+    {
+      "key": "setup_lang_2_prev_page_press",
+      "source": {
+        "png": "pictures/setup_lang_2_prev_page_press.png"
+      }
+    },
+    {
+      "key": "setup_lang_2_next_page",
+      "source": {
+        "png": "pictures/setup_lang_2_next_page.png"
+      }
+    },
+    {
+      "key": "setup_lang_2_next_page_press",
+      "source": {
+        "png": "pictures/setup_lang_2_next_page_press.png"
+      }
+    },
+    {
+      "key": "setup_unbox_1_next",
+      "source": {
+        "png": "pictures/setup_unbox_1_next.png"
+      }
+    },
+    {
+      "key": "setup_unbox_1_next_press",
+      "source": {
+        "png": "pictures/setup_unbox_1_next_press.png"
+      }
+    },
+    {
+      "key": "setup_warning_next",
+      "source": {
+        "png": "pictures/setup_warning_next.png"
+      }
+    },
+    {
+      "key": "setup_warning_next_press",
+      "source": {
+        "png": "pictures/setup_warning_next_press.png"
+      }
+    },
+    {
+      "key": "setup_extrude_extrude",
+      "source": {
+        "png": "pictures/setup_extrude_extrude.png"
+      }
+    },
+    {
+      "key": "setup_extrude_extrude_press",
+      "source": {
+        "png": "pictures/setup_extrude_extrude_press.png"
+      }
+    },
+    {
+      "key": "setup_done_finish",
+      "source": {
+        "png": "pictures/setup_done_finish.png"
+      }
+    },
+    {
+      "key": "setup_done_finish_press",
+      "source": {
+        "png": "pictures/setup_done_finish_press.png"
+      }
+    },
+    {
+      "key": "unload_choose_manual_btn",
+      "source": {
+        "png": "pictures/unload_choose_manual_btn.png"
+      }
+    },
+    {
+      "key": "unload_choose_manual_btn_press",
+      "source": {
+        "png": "pictures/unload_choose_manual_btn_press.png"
+      }
+    },
+    {
+      "key": "unload_choose_back_btn",
+      "source": {
+        "png": "pictures/unload_choose_back_btn.png"
+      }
+    },
+    {
+      "key": "unload_choose_back_btn_press",
+      "source": {
+        "png": "pictures/unload_choose_back_btn_press.png"
+      }
+    },
+    {
+      "key": "unload_auto_ok",
+      "source": {
+        "png": "pictures/unload_auto_ok.png"
+      }
+    },
+    {
+      "key": "unload_auto_ok_press",
+      "source": {
+        "png": "pictures/unload_auto_ok_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_refresh_btn",
+      "source": {
+        "png": "pictures/wifi_list_refresh_btn.png"
+      }
+    },
+    {
+      "key": "wifi_list_refresh_btn_press",
+      "source": {
+        "png": "pictures/wifi_list_refresh_btn_press.png"
+      }
+    },
+    {
+      "key": "klipper_status_restart_fw",
+      "source": {
+        "png": "pictures/klipper_status_restart_fw.png"
+      }
+    },
+    {
+      "key": "klipper_status_restart_fw_press",
+      "source": {
+        "png": "pictures/klipper_status_restart_fw_press.png"
+      }
+    },
+    {
+      "key": "calibration_auto_level",
+      "source": {
+        "png": "pictures/calibration_auto_level.png"
+      }
+    },
+    {
+      "key": "calibration_auto_level_press",
+      "source": {
+        "png": "pictures/calibration_auto_level_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_001_on",
+      "source": {
+        "png": "pictures/ref_point_cstep_001_on.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_001_on_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_001_on_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_001",
+      "source": {
+        "png": "pictures/ref_point_cstep_001.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_001_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_001_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_005_on",
+      "source": {
+        "png": "pictures/ref_point_cstep_005_on.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_005_on_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_005_on_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_005",
+      "source": {
+        "png": "pictures/ref_point_cstep_005.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_005_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_005_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_01_on",
+      "source": {
+        "png": "pictures/ref_point_cstep_01_on.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_01_on_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_01_on_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_01",
+      "source": {
+        "png": "pictures/ref_point_cstep_01.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_01_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_01_press.png"
+      }
+    },
+    {
+      "key": "ref_point_z_up",
+      "source": {
+        "png": "pictures/ref_point_z_up.png"
+      }
+    },
+    {
+      "key": "ref_point_z_up_press",
+      "source": {
+        "png": "pictures/ref_point_z_up_press.png"
+      }
+    },
+    {
+      "key": "ref_point_z_down",
+      "source": {
+        "png": "pictures/ref_point_z_down.png"
+      }
+    },
+    {
+      "key": "ref_point_z_down_press",
+      "source": {
+        "png": "pictures/ref_point_z_down_press.png"
+      }
+    },
+    {
+      "key": "level_preheat_enter_btn",
+      "source": {
+        "png": "pictures/level_preheat_enter_btn.png"
+      }
+    },
+    {
+      "key": "level_preheat_enter_btn_press",
+      "source": {
+        "png": "pictures/level_preheat_enter_btn_press.png"
+      }
+    },
+    {
+      "key": "file_preview_auto_btn",
+      "source": {
+        "png": "pictures/file_preview_auto_btn.png"
+      }
+    },
+    {
+      "key": "file_preview_auto_btn_press",
+      "source": {
+        "png": "pictures/file_preview_auto_btn_press.png"
+      }
+    },
+    {
+      "key": "file_preview_auto_btn_on",
+      "source": {
+        "png": "pictures/file_preview_auto_btn_on.png"
+      }
+    },
+    {
+      "key": "file_preview_auto_btn_on_press",
+      "source": {
+        "png": "pictures/file_preview_auto_btn_on_press.png"
+      }
+    },
+    {
+      "key": "forget_network_forget_btn",
+      "source": {
+        "png": "pictures/forget_network_forget_btn.png"
+      }
+    },
+    {
+      "key": "forget_network_forget_btn_press",
+      "source": {
+        "png": "pictures/forget_network_forget_btn_press.png"
+      }
+    },
+    {
+      "key": "network_info_radio_btn",
+      "source": {
+        "png": "pictures/network_info_radio_btn.png"
+      }
+    },
+    {
+      "key": "network_info_radio_btn_press",
+      "source": {
+        "png": "pictures/network_info_radio_btn_press.png"
+      }
+    },
+    {
+      "key": "network_info_radio_btn_on",
+      "source": {
+        "png": "pictures/network_info_radio_btn_on.png"
+      }
+    },
+    {
+      "key": "network_info_radio_btn_on_press",
+      "source": {
+        "png": "pictures/network_info_radio_btn_on_press.png"
+      }
+    },
+    {
+      "key": "screen_opt_5min",
+      "source": {
+        "png": "pictures/screen_opt_5min.png"
+      }
+    },
+    {
+      "key": "screen_opt_5min_press",
+      "source": {
+        "png": "pictures/screen_opt_5min_press.png"
+      }
+    },
+    {
+      "key": "screen_opt_5min_on",
+      "source": {
+        "png": "pictures/screen_opt_5min_on.png"
+      }
+    },
+    {
+      "key": "screen_opt_5min_on_press",
+      "source": {
+        "png": "pictures/screen_opt_5min_on_press.png"
+      }
+    },
+    {
+      "key": "unload_steps_back_btn",
+      "source": {
+        "png": "pictures/unload_steps_back_btn.png"
+      }
+    },
+    {
+      "key": "unload_steps_back_btn_press",
+      "source": {
+        "png": "pictures/unload_steps_back_btn_press.png"
+      }
+    },
+    {
+      "key": "unload_steps_next_btn",
+      "source": {
+        "png": "pictures/unload_steps_next_btn.png"
+      }
+    },
+    {
+      "key": "unload_steps_next_btn_press",
+      "source": {
+        "png": "pictures/unload_steps_next_btn_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_saved_btn",
+      "source": {
+        "png": "pictures/wifi_list_saved_btn.png"
+      }
+    },
+    {
+      "key": "wifi_list_saved_btn_press",
+      "source": {
+        "png": "pictures/wifi_list_saved_btn_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_item",
+      "source": {
+        "png": "pictures/wifi_list_row1_item.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_item_press",
+      "source": {
+        "png": "pictures/wifi_list_row1_item_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_check",
+      "source": {
+        "png": "pictures/wifi_list_row1_check.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_check_press",
+      "source": {
+        "png": "pictures/wifi_list_row1_check_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_blank",
+      "source": {
+        "png": "pictures/wifi_list_row1_blank.png"
+      }
+    },
+    {
+      "key": "wifi_list_row1_blank_press",
+      "source": {
+        "png": "pictures/wifi_list_row1_blank_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_next_btn_more",
+      "source": {
+        "png": "pictures/wifi_list_next_btn_more.png"
+      }
+    },
+    {
+      "key": "wifi_list_next_btn_more_press",
+      "source": {
+        "png": "pictures/wifi_list_next_btn_more_press.png"
+      }
+    },
+    {
+      "key": "unload_steps_next_btn_edge",
+      "source": {
+        "png": "pictures/unload_steps_next_btn_edge.png"
+      }
+    },
+    {
+      "key": "unload_steps_next_btn_edge_press",
+      "source": {
+        "png": "pictures/unload_steps_next_btn_edge_press.png"
+      }
+    },
+    {
+      "key": "wifi_list_prev_btn_edge",
+      "source": {
+        "png": "pictures/wifi_list_prev_btn_edge.png"
+      }
+    },
+    {
+      "key": "wifi_list_prev_btn_edge_press",
+      "source": {
+        "png": "pictures/wifi_list_prev_btn_edge_press.png"
+      }
+    },
+    {
+      "key": "file_list_prev_btn_more",
+      "source": {
+        "png": "pictures/file_list_prev_btn_more.png"
+      }
+    },
+    {
+      "key": "file_list_prev_btn_more_press",
+      "source": {
+        "png": "pictures/file_list_prev_btn_more_press.png"
+      }
+    },
+    {
+      "key": "setup_heat_temp_down",
+      "source": {
+        "png": "pictures/setup_heat_temp_down.png"
+      }
+    },
+    {
+      "key": "setup_heat_temp_down_press",
+      "source": {
+        "png": "pictures/setup_heat_temp_down_press.png"
+      }
+    },
+    {
+      "key": "setup_heat_temp_up",
+      "source": {
+        "png": "pictures/setup_heat_temp_up.png"
+      }
+    },
+    {
+      "key": "setup_heat_temp_up_press",
+      "source": {
+        "png": "pictures/setup_heat_temp_up_press.png"
+      }
+    },
+    {
+      "key": "filament_extr_down",
+      "source": {
+        "png": "pictures/filament_extr_down.png"
+      }
+    },
+    {
+      "key": "filament_extr_down_press",
+      "source": {
+        "png": "pictures/filament_extr_down_press.png"
+      }
+    },
+    {
+      "key": "move_y_up",
+      "source": {
+        "png": "pictures/move_y_up.png"
+      }
+    },
+    {
+      "key": "move_y_up_press",
+      "source": {
+        "png": "pictures/move_y_up_press.png"
+      }
+    },
+    {
+      "key": "move_x_down",
+      "source": {
+        "png": "pictures/move_x_down.png"
+      }
+    },
+    {
+      "key": "move_x_down_press",
+      "source": {
+        "png": "pictures/move_x_down_press.png"
+      }
+    },
+    {
+      "key": "move_x_up",
+      "source": {
+        "png": "pictures/move_x_up.png"
+      }
+    },
+    {
+      "key": "move_x_up_press",
+      "source": {
+        "png": "pictures/move_x_up_press.png"
+      }
+    },
+    {
+      "key": "move_y_down",
+      "source": {
+        "png": "pictures/move_y_down.png"
+      }
+    },
+    {
+      "key": "move_y_down_press",
+      "source": {
+        "png": "pictures/move_y_down_press.png"
+      }
+    },
+    {
+      "key": "move_home_btn",
+      "source": {
+        "png": "pictures/move_home_btn.png"
+      }
+    },
+    {
+      "key": "move_home_btn_press",
+      "source": {
+        "png": "pictures/move_home_btn_press.png"
+      }
+    },
+    {
+      "key": "move_z_up",
+      "source": {
+        "png": "pictures/move_z_up.png"
+      }
+    },
+    {
+      "key": "move_z_up_press",
+      "source": {
+        "png": "pictures/move_z_up_press.png"
+      }
+    },
+    {
+      "key": "move_z_down",
+      "source": {
+        "png": "pictures/move_z_down.png"
+      }
+    },
+    {
+      "key": "move_z_down_press",
+      "source": {
+        "png": "pictures/move_z_down_press.png"
+      }
+    },
+    {
+      "key": "move_motors_off",
+      "source": {
+        "png": "pictures/move_motors_off.png"
+      }
+    },
+    {
+      "key": "move_motors_off_press",
+      "source": {
+        "png": "pictures/move_motors_off_press.png"
+      }
+    },
+    {
+      "key": "preheat_temp_opt1",
+      "source": {
+        "png": "pictures/preheat_temp_opt1.png"
+      }
+    },
+    {
+      "key": "preheat_temp_opt1_press",
+      "source": {
+        "png": "pictures/preheat_temp_opt1_press.png"
+      }
+    },
+    {
+      "key": "preheat_temp_opt1_on",
+      "source": {
+        "png": "pictures/preheat_temp_opt1_on.png"
+      }
+    },
+    {
+      "key": "preheat_temp_opt1_on_press",
+      "source": {
+        "png": "pictures/preheat_temp_opt1_on_press.png"
+      }
+    },
+    {
+      "key": "setup_heat_next_wait",
+      "source": {
+        "png": "pictures/setup_heat_next_wait.png"
+      }
+    },
+    {
+      "key": "setup_heat_next_wait_press",
+      "source": {
+        "png": "pictures/setup_heat_next_wait_press.png"
+      }
+    },
+    {
+      "key": "keypad_key_1",
+      "source": {
+        "png": "pictures/keypad_key_1.png"
+      }
+    },
+    {
+      "key": "keypad_key_1_press",
+      "source": {
+        "png": "pictures/keypad_key_1_press.png"
+      }
+    },
+    {
+      "key": "keypad_key_2",
+      "source": {
+        "png": "pictures/keypad_key_2.png"
+      }
+    },
+    {
+      "key": "keypad_key_2_press",
+      "source": {
+        "png": "pictures/keypad_key_2_press.png"
+      }
+    },
+    {
+      "key": "keypad_key_del",
+      "source": {
+        "png": "pictures/keypad_key_del.png"
+      }
+    },
+    {
+      "key": "keypad_key_del_press",
+      "source": {
+        "png": "pictures/keypad_key_del_press.png"
+      }
+    },
+    {
+      "key": "keypad_key_ok",
+      "source": {
+        "png": "pictures/keypad_key_ok.png"
+      }
+    },
+    {
+      "key": "keypad_key_ok_press",
+      "source": {
+        "png": "pictures/keypad_key_ok_press.png"
+      }
+    },
+    {
+      "key": "keybdB_pause_btn",
+      "source": {
+        "png": "pictures/keybdB_pause_btn.png"
+      }
+    },
+    {
+      "key": "keybdB_pause_btn_press",
+      "source": {
+        "png": "pictures/keybdB_pause_btn_press.png"
+      }
+    },
+    {
+      "key": "keybdB_stop_btn",
+      "source": {
+        "png": "pictures/keybdB_stop_btn.png"
+      }
+    },
+    {
+      "key": "keybdB_stop_btn_press",
+      "source": {
+        "png": "pictures/keybdB_stop_btn_press.png"
+      }
+    },
+    {
+      "key": "keybdB_mute_btn",
+      "source": {
+        "png": "pictures/keybdB_mute_btn.png"
+      }
+    },
+    {
+      "key": "keybdB_mute_btn_press",
+      "source": {
+        "png": "pictures/keybdB_mute_btn_press.png"
+      }
+    },
+    {
+      "key": "keybdB_mute_btn_on",
+      "source": {
+        "png": "pictures/keybdB_mute_btn_on.png"
+      }
+    },
+    {
+      "key": "keybdB_mute_btn_on_press",
+      "source": {
+        "png": "pictures/keybdB_mute_btn_on_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_1_on",
+      "source": {
+        "png": "pictures/keybdB_key_1_on.png"
+      }
+    },
+    {
+      "key": "keybdB_key_1_on_press",
+      "source": {
+        "png": "pictures/keybdB_key_1_on_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_1",
+      "source": {
+        "png": "pictures/keybdB_key_1.png"
+      }
+    },
+    {
+      "key": "keybdB_key_1_press",
+      "source": {
+        "png": "pictures/keybdB_key_1_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_2_on",
+      "source": {
+        "png": "pictures/keybdB_key_2_on.png"
+      }
+    },
+    {
+      "key": "keybdB_key_2_on_press",
+      "source": {
+        "png": "pictures/keybdB_key_2_on_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_2",
+      "source": {
+        "png": "pictures/keybdB_key_2.png"
+      }
+    },
+    {
+      "key": "keybdB_key_2_press",
+      "source": {
+        "png": "pictures/keybdB_key_2_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_del_on",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_del_on.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_del_on_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_del_on_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_del",
+      "source": {
+        "png": "pictures/keybdB_key_del.png"
+      }
+    },
+    {
+      "key": "keybdB_key_del_press",
+      "source": {
+        "png": "pictures/keybdB_key_del_press.png"
+      }
+    },
+    {
+      "key": "keybdB_key_ok_on",
+      "source": {
+        "png": "pictures/keybdB_key_ok_on.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_ok_on_press_2",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_ok_on_press_2.png"
+      }
+    },
+    {
+      "key": "keybdB_key_ok",
+      "source": {
+        "png": "pictures/keybdB_key_ok.png"
+      }
+    },
+    {
+      "key": "keybdB_key_ok_press",
+      "source": {
+        "png": "pictures/keybdB_key_ok_press.png"
+      }
+    },
+    {
+      "key": "printing_pause_btn",
+      "source": {
+        "png": "pictures/printing_pause_btn.png"
+      }
+    },
+    {
+      "key": "printing_pause_btn_press",
+      "source": {
+        "png": "pictures/printing_pause_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_stop_btn",
+      "source": {
+        "png": "pictures/printing_stop_btn.png"
+      }
+    },
+    {
+      "key": "printing_stop_btn_press",
+      "source": {
+        "png": "pictures/printing_stop_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_speed_btn",
+      "source": {
+        "png": "pictures/printing_speed_btn.png"
+      }
+    },
+    {
+      "key": "printing_speed_btn_press",
+      "source": {
+        "png": "pictures/printing_speed_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_flow_btn",
+      "source": {
+        "png": "pictures/printing_flow_btn.png"
+      }
+    },
+    {
+      "key": "printing_flow_btn_press",
+      "source": {
+        "png": "pictures/printing_flow_btn_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_light2_btn",
+      "source": {
+        "png": "pictures/print_adjust_light2_btn.png"
+      }
+    },
+    {
+      "key": "print_adjust_light2_btn_press",
+      "source": {
+        "png": "pictures/print_adjust_light2_btn_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_light2_btn_on",
+      "source": {
+        "png": "pictures/print_adjust_light2_btn_on.png"
+      }
+    },
+    {
+      "key": "print_adjust_light2_btn_on_press",
+      "source": {
+        "png": "pictures/print_adjust_light2_btn_on_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_back_btn",
+      "source": {
+        "png": "pictures/print_adjust_back_btn.png"
+      }
+    },
+    {
+      "key": "print_adjust_back_btn_press",
+      "source": {
+        "png": "pictures/print_adjust_back_btn_press.png"
+      }
+    },
+    {
+      "key": "print_filament_pause_btn",
+      "source": {
+        "png": "pictures/print_filament_pause_btn.png"
+      }
+    },
+    {
+      "key": "print_filament_pause_btn_press",
+      "source": {
+        "png": "pictures/print_filament_pause_btn_press.png"
+      }
+    },
+    {
+      "key": "print_filament_temp_down",
+      "source": {
+        "png": "pictures/print_filament_temp_down.png"
+      }
+    },
+    {
+      "key": "print_filament_temp_down_press",
+      "source": {
+        "png": "pictures/print_filament_temp_down_press.png"
+      }
+    },
+    {
+      "key": "print_filament_temp_up",
+      "source": {
+        "png": "pictures/print_filament_temp_up.png"
+      }
+    },
+    {
+      "key": "print_filament_temp_up_press",
+      "source": {
+        "png": "pictures/print_filament_temp_up_press.png"
+      }
+    },
+    {
+      "key": "print_filament_retract_btn",
+      "source": {
+        "png": "pictures/print_filament_retract_btn.png"
+      }
+    },
+    {
+      "key": "print_filament_retract_btn_press",
+      "source": {
+        "png": "pictures/print_filament_retract_btn_press.png"
+      }
+    },
+    {
+      "key": "print_filament_extrude_btn",
+      "source": {
+        "png": "pictures/print_filament_extrude_btn.png"
+      }
+    },
+    {
+      "key": "print_filament_extrude_btn_press",
+      "source": {
+        "png": "pictures/print_filament_extrude_btn_press.png"
+      }
+    },
+    {
+      "key": "print_filament_replace_btn",
+      "source": {
+        "png": "pictures/print_filament_replace_btn.png"
+      }
+    },
+    {
+      "key": "print_filament_replace_btn_press",
+      "source": {
+        "png": "pictures/print_filament_replace_btn_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_001_z_off",
+      "source": {
+        "png": "pictures/print_z_offset_step_001_z_off.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_001_z_off_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_001_z_off_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_001_z_on",
+      "source": {
+        "png": "pictures/print_z_offset_step_001_z_on.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_001_z_on_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_001_z_on_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_005_z_off",
+      "source": {
+        "png": "pictures/print_z_offset_step_005_z_off.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_005_z_off_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_005_z_off_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_005_z_on",
+      "source": {
+        "png": "pictures/print_z_offset_step_005_z_on.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_005_z_on_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_005_z_on_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_01_z_off",
+      "source": {
+        "png": "pictures/print_z_offset_step_01_z_off.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_01_z_off_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_01_z_off_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_01_z_on",
+      "source": {
+        "png": "pictures/print_z_offset_step_01_z_on.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_01_z_on_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_01_z_on_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_05_z_off",
+      "source": {
+        "png": "pictures/print_z_offset_step_05_z_off.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_05_z_off_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_05_z_off_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_05_z_on",
+      "source": {
+        "png": "pictures/print_z_offset_step_05_z_on.png"
+      }
+    },
+    {
+      "key": "print_z_offset_step_05_z_on_press",
+      "source": {
+        "png": "pictures/print_z_offset_step_05_z_on_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_z_up",
+      "source": {
+        "png": "pictures/print_z_offset_z_up.png"
+      }
+    },
+    {
+      "key": "print_z_offset_z_up_press",
+      "source": {
+        "png": "pictures/print_z_offset_z_up_press.png"
+      }
+    },
+    {
+      "key": "print_z_offset_z_down",
+      "source": {
+        "png": "pictures/print_z_offset_z_down.png"
+      }
+    },
+    {
+      "key": "print_z_offset_z_down_press",
+      "source": {
+        "png": "pictures/print_z_offset_z_down_press.png"
+      }
+    },
+    {
+      "key": "file_list_file1_none",
+      "source": {
+        "png": "pictures/file_list_file1_none.png"
+      }
+    },
+    {
+      "key": "file_list_file1_none_press",
+      "source": {
+        "png": "pictures/file_list_file1_none_press.png"
+      }
+    },
+    {
+      "key": "file_list_thumb_bg",
+      "source": {
+        "png": "pictures/file_list_thumb_bg.png"
+      }
+    },
+    {
+      "key": "file_list_prev",
+      "source": {
+        "png": "pictures/file_list_prev.png"
+      }
+    },
+    {
+      "key": "file_list_prev_press",
+      "source": {
+        "png": "pictures/file_list_prev_press.png"
+      }
+    },
+    {
+      "key": "file_list_prev_on",
+      "source": {
+        "png": "pictures/file_list_prev_on.png"
+      }
+    },
+    {
+      "key": "file_list_prev_on_press",
+      "source": {
+        "png": "pictures/file_list_prev_on_press.png"
+      }
+    },
+    {
+      "key": "setup_language_next_on",
+      "source": {
+        "png": "pictures/setup_language_next_on.png"
+      }
+    },
+    {
+      "key": "setup_language_next_on_press",
+      "source": {
+        "png": "pictures/setup_language_next_on_press.png"
+      }
+    },
+    {
+      "key": "file_list_next",
+      "source": {
+        "png": "pictures/file_list_next.png"
+      }
+    },
+    {
+      "key": "file_list_next_press",
+      "source": {
+        "png": "pictures/file_list_next_press.png"
+      }
+    },
+    {
+      "key": "file_list_up_dir_on",
+      "source": {
+        "png": "pictures/file_list_up_dir_on.png"
+      }
+    },
+    {
+      "key": "file_list_up_dir_on_press",
+      "source": {
+        "png": "pictures/file_list_up_dir_on_press.png"
+      }
+    },
+    {
+      "key": "file_list_up_dir",
+      "source": {
+        "png": "pictures/file_list_up_dir.png"
+      }
+    },
+    {
+      "key": "file_list_up_dir_press",
+      "source": {
+        "png": "pictures/file_list_up_dir_press.png"
+      }
+    },
+    {
+      "key": "file_preview_back_btn",
+      "source": {
+        "png": "pictures/file_preview_back_btn.png"
+      }
+    },
+    {
+      "key": "file_preview_back_btn_press",
+      "source": {
+        "png": "pictures/file_preview_back_btn_press.png"
+      }
+    },
+    {
+      "key": "file_preview_start_btn",
+      "source": {
+        "png": "pictures/file_preview_start_btn.png"
+      }
+    },
+    {
+      "key": "file_preview_start_btn_press",
+      "source": {
+        "png": "pictures/file_preview_start_btn_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_a",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_a.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_a_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_a_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_space",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_space.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_space_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_space_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_del",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_del.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_del_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_del_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_lower",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_lower.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_lower_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_lower_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_upper",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_upper.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_upper_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_upper_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_sym",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_sym.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_shift_sym_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_shift_sym_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_sym",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_sym.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_sym_press",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_sym_press.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_ok_on",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_ok_on.png"
+      }
+    },
+    {
+      "key": "wifi_keyboard_key_ok_on_press_1",
+      "source": {
+        "png": "pictures/wifi_keyboard_key_ok_on_press_1.png"
+      }
+    },
+    {
+      "key": "keybdB_key_ok_dim",
+      "source": {
+        "png": "pictures/keybdB_key_ok_dim.png"
+      }
+    },
+    {
+      "key": "keybdB_key_ok_dim_press",
+      "source": {
+        "png": "pictures/keybdB_key_ok_dim_press.png"
+      }
+    },
+    {
+      "key": "home_light_btn",
+      "source": {
+        "png": "pictures/home_light_btn.png"
+      }
+    },
+    {
+      "key": "home_light_btn_press",
+      "source": {
+        "png": "pictures/home_light_btn_press.png"
+      }
+    },
+    {
+      "key": "home_light_btn_on",
+      "source": {
+        "png": "pictures/home_light_btn_on.png"
+      }
+    },
+    {
+      "key": "home_light_btn_on_press",
+      "source": {
+        "png": "pictures/home_light_btn_on_press.png"
+      }
+    },
+    {
+      "key": "printing_nozzle_btn",
+      "source": {
+        "png": "pictures/printing_nozzle_btn.png"
+      }
+    },
+    {
+      "key": "printing_nozzle_btn_press",
+      "source": {
+        "png": "pictures/printing_nozzle_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_bed_btn",
+      "source": {
+        "png": "pictures/printing_bed_btn.png"
+      }
+    },
+    {
+      "key": "printing_bed_btn_press",
+      "source": {
+        "png": "pictures/printing_bed_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_chamber_btn",
+      "source": {
+        "png": "pictures/printing_chamber_btn.png"
+      }
+    },
+    {
+      "key": "printing_chamber_btn_press",
+      "source": {
+        "png": "pictures/printing_chamber_btn_press.png"
+      }
+    },
+    {
+      "key": "printing_fan1_btn",
+      "source": {
+        "png": "pictures/printing_fan1_btn.png"
+      }
+    },
+    {
+      "key": "printing_fan1_btn_press",
+      "source": {
+        "png": "pictures/printing_fan1_btn_press.png"
+      }
+    },
+    {
+      "key": "setup_language_lang_cn",
+      "source": {
+        "png": "pictures/setup_language_lang_cn.png"
+      }
+    },
+    {
+      "key": "setup_language_lang_cn_press",
+      "source": {
+        "png": "pictures/setup_language_lang_cn_press.png"
+      }
+    },
+    {
+      "key": "setup_language_lang_cn_on",
+      "source": {
+        "png": "pictures/setup_language_lang_cn_on.png"
+      }
+    },
+    {
+      "key": "setup_language_lang_cn_on_press",
+      "source": {
+        "png": "pictures/setup_language_lang_cn_on_press.png"
+      }
+    },
+    {
+      "key": "nut_choose_screw3",
+      "source": {
+        "png": "pictures/nut_choose_screw3.png"
+      }
+    },
+    {
+      "key": "nut_choose_screw3_press",
+      "source": {
+        "png": "pictures/nut_choose_screw3_press.png"
+      }
+    },
+    {
+      "key": "nut_choose_screw1",
+      "source": {
+        "png": "pictures/nut_choose_screw1.png"
+      }
+    },
+    {
+      "key": "nut_choose_screw1_press",
+      "source": {
+        "png": "pictures/nut_choose_screw1_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_05_on",
+      "source": {
+        "png": "pictures/ref_point_cstep_05_on.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_05_on_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_05_on_press.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_05",
+      "source": {
+        "png": "pictures/ref_point_cstep_05.png"
+      }
+    },
+    {
+      "key": "ref_point_cstep_05_press",
+      "source": {
+        "png": "pictures/ref_point_cstep_05_press.png"
+      }
+    },
+    {
+      "key": "filament_fan1_btn",
+      "source": {
+        "png": "pictures/filament_fan1_btn.png"
+      }
+    },
+    {
+      "key": "filament_fan1_btn_press",
+      "source": {
+        "png": "pictures/filament_fan1_btn_press.png"
+      }
+    },
+    {
+      "key": "filament_load_btn",
+      "source": {
+        "png": "pictures/filament_load_btn.png"
+      }
+    },
+    {
+      "key": "filament_load_btn_press",
+      "source": {
+        "png": "pictures/filament_load_btn_press.png"
+      }
+    },
+    {
+      "key": "filament_extr_up",
+      "source": {
+        "png": "pictures/filament_extr_up.png"
+      }
+    },
+    {
+      "key": "filament_extr_up_press",
+      "source": {
+        "png": "pictures/filament_extr_up_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_speed_btn",
+      "source": {
+        "png": "pictures/print_adjust_speed_btn.png"
+      }
+    },
+    {
+      "key": "print_adjust_speed_btn_press",
+      "source": {
+        "png": "pictures/print_adjust_speed_btn_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_flow_btn",
+      "source": {
+        "png": "pictures/print_adjust_flow_btn.png"
+      }
+    },
+    {
+      "key": "print_adjust_flow_btn_press",
+      "source": {
+        "png": "pictures/print_adjust_flow_btn_press.png"
+      }
+    },
+    {
+      "key": "print_adjust_zoffset_btn",
+      "source": {
+        "png": "pictures/print_adjust_zoffset_btn.png"
+      }
+    },
+    {
+      "key": "print_adjust_zoffset_btn_press",
+      "source": {
+        "png": "pictures/print_adjust_zoffset_btn_press.png"
+      }
+    },
+    {
+      "key": "print_filament_heat_btn",
+      "source": {
+        "png": "pictures/print_filament_heat_btn.png"
+      }
+    },
+    {
+      "key": "print_filament_heat_btn_press",
+      "source": {
+        "png": "pictures/print_filament_heat_btn_press.png"
+      }
+    },
+    {
+      "key": "file_list_file1_file",
+      "source": {
+        "png": "pictures/file_list_file1_file.png"
+      }
+    },
+    {
+      "key": "file_list_file1_file_press",
+      "source": {
+        "png": "pictures/file_list_file1_file_press.png"
+      }
+    },
+    {
+      "key": "file_list_file1_dir",
+      "source": {
+        "png": "pictures/file_list_file1_dir.png"
+      }
+    },
+    {
+      "key": "file_list_file1_dir_press",
+      "source": {
+        "png": "pictures/file_list_file1_dir_press.png"
+      }
+    },
+    {
+      "key": "home_last_file_btn",
+      "source": {
+        "png": "pictures/home_last_file_btn.png"
+      }
+    },
+    {
+      "key": "home_last_file_btn_press",
+      "source": {
+        "png": "pictures/home_last_file_btn_press.png"
+      }
+    },
+    {
+      "key": "home_beep_btn",
+      "source": {
+        "png": "pictures/home_beep_btn.png"
+      }
+    },
+    {
+      "key": "home_beep_btn_press",
+      "source": {
+        "png": "pictures/home_beep_btn_press.png"
+      }
+    },
+    {
+      "key": "home_beep_btn_on",
+      "source": {
+        "png": "pictures/home_beep_btn_on.png"
+      }
+    },
+    {
+      "key": "home_beep_btn_on_press",
+      "source": {
+        "png": "pictures/home_beep_btn_on_press.png"
+      }
+    },
+    {
+      "key": "home_stop_btn",
+      "source": {
+        "png": "pictures/home_stop_btn.png"
+      }
+    },
+    {
+      "key": "home_stop_btn_press",
+      "source": {
+        "png": "pictures/home_stop_btn_press.png"
+      }
+    },
+    {
+      "key": "unload_auto_steps_bar_unload_2",
+      "source": {
+        "png": "pictures/unload_auto_steps_bar_unload_2.png"
+      }
+    },
+    {
+      "key": "auto_level_preheat_bed_icon_off",
+      "source": {
+        "png": "pictures/auto_level_preheat_bed_icon_off.png"
+      }
+    },
+    {
+      "key": "filament_nozzle_icon_off",
+      "source": {
+        "png": "pictures/filament_nozzle_icon_off.png"
+      }
+    },
+    {
+      "key": "filament_chamber_icon_off",
+      "source": {
+        "png": "pictures/filament_chamber_icon_off.png"
+      }
+    },
+    {
+      "key": "print_filament_nozzle_icon_off",
+      "source": {
+        "png": "pictures/print_filament_nozzle_icon_off.png"
+      }
+    },
+    {
+      "key": "load_steps_steps_bar_load_0",
+      "source": {
+        "png": "pictures/load_steps_steps_bar_load_0.png"
+      }
+    },
+    {
+      "key": "load_steps_steps_bar_load_1",
+      "source": {
+        "png": "pictures/load_steps_steps_bar_load_1.png"
+      }
+    },
+    {
+      "key": "load_steps_steps_bar_load_2",
+      "source": {
+        "png": "pictures/load_steps_steps_bar_load_2.png"
+      }
+    },
+    {
+      "key": "load_steps_steps_bar_load_3",
+      "source": {
+        "png": "pictures/load_steps_steps_bar_load_3.png"
+      }
+    },
+    {
+      "key": "unload_auto_steps_bar_unload_1",
+      "source": {
+        "png": "pictures/unload_auto_steps_bar_unload_1.png"
+      }
+    },
+    {
+      "key": "unload_auto_decor",
+      "source": {
+        "png": "pictures/unload_auto_decor.png"
+      }
+    },
+    {
+      "key": "auto_level_progress_steps_bar_level_0",
+      "source": {
+        "png": "pictures/auto_level_progress_steps_bar_level_0.png"
+      }
+    },
+    {
+      "key": "auto_level_progress_steps_bar_level_1",
+      "source": {
+        "png": "pictures/auto_level_progress_steps_bar_level_1.png"
+      }
+    },
+    {
+      "key": "auto_level_progress_steps_bar_level_2",
+      "source": {
+        "png": "pictures/auto_level_progress_steps_bar_level_2.png"
+      }
+    },
+    {
+      "key": "auto_level_progress_steps_bar_level_3",
+      "source": {
+        "png": "pictures/auto_level_progress_steps_bar_level_3.png"
+      }
+    },
+    {
+      "key": "auto_level_progress_decor",
+      "source": {
+        "png": "pictures/auto_level_progress_decor.png"
+      }
+    },
+    {
+      "key": "auto_level_preheat_decor",
+      "source": {
+        "png": "pictures/auto_level_preheat_decor.png"
+      }
+    },
+    {
+      "key": "filament_decor",
+      "source": {
+        "png": "pictures/filament_decor.png"
+      }
+    },
+    {
+      "key": "home_lan_icon",
+      "source": {
+        "png": "pictures/home_lan_icon.png"
+      }
+    },
+    {
+      "key": "home_lan_icon_on",
+      "source": {
+        "png": "pictures/home_lan_icon_on.png"
+      }
+    },
+    {
+      "key": "print_keypad_back_btn",
+      "source": {
+        "png": "pictures/print_keypad_back_btn.png"
+      }
+    },
+    {
+      "key": "print_keypad_back_btn_press",
+      "source": {
+        "png": "pictures/print_keypad_back_btn_press.png"
+      }
+    }
+  ],
+  "fonts": [
+    {
+      "key": "font_t13",
+      "source": {
+        "zi": "fonts/font_t13.zi"
+      }
+    },
+    {
+      "key": "font_t16",
+      "source": {
+        "zi": "fonts/font_t16.zi"
+      }
+    },
+    {
+      "key": "font_t19",
+      "source": {
+        "zi": "fonts/font_t19.zi"
+      }
+    },
+    {
+      "key": "font_d20",
+      "source": {
+        "zi": "fonts/font_d20.zi"
+      }
+    },
+    {
+      "key": "font_d28",
+      "source": {
+        "zi": "fonts/font_d28.zi"
+      }
+    },
+    {
+      "key": "font_d32",
+      "source": {
+        "zi": "fonts/font_d32.zi"
+      }
+    }
+  ],
+  "animations": [
+    {
+      "key": "video_remove_ties",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_remove_ties/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_remove_ties/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_remove_ties/002.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_remove_ties/003.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_remove_screws",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_remove_screws/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_remove_screws/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_remove_screws/002.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_spool_holder",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_spool_holder/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_spool_holder/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_spool_holder/002.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_spool_holder/003.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_spool_holder/004.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_push_filament",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_push_filament/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_push_filament/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_push_filament/002.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_extrude",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_extrude/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_extrude/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_extrude/002.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_cut_filament",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_cut_filament/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_cut_filament/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_cut_filament/002.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_cut_filament/003.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_cut_filament/004.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "video_load_filament",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/video_load_filament/000.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_load_filament/001.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_load_filament/002.png",
+          "ms": 1500
+        },
+        {
+          "png": "animations/video_load_filament/003.png",
+          "ms": 1500
+        }
+      ]
+    },
+    {
+      "key": "spinner",
+      "fps": 10,
+      "frames": [
+        {
+          "png": "animations/spinner/000.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/001.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/002.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/003.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/004.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/005.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/006.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/007.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/008.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/009.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/010.png",
+          "ms": 80
+        },
+        {
+          "png": "animations/spinner/011.png",
+          "ms": 80
+        }
+      ]
+    }
+  ],
+  "program": "Program.s"
+}

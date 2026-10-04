@@ -1,0 +1,1919 @@
+{
+ "name": "home",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01420300000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 1,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "covx boot_logo.version.val,soc_ver.txt,0,0",
+    "vis last_file_pic,0",
+    "if(boot_logo.version.val==100)",
+    "{",
+    "  vis ver_panel,0",
+    "  vis ver_warning,0",
+    "  vis ui_ver_lbl,0",
+    "  vis ui_ver,0",
+    "  vis soc_ver_lbl,0",
+    "  vis soc_ver,0",
+    "}",
+    "if(lang==0)",
+    "{",
+    "  ver_warning.txt=\"UI版本与固件不符合，请检查更新或联系售后！\"",
+    "}else if(lang==1)",
+    "{",
+    "  ver_warning.txt=\"Версия интерфейса не соответствует прошивке. Проверьте обновления или обратитесь в поддержку!\"",
+    "}else if(lang==2)",
+    "{",
+    "  ver_warning.txt=\"The UI version does not match the firmware. Please check for updates or contact support!\"",
+    "}else if(lang==3)",
+    "{",
+    "  ver_warning.txt=\"UIのバージョンがファームウェアと一致しません。アップデートを確認するか、サポートにお問い合わせください。\"",
+    "}else if(lang==4)",
+    "{",
+    "  ver_warning.txt=\"La version de l'interface ne correspond pas au micrologiciel. Vérifiez les mises à jour ou contactez l'assistance !\"",
+    "}else if(lang==5)",
+    "{",
+    "  ver_warning.txt=\"Die UI-Version passt nicht zur Firmware. Bitte suchen Sie nach Updates oder wenden Sie sich an den Support!\"",
+    "}else if(lang==6)",
+    "{",
+    "  ver_warning.txt=\"La versione dell'interfaccia non corrisponde al firmware. Controlla gli aggiornamenti o contatta l'assistenza!\"",
+    "}else if(lang==7)",
+    "{",
+    "  ver_warning.txt=\"La versión de la interfaz no coincide con el firmware. Busque actualizaciones o contacte con soporte.\"",
+    "}else if(lang==8)",
+    "{",
+    "  ver_warning.txt=\"UI 버전이 펌웨어와 일치하지 않습니다. 업데이트를 확인하거나 지원팀에 문의하세요.\"",
+    "}else if(lang==9)",
+    "{",
+    "  ver_warning.txt=\"A versão da interface não corresponde ao firmware. Verifique as atualizações ou contate o suporte!\"",
+    "}else if(lang==10)",
+    "{",
+    "  ver_warning.txt=\"إصدار الواجهة لا يطابق البرنامج الثابت. يرجى التحقق من التحديثات أو التواصل مع الدعم!\"",
+    "}else if(lang==11)",
+    "{",
+    "  ver_warning.txt=\"Arayüz sürümü donanım yazılımıyla eşleşmiyor. Lütfen güncellemeleri denetleyin veya destekle iletişime geçin!\"",
+    "}else if(lang==12)",
+    "{",
+    "  ver_warning.txt=\"גרסת הממשק אינה תואמת לקושחה. בדוק אם יש עדכונים או פנה לתמיכה!\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "sleep_counter",
+   "type": "timer",
+   "attributes": {
+    "objname": "sleep_counter",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "sleep_counts+=1",
+     "if(sleep_counts==sleep_time)",
+     "{",
+     "  prints 0x65,1",
+     "  prints 4,1",
+     "  prints 1,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "touch",
+   "type": "touch_capture",
+   "attributes": {
+    "objname": "touch",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [
+     "sleep_counts=0",
+     "dim=max_dim"
+    ],
+    "codesup": []
+   }
+  },
+  {
+   "key": "lan_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "lan_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 204,
+    "y": 10,
+    "w": 20,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_lan_icon"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "usb_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "usb_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 176,
+    "y": 10,
+    "w": 20,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_usb_icon"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "wifi_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "wifi_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 232,
+    "y": 10,
+    "w": 20,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_wifi_icon"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "last_file_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "last_file_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 38,
+    "w": 248,
+    "h": 198,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_last_file_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_last_file_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 6,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "thumb_empty",
+   "type": "picture",
+   "attributes": {
+    "objname": "thumb_empty",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 66,
+    "y": 48,
+    "w": 140,
+    "h": 140,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_thumb_empty"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "last_file_pic",
+   "type": "col_pic",
+   "attributes": {
+    "objname": "last_file_pic",
+    "vscope": 1,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 66,
+    "y": 48,
+    "w": 140,
+    "h": 140,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "write": 357,
+    "close": 101,
+    "buffsize": 60000,
+    "buff": 0
+   },
+   "events": {
+    "codesdown": [
+     "click last_file_btn,1"
+    ],
+    "codesup": [
+     "click last_file_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "nozzle_card",
+   "type": "picture",
+   "attributes": {
+    "objname": "nozzle_card",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 244,
+    "w": 168,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_nozzle_card"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nozzle_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "nozzle_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 257,
+    "w": 26,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:setup_heat_nozzle_icon_off"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nozzle_btn",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "nozzle_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 62,
+    "y": 244,
+    "w": 118,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nozzle_toggle",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "nozzle_toggle",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 244,
+    "w": 50,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 7,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "bed_card",
+   "type": "picture",
+   "attributes": {
+    "objname": "bed_card",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 304,
+    "w": 168,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_nozzle_card"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bed_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "bed_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 317,
+    "w": 26,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_bed_icon_off"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bed_btn",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "bed_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 62,
+    "y": 304,
+    "w": 118,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "bed_toggle",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "bed_toggle",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 304,
+    "w": 50,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 8,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "chamber_card",
+   "type": "picture",
+   "attributes": {
+    "objname": "chamber_card",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 364,
+    "w": 168,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_nozzle_card"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "chamber_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "chamber_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 377,
+    "w": 26,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_chamber_icon_off"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "chamber_btn",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "chamber_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 62,
+    "y": 364,
+    "w": 118,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 5,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "chamber_toggle",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "chamber_toggle",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 364,
+    "w": 50,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 9,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "light_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "light_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 188,
+    "y": 244,
+    "w": 72,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_light_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_light_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "beep_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "beep_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 188,
+    "y": 304,
+    "w": 72,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_beep_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_beep_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "stop_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "stop_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 188,
+    "y": 364,
+    "w": 72,
+    "h": 52,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_stop_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_stop_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_main",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_main",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 424,
+    "w": 68,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_nav_main"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_nav_main_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 30,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_adjust",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_adjust",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 68,
+    "y": 424,
+    "w": 68,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_nav_adjust"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_nav_adjust_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 31,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_files",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_files",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 424,
+    "w": 68,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_nav_files"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_nav_files_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 32,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 204,
+    "y": 424,
+    "w": 68,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:home_nav_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:home_nav_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 33,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "last_file_name",
+   "type": "text",
+   "attributes": {
+    "objname": "last_file_name",
+    "vscope": 1,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 190,
+    "w": 224,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "",
+    "txt_maxl": 1024,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click last_file_btn,1"
+    ],
+    "codesup": [
+     "click last_file_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "nozzle_temp",
+   "type": "text",
+   "attributes": {
+    "objname": "nozzle_temp",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 56,
+    "y": 250,
+    "w": 52,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_d28"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click nozzle_btn,1"
+    ],
+    "codesup": [
+     "click nozzle_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "nozzle_set",
+   "type": "text",
+   "attributes": {
+    "objname": "nozzle_set",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 111,
+    "y": 266,
+    "w": 34,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 27503,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "/ ---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nozzle_unit",
+   "type": "text",
+   "attributes": {
+    "objname": "nozzle_unit",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 148,
+    "y": 266,
+    "w": 18,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "°C",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bed_temp",
+   "type": "text",
+   "attributes": {
+    "objname": "bed_temp",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 56,
+    "y": 310,
+    "w": 52,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_d28"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click bed_btn,1"
+    ],
+    "codesup": [
+     "click bed_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "bed_set",
+   "type": "text",
+   "attributes": {
+    "objname": "bed_set",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 111,
+    "y": 326,
+    "w": 34,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 27503,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "/ ---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bed_unit",
+   "type": "text",
+   "attributes": {
+    "objname": "bed_unit",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 148,
+    "y": 326,
+    "w": 18,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "°C",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "chamber_temp",
+   "type": "text",
+   "attributes": {
+    "objname": "chamber_temp",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 56,
+    "y": 370,
+    "w": 52,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_d28"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click chamber_btn,1"
+    ],
+    "codesup": [
+     "click chamber_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "chamber_set",
+   "type": "text",
+   "attributes": {
+    "objname": "chamber_set",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 111,
+    "y": 386,
+    "w": 34,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 27503,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "/ ---",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "chamber_unit",
+   "type": "text",
+   "attributes": {
+    "objname": "chamber_unit",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 148,
+    "y": 386,
+    "w": 18,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 10565,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "°C",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "ver_panel",
+   "type": "picture",
+   "attributes": {
+    "objname": "ver_panel",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 118,
+    "w": 256,
+    "h": 244,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:home_ver_panel"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "ver_warning",
+   "type": "text",
+   "attributes": {
+    "objname": "ver_warning",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 20,
+    "y": 130,
+    "w": 232,
+    "h": 150,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 2146,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 64333,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "The UI version does not match the firmware. Please check for updates or contact support!",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "ui_ver_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "ui_ver_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 302,
+    "w": 24,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 2146,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "UI:",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "ui_ver",
+   "type": "text",
+   "attributes": {
+    "objname": "ui_ver",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 48,
+    "y": 302,
+    "w": 36,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 2146,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "100",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "soc_ver_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "soc_ver_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 326,
+    "w": 34,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 2146,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "SOC:",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "soc_ver",
+   "type": "text",
+   "attributes": {
+    "objname": "soc_ver",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 58,
+    "y": 326,
+    "w": 36,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 2146,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

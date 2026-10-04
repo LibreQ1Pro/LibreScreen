@@ -1,0 +1,203 @@
+{
+ "name": "shaping_run",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "sleep_counts=0",
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"正在共振补偿中，请等待......\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Выполняется Input Shaping,\\rподождите...\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Input shaping in progress,\\rplease wait...\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"インプットシェーピングを実行\\r中です。しばらくお待ちくださ\\rい...\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"Input Shaping en cours,\\rveuillez patienter...\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"Input Shaping läuft, bitte\\rwarten...\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"Input Shaping in corso,\\rattendere...\"",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"Input Shaping en curso,\\respere...\"",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"인풋 쉐이핑 진행 중입니다. 잠시\\r기다려 주세요...\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"Input Shaping em\\randamento, aguarde...\"",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"Input Shaping قيد\\rالتنفيذ، يرجى الانتظار...\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"Input Shaping sürüyor,\\rlütfen bekleyin...\"",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"Input Shaping מתבצע, אנא\\rהמתן...\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": [
+    "sleep_counts=0"
+   ]
+  }
+ },
+ "objects": [
+  {
+   "key": "idle_timer",
+   "type": "timer",
+   "attributes": {
+    "objname": "idle_timer",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "sleep_counts++",
+     "if(sleep_counts==600)",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 0,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "spin",
+   "type": "animation",
+   "attributes": {
+    "objname": "spin",
+    "vscope": 0,
+    "x": 116,
+    "y": 170,
+    "w": 40,
+    "h": 40,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "from": 0,
+    "vid": {
+     "$ref": "animation:spinner"
+    },
+    "path": "",
+    "path_m": 255,
+    "en": 1,
+    "loop": 1,
+    "dis": 100,
+    "tim": 0,
+    "stim": 0,
+    "qty": 0,
+    "molloc_s": 12000,
+    "molloc": 12000
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [],
+    "codesplayend": []
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 226,
+    "w": 224,
+    "h": 62,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 1,
+    "ycen": 0,
+    "pw": 0,
+    "txt": "Input shaping in progress,\\rplease wait...",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

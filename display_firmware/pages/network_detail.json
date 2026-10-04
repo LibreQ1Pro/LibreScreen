@@ -1,0 +1,1017 @@
+{
+ "name": "network_detail",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  connect_btn.txt=\"断开连接\"",
+    "  auto_lbl.txt=\"自动连接\"",
+    "  title.txt=\"网络\"",
+    "  passwd_btn.txt=\"修改密码\"",
+    "  forget_btn.txt=\"忘记网络\"",
+    "}else if(lang==1)",
+    "{",
+    "  connect_btn.txt=\"Отключиться\"",
+    "  auto_lbl.txt=\"Автоподключение\"",
+    "  title.txt=\"Сеть\"",
+    "  passwd_btn.txt=\"Изменить пароль\"",
+    "  forget_btn.txt=\"Забыть сеть\"",
+    "}else if(lang==2)",
+    "{",
+    "  connect_btn.txt=\"Disconnect\"",
+    "  auto_lbl.txt=\"Autoconnect\"",
+    "  title.txt=\"Network\"",
+    "  passwd_btn.txt=\"Change Password\"",
+    "  forget_btn.txt=\"Forget Network\"",
+    "}else if(lang==3)",
+    "{",
+    "  connect_btn.txt=\"切断\"",
+    "  auto_lbl.txt=\"自動接続\"",
+    "  title.txt=\"ネットワーク\"",
+    "  passwd_btn.txt=\"パスワード変更\"",
+    "  forget_btn.txt=\"ネットワークを削除\"",
+    "}else if(lang==4)",
+    "{",
+    "  connect_btn.txt=\"Déconnecter\"",
+    "  auto_lbl.txt=\"Connexion auto\"",
+    "  title.txt=\"Réseau\"",
+    "  passwd_btn.txt=\"Changer le mot de passe\"",
+    "  forget_btn.txt=\"Oublier le réseau\"",
+    "}else if(lang==5)",
+    "{",
+    "  connect_btn.txt=\"Trennen\"",
+    "  auto_lbl.txt=\"Autoverbinden\"",
+    "  title.txt=\"Netzwerk\"",
+    "  passwd_btn.txt=\"Passwort ändern\"",
+    "  forget_btn.txt=\"Netzwerk entfernen\"",
+    "}else if(lang==6)",
+    "{",
+    "  connect_btn.txt=\"Disconnetti\"",
+    "  auto_lbl.txt=\"Connessione auto\"",
+    "  title.txt=\"Rete\"",
+    "  passwd_btn.txt=\"Cambia password\"",
+    "  forget_btn.txt=\"Elimina rete\"",
+    "}else if(lang==7)",
+    "{",
+    "  connect_btn.txt=\"Desconectar\"",
+    "  auto_lbl.txt=\"Conexión auto\"",
+    "  title.txt=\"Red\"",
+    "  passwd_btn.txt=\"Cambiar contraseña\"",
+    "  forget_btn.txt=\"Olvidar red\"",
+    "}else if(lang==8)",
+    "{",
+    "  connect_btn.txt=\"연결 끊기\"",
+    "  auto_lbl.txt=\"자동 연결\"",
+    "  title.txt=\"네트워크\"",
+    "  passwd_btn.txt=\"비밀번호 변경\"",
+    "  forget_btn.txt=\"네트워크 삭제\"",
+    "}else if(lang==9)",
+    "{",
+    "  connect_btn.txt=\"Desconectar\"",
+    "  auto_lbl.txt=\"Conexão auto\"",
+    "  title.txt=\"Rede\"",
+    "  passwd_btn.txt=\"Alterar senha\"",
+    "  forget_btn.txt=\"Esquecer rede\"",
+    "}else if(lang==10)",
+    "{",
+    "  connect_btn.txt=\"قطع الاتصال\"",
+    "  auto_lbl.txt=\"الاتصال التلقائي\"",
+    "  title.txt=\"الشبكة\"",
+    "  passwd_btn.txt=\"تغيير كلمة المرور\"",
+    "  forget_btn.txt=\"نسيان الشبكة\"",
+    "}else if(lang==11)",
+    "{",
+    "  connect_btn.txt=\"Bağlantıyı kes\"",
+    "  auto_lbl.txt=\"Otomatik bağlan\"",
+    "  title.txt=\"Ağ\"",
+    "  passwd_btn.txt=\"Parolayı değiştir\"",
+    "  forget_btn.txt=\"Ağı unut\"",
+    "}else if(lang==12)",
+    "{",
+    "  connect_btn.txt=\"התנתק\"",
+    "  auto_lbl.txt=\"חיבור אוטומטי\"",
+    "  title.txt=\"רשת\"",
+    "  passwd_btn.txt=\"שינוי סיסמה\"",
+    "  forget_btn.txt=\"שכח רשת\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "touch",
+   "type": "touch_capture",
+   "attributes": {
+    "objname": "touch",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [
+     "sleep_counts=0",
+     "dim=max_dim"
+    ],
+    "codesup": []
+   }
+  },
+  {
+   "key": "sleep_counter",
+   "type": "timer",
+   "attributes": {
+    "objname": "sleep_counter",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "sleep_counts+=1",
+     "if(sleep_counts==sleep_time)",
+     "{",
+     "  prints 0x65,1",
+     "  prints 4,1",
+     "  prints 1,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "back_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "back_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 0,
+    "w": 272,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:keypad_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:keypad_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 23,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 48,
+    "y": 0,
+    "w": 212,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t19"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Network",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click back_btn,1"
+    ],
+    "codesup": [
+     "click back_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "bg6",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg6",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 48,
+    "w": 272,
+    "h": 2,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:keypad_decor_2"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bg7",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg7",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 56,
+    "w": 248,
+    "h": 84,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:network_detail_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "ssid_txt",
+   "type": "text",
+   "attributes": {
+    "objname": "ssid_txt",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 26,
+    "y": 62,
+    "w": 220,
+    "h": 28,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "",
+    "txt_maxl": 1024,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "status_txt",
+   "type": "text",
+   "attributes": {
+    "objname": "status_txt",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 26,
+    "y": 96,
+    "w": 220,
+    "h": 34,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "connect_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "connect_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 148,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:unload_auto_ok"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:unload_auto_ok_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Disconnect",
+    "txt_maxl": 74,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "passwd_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "passwd_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 202,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:unload_choose_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:unload_choose_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Change Password",
+    "txt_maxl": 104,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "auto_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "auto_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 256,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:file_preview_auto_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:file_preview_auto_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "auto_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "auto_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 268,
+    "w": 186,
+    "h": 22,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Autoconnect",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click auto_btn,1"
+    ],
+    "codesup": [
+     "click auto_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "forget_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "forget_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 310,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:klipper_status_restart_fw"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:klipper_status_restart_fw_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 64626,
+    "pco2": 64626,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Forget Network",
+    "txt_maxl": 89,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "bg23",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg23",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 424,
+    "w": 272,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:filament_decor_5"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nav_main",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_main",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:filament_nav_main"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:filament_nav_main_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 30,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_adjust",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_adjust",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 68,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:file_list_nav_adjust"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:file_list_nav_adjust_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 31,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_files",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_files",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:filament_nav_files"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:filament_nav_files_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 32,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 204,
+    "y": 425,
+    "w": 68,
+    "h": 55,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:calibration_nav_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:calibration_nav_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 24,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  }
+ ]
+}

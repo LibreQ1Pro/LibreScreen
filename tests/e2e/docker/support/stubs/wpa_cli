@@ -1,0 +1,3 @@
+#!/bin/dash
+# test stub: does nothing
+exit 0

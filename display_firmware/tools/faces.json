@@ -1,0 +1,848 @@
+{
+ "bed_icon": {
+  "off": [
+   "home_bed_icon_off",
+   null
+  ],
+  "on": [
+   "home_bed_icon_on",
+   null
+  ]
+ },
+ "beep_btn": {
+  "off": [
+   "home_beep_btn",
+   "home_beep_btn_press"
+  ],
+  "on": [
+   "home_beep_btn_on",
+   "home_beep_btn_on_press"
+  ]
+ },
+ "chamber_icon": {
+  "off": [
+   "home_chamber_icon_off",
+   null
+  ],
+  "on": [
+   "home_chamber_icon_on",
+   null
+  ]
+ },
+ "cstep_001": {
+  "off": [
+   "ref_point_cstep_001",
+   "ref_point_cstep_001_press"
+  ],
+  "on": [
+   "ref_point_cstep_001_on",
+   "ref_point_cstep_001_on_press"
+  ]
+ },
+ "cstep_005": {
+  "off": [
+   "ref_point_cstep_005",
+   "ref_point_cstep_005_press"
+  ],
+  "on": [
+   "ref_point_cstep_005_on",
+   "ref_point_cstep_005_on_press"
+  ]
+ },
+ "cstep_01": {
+  "off": [
+   "ref_point_cstep_01",
+   "ref_point_cstep_01_press"
+  ],
+  "on": [
+   "ref_point_cstep_01_on",
+   "ref_point_cstep_01_on_press"
+  ]
+ },
+ "cstep_05": {
+  "off": [
+   "ref_point_cstep_05",
+   "ref_point_cstep_05_press"
+  ],
+  "on": [
+   "ref_point_cstep_05_on",
+   "ref_point_cstep_05_on_press"
+  ]
+ },
+ "dist_seg": {
+  "d01": [
+   "move_step_seg_s10",
+   null
+  ],
+  "d1": [
+   "filament_step_seg_s50",
+   null
+  ],
+  "d10": [
+   "move_step_seg_s100",
+   null
+  ]
+ },
+ "file1": {
+  "dir": [
+   "file_list_file1_dir",
+   "file_list_file1_dir_press"
+  ],
+  "file": [
+   "file_list_file1_file",
+   "file_list_file1_file_press"
+  ],
+  "none": [
+   "file_list_file1_none",
+   "file_list_file1_none_press"
+  ]
+ },
+ "file2": {
+  "dir": [
+   "file_list_file1_dir",
+   "file_list_file1_dir_press"
+  ],
+  "file": [
+   "file_list_file1_file",
+   "file_list_file1_file_press"
+  ],
+  "none": [
+   "file_list_file1_none",
+   "file_list_file1_none_press"
+  ]
+ },
+ "file3": {
+  "dir": [
+   "file_list_file1_dir",
+   "file_list_file1_dir_press"
+  ],
+  "file": [
+   "file_list_file1_file",
+   "file_list_file1_file_press"
+  ],
+  "none": [
+   "file_list_file1_none",
+   "file_list_file1_none_press"
+  ]
+ },
+ "file4": {
+  "dir": [
+   "file_list_file1_dir",
+   "file_list_file1_dir_press"
+  ],
+  "file": [
+   "file_list_file1_file",
+   "file_list_file1_file_press"
+  ],
+  "none": [
+   "file_list_file1_none",
+   "file_list_file1_none_press"
+  ]
+ },
+ "key_0": {
+  "off": [
+   "keybdB_key_2",
+   "keybdB_key_2_press"
+  ],
+  "on": [
+   "keybdB_key_2_on",
+   "keybdB_key_2_on_press"
+  ]
+ },
+ "key_1": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_2": {
+  "off": [
+   "keybdB_key_2",
+   "keybdB_key_2_press"
+  ],
+  "on": [
+   "keybdB_key_2_on",
+   "keybdB_key_2_on_press"
+  ]
+ },
+ "key_3": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_4": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_5": {
+  "off": [
+   "keybdB_key_2",
+   "keybdB_key_2_press"
+  ],
+  "on": [
+   "keybdB_key_2_on",
+   "keybdB_key_2_on_press"
+  ]
+ },
+ "key_6": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_7": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_8": {
+  "off": [
+   "keybdB_key_2",
+   "keybdB_key_2_press"
+  ],
+  "on": [
+   "keybdB_key_2_on",
+   "keybdB_key_2_on_press"
+  ]
+ },
+ "key_9": {
+  "off": [
+   "keybdB_key_1",
+   "keybdB_key_1_press"
+  ],
+  "on": [
+   "keybdB_key_1_on",
+   "keybdB_key_1_on_press"
+  ]
+ },
+ "key_del": {
+  "off": [
+   "keybdB_key_del",
+   "keybdB_key_del_press"
+  ],
+  "on": [
+   "wifi_keyboard_key_del_on",
+   "wifi_keyboard_key_del_on_press"
+  ]
+ },
+ "key_ok": {
+  "off": [
+   "keybdB_key_ok",
+   "keybdB_key_ok_press"
+  ],
+  "on": [
+   "wifi_keyboard_key_ok_on",
+   "wifi_keyboard_key_ok_on_press_1"
+  ],
+  "dim": [
+   "keybdB_key_ok_dim",
+   "keybdB_key_ok_dim_press"
+  ]
+ },
+ "last_file_btn": {
+  "photo": [
+   "home_last_file_btn",
+   "home_last_file_btn_press"
+  ],
+  "noimg": [
+   "home_last_file_btn",
+   "home_last_file_btn_press"
+  ]
+ },
+ "level_btn": {
+  "off": [
+   "file_preview_auto_btn",
+   "file_preview_auto_btn_press"
+  ],
+  "on": [
+   "file_preview_auto_btn_on",
+   "file_preview_auto_btn_on_press"
+  ]
+ },
+ "light2_btn": {
+  "off": [
+   "print_adjust_light2_btn",
+   "print_adjust_light2_btn_press"
+  ],
+  "on": [
+   "print_adjust_light2_btn_on",
+   "print_adjust_light2_btn_on_press"
+  ]
+ },
+ "light_btn": {
+  "off": [
+   "home_light_btn",
+   "home_light_btn_press"
+  ],
+  "on": [
+   "home_light_btn_on",
+   "home_light_btn_on_press"
+  ]
+ },
+ "mute_btn": {
+  "off": [
+   "keybdB_mute_btn",
+   "keybdB_mute_btn_press"
+  ],
+  "on": [
+   "keybdB_mute_btn_on",
+   "keybdB_mute_btn_on_press"
+  ]
+ },
+ "next": {
+  "off": [
+   "file_list_next",
+   "file_list_next_press"
+  ],
+  "on": [
+   "setup_language_next_on",
+   "setup_language_next_on_press"
+  ],
+  "ready": [
+   "setup_unbox_1_next",
+   "setup_unbox_1_next_press"
+  ],
+  "wait": [
+   "setup_heat_next_wait",
+   "setup_heat_next_wait_press"
+  ]
+ },
+ "next_btn": {
+  "edge": [
+   "unload_steps_next_btn_edge",
+   "unload_steps_next_btn_edge_press"
+  ],
+  "more": [
+   "wifi_list_next_btn_more",
+   "wifi_list_next_btn_more_press"
+  ]
+ },
+ "nozzle_icon": {
+  "off": [
+   "setup_heat_nozzle_icon_off",
+   null
+  ],
+  "on": [
+   "home_nozzle_icon_on",
+   null
+  ]
+ },
+ "prev": {
+  "off": [
+   "file_list_prev",
+   "file_list_prev_press"
+  ],
+  "on": [
+   "file_list_prev_on",
+   "file_list_prev_on_press"
+  ]
+ },
+ "prev_btn": {
+  "edge": [
+   "wifi_list_prev_btn_edge",
+   "wifi_list_prev_btn_edge_press"
+  ],
+  "more": [
+   "file_list_prev_btn_more",
+   "file_list_prev_btn_more_press"
+  ]
+ },
+ "reset_btn": {
+  "oobe_off": [
+   "settings_reset_btn_oobe_off",
+   "settings_reset_btn_oobe_off_press"
+  ],
+  "oobe_on": [
+   "settings_reset_btn_oobe_on",
+   "settings_reset_btn_oobe_on_press"
+  ]
+ },
+ "row1": {
+  "blank": [
+   "wifi_list_row1_blank",
+   "wifi_list_row1_blank_press"
+  ],
+  "check": [
+   "wifi_list_row1_check",
+   "wifi_list_row1_check_press"
+  ],
+  "item": [
+   "wifi_list_row1_item",
+   "wifi_list_row1_item_press"
+  ]
+ },
+ "row2": {
+  "blank": [
+   "wifi_list_row1_blank",
+   "wifi_list_row1_blank_press"
+  ],
+  "check": [
+   "wifi_list_row1_check",
+   "wifi_list_row1_check_press"
+  ],
+  "item": [
+   "wifi_list_row1_item",
+   "wifi_list_row1_item_press"
+  ]
+ },
+ "row3": {
+  "blank": [
+   "wifi_list_row1_blank",
+   "wifi_list_row1_blank_press"
+  ],
+  "check": [
+   "wifi_list_row1_check",
+   "wifi_list_row1_check_press"
+  ],
+  "item": [
+   "wifi_list_row1_item",
+   "wifi_list_row1_item_press"
+  ]
+ },
+ "row4": {
+  "blank": [
+   "wifi_list_row1_blank",
+   "wifi_list_row1_blank_press"
+  ],
+  "check": [
+   "wifi_list_row1_check",
+   "wifi_list_row1_check_press"
+  ],
+  "item": [
+   "wifi_list_row1_item",
+   "wifi_list_row1_item_press"
+  ]
+ },
+ "row5": {
+  "blank": [
+   "wifi_list_row1_blank",
+   "wifi_list_row1_blank_press"
+  ],
+  "check": [
+   "wifi_list_row1_check",
+   "wifi_list_row1_check_press"
+  ],
+  "item": [
+   "wifi_list_row1_item",
+   "wifi_list_row1_item_press"
+  ]
+ },
+ "step_001": {
+  "z_off": [
+   "print_z_offset_step_001_z_off",
+   "print_z_offset_step_001_z_off_press"
+  ],
+  "z_on": [
+   "print_z_offset_step_001_z_on",
+   "print_z_offset_step_001_z_on_press"
+  ]
+ },
+ "step_005": {
+  "z_off": [
+   "print_z_offset_step_005_z_off",
+   "print_z_offset_step_005_z_off_press"
+  ],
+  "z_on": [
+   "print_z_offset_step_005_z_on",
+   "print_z_offset_step_005_z_on_press"
+  ]
+ },
+ "step_01": {
+  "z_off": [
+   "print_z_offset_step_01_z_off",
+   "print_z_offset_step_01_z_off_press"
+  ],
+  "z_on": [
+   "print_z_offset_step_01_z_on",
+   "print_z_offset_step_01_z_on_press"
+  ]
+ },
+ "step_05": {
+  "z_off": [
+   "print_z_offset_step_05_z_off",
+   "print_z_offset_step_05_z_off_press"
+  ],
+  "z_on": [
+   "print_z_offset_step_05_z_on",
+   "print_z_offset_step_05_z_on_press"
+  ]
+ },
+ "step_seg": {
+  "s10": [
+   "move_step_seg_s10",
+   null
+  ],
+  "s100": [
+   "move_step_seg_s100",
+   null
+  ],
+  "s50": [
+   "filament_step_seg_s50",
+   null
+  ]
+ },
+ "steps_bar": {
+  "level_0": [
+   "auto_level_progress_steps_bar_level_0",
+   null
+  ],
+  "level_1": [
+   "auto_level_progress_steps_bar_level_1",
+   null
+  ],
+  "level_2": [
+   "auto_level_progress_steps_bar_level_2",
+   null
+  ],
+  "level_3": [
+   "auto_level_progress_steps_bar_level_3",
+   null
+  ],
+  "load_0": [
+   "load_steps_steps_bar_load_0",
+   null
+  ],
+  "load_1": [
+   "load_steps_steps_bar_load_1",
+   null
+  ],
+  "load_2": [
+   "load_steps_steps_bar_load_2",
+   null
+  ],
+  "load_3": [
+   "load_steps_steps_bar_load_3",
+   null
+  ],
+  "unload_0": [
+   "unload_auto_steps_bar_unload_0",
+   null
+  ],
+  "unload_1": [
+   "unload_auto_steps_bar_unload_1",
+   null
+  ],
+  "unload_2": [
+   "unload_auto_steps_bar_unload_2",
+   null
+  ]
+ },
+ "temp_opt1": {
+  "off": [
+   "preheat_temp_opt1",
+   "preheat_temp_opt1_press"
+  ],
+  "on": [
+   "preheat_temp_opt1_on",
+   "preheat_temp_opt1_on_press"
+  ]
+ },
+ "temp_opt2": {
+  "off": [
+   "preheat_temp_opt1",
+   "preheat_temp_opt1_press"
+  ],
+  "on": [
+   "preheat_temp_opt1_on",
+   "preheat_temp_opt1_on_press"
+  ]
+ },
+ "temp_opt3": {
+  "off": [
+   "preheat_temp_opt1",
+   "preheat_temp_opt1_press"
+  ],
+  "on": [
+   "preheat_temp_opt1_on",
+   "preheat_temp_opt1_on_press"
+  ]
+ },
+ "timelapse_btn": {
+  "off": [
+   "file_preview_auto_btn",
+   "file_preview_auto_btn_press"
+  ],
+  "on": [
+   "file_preview_auto_btn_on",
+   "file_preview_auto_btn_on_press"
+  ]
+ },
+ "up_dir": {
+  "off": [
+   "file_list_up_dir",
+   "file_list_up_dir_press"
+  ],
+  "on": [
+   "file_list_up_dir_on",
+   "file_list_up_dir_on_press"
+  ]
+ },
+ "usb_icon": {
+  "off": [
+   "home_usb_icon",
+   null
+  ],
+  "on": [
+   "home_usb_icon_on",
+   null
+  ]
+ },
+ "wifi_icon": {
+  "off": [
+   "home_wifi_icon",
+   null
+  ],
+  "on": [
+   "home_wifi_icon_on",
+   null
+  ]
+ },
+ "tabs_seg": {
+  "local": [
+   "filament_decor_4",
+   null
+  ],
+  "usb": [
+   "move_decor_2",
+   null
+  ]
+ },
+ "key_shift": {
+  "lower": [
+   "wifi_keyboard_key_shift_lower",
+   "wifi_keyboard_key_shift_lower_press"
+  ],
+  "upper": [
+   "wifi_keyboard_key_shift_upper",
+   "wifi_keyboard_key_shift_upper_press"
+  ],
+  "sym": [
+   "wifi_keyboard_key_shift_sym",
+   "wifi_keyboard_key_shift_sym_press"
+  ]
+ },
+ "lang_cn": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_ru": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_en": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_jp": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_fr": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_de": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_it": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_es": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_kr": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_pt": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_ar": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_tr": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "lang_he": {
+  "off": [
+   "setup_language_lang_cn",
+   "setup_language_lang_cn_press"
+  ],
+  "on": [
+   "setup_language_lang_cn_on",
+   "setup_language_lang_cn_on_press"
+  ]
+ },
+ "opt_5min": {
+  "off": [
+   "screen_opt_5min",
+   "screen_opt_5min_press"
+  ],
+  "on": [
+   "screen_opt_5min_on",
+   "screen_opt_5min_on_press"
+  ]
+ },
+ "opt_15min": {
+  "off": [
+   "screen_opt_5min",
+   "screen_opt_5min_press"
+  ],
+  "on": [
+   "screen_opt_5min_on",
+   "screen_opt_5min_on_press"
+  ]
+ },
+ "opt_30min": {
+  "off": [
+   "screen_opt_5min",
+   "screen_opt_5min_press"
+  ],
+  "on": [
+   "screen_opt_5min_on",
+   "screen_opt_5min_on_press"
+  ]
+ },
+ "opt_never": {
+  "off": [
+   "screen_opt_5min",
+   "screen_opt_5min_press"
+  ],
+  "on": [
+   "screen_opt_5min_on",
+   "screen_opt_5min_on_press"
+  ]
+ },
+ "radio_btn": {
+  "off": [
+   "network_info_radio_btn",
+   "network_info_radio_btn_press"
+  ],
+  "on": [
+   "network_info_radio_btn_on",
+   "network_info_radio_btn_on_press"
+  ]
+ },
+ "auto_btn": {
+  "off": [
+   "file_preview_auto_btn",
+   "file_preview_auto_btn_press"
+  ],
+  "on": [
+   "file_preview_auto_btn_on",
+   "file_preview_auto_btn_on_press"
+  ]
+ },
+ "lan_icon": {
+  "off": [
+   "home_lan_icon",
+   null
+  ],
+  "on": [
+   "home_lan_icon_on",
+   null
+  ]
+ }
+}

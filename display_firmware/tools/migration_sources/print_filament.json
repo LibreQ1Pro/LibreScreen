@@ -1,0 +1,1053 @@
+{
+ "name": "print_filament",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01420300000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_print_filament"
+   }
+  },
+  "events": {
+   "codesload": [
+    "thumb.close()",
+    "thumb.write(preview.cp_data.txt)",
+    "time_elapsed.txt=\"\"",
+    "time_left.txt=\"\"",
+    "temp_now.txt=\"\"",
+    "temp_set.txt=\"\"",
+    "file_name.txt=\"\"",
+    "if(printing.thumb_flag.val==0)",
+    "{",
+    "  vis thumb,0",
+    "}else",
+    "{",
+    "  vis thumb,1",
+    "}",
+    "if(lang==0)",
+    "{",
+    "  title.txt=\"装载耗材\"",
+    "  replace_btn.txt=\"更换耗材\"",
+    "}else if(lang==1)",
+    "{",
+    "  title.txt=\"Загрузка филамента\"",
+    "  replace_btn.txt=\"Заменить\\rфиламент\"",
+    "}else if(lang==2)",
+    "{",
+    "  title.txt=\"Load Filament\"",
+    "  replace_btn.txt=\"Replace\\rFilament\"",
+    "}else if(lang==3)",
+    "{",
+    "  title.txt=\"フィラメント装填\"",
+    "  replace_btn.txt=\"フィラメント交換\"",
+    "}else if(lang==4)",
+    "{",
+    "  title.txt=\"Charger le filament\"",
+    "  replace_btn.txt=\"Changer le\\rfilament\"",
+    "  replace_btn.font=${font:font_small14}",
+    "}else if(lang==5)",
+    "{",
+    "  title.txt=\"Filament laden\"",
+    "  replace_btn.txt=\"Filament\\rwechseln\"",
+    "}else if(lang==6)",
+    "{",
+    "  title.txt=\"Carica filamento\"",
+    "  replace_btn.txt=\"Sostituisci\\rfilamento\"",
+    "}else if(lang==7)",
+    "{",
+    "  title.txt=\"Cargar filamento\"",
+    "  replace_btn.txt=\"Cambiar\\rfilamento\"",
+    "}else if(lang==8)",
+    "{",
+    "  title.txt=\"필라멘트 로드\"",
+    "  replace_btn.txt=\"필라멘트 교체\"",
+    "}else if(lang==9)",
+    "{",
+    "  title.txt=\"Carregar filamento\"",
+    "  replace_btn.txt=\"Trocar\\rfilamento\"",
+    "}else if(lang==10)",
+    "{",
+    "  title.txt=\"تحميل الخيط\"",
+    "  replace_btn.txt=\"استبدال الخيط\"",
+    "}else if(lang==11)",
+    "{",
+    "  title.txt=\"Filament yükle\"",
+    "  replace_btn.txt=\"Filamenti\\rdeğiştir\"",
+    "}else if(lang==12)",
+    "{",
+    "  title.txt=\"טעינת נימה\"",
+    "  replace_btn.txt=\"החלפת נימה\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 10,
+    "y": 249,
+    "w": 252,
+    "h": 43,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Load Filament",
+    "txt_maxl": 30,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "heat_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 300,
+    "w": 236,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_heat_off"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_heat_off_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_now",
+   "type": "text",
+   "attributes": {
+    "objname": "temp_now",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 91,
+    "y": 306,
+    "w": 37,
+    "h": 30,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "220",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click heat_btn,1"
+    ],
+    "codesup": [
+     "click heat_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "temp_up",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_up",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 154,
+    "y": 350,
+    "w": 100,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_temp_up"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_temp_up_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_down",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_down",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 350,
+    "w": 100,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_temp_down"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_temp_down_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "replace_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "replace_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 138,
+    "y": 410,
+    "w": 116,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_replace_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_replace_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Replace\r\nFilament",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "sys2=1",
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_set",
+   "type": "text",
+   "attributes": {
+    "objname": "temp_set",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 152,
+    "y": 306,
+    "w": 37,
+    "h": 30,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "220",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click heat_btn,1"
+    ],
+    "codesup": [
+     "click heat_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "pause_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "pause_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 178,
+    "y": 10,
+    "w": 86,
+    "h": 75,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:preview_start_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:preview_start_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 10,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "stop_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "stop_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 178,
+    "y": 95,
+    "w": 86,
+    "h": 75,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:stop_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:stop_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 11,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "time_elapsed",
+   "type": "text",
+   "attributes": {
+    "objname": "time_elapsed",
+    "vscope": 1,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 2,
+    "y": 228,
+    "w": 96,
+    "h": 22,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "00h00m",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "time_left",
+   "type": "text",
+   "attributes": {
+    "objname": "time_left",
+    "vscope": 1,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 176,
+    "y": 228,
+    "w": 96,
+    "h": 22,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "00h00m",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "progress",
+   "type": "progress_bar",
+   "attributes": {
+    "objname": "progress",
+    "vscope": 1,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 14,
+    "y": 212,
+    "w": 244,
+    "h": 18,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "dez": 0,
+    "val": 0,
+    "dis": 100,
+    "bco": 6371,
+    "bpic": 65535,
+    "pco": 17439,
+    "ppic": 65535
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "file_name",
+   "type": "text",
+   "attributes": {
+    "objname": "file_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 10,
+    "y": 172,
+    "w": 252,
+    "h": 38,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "gcode_file",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "pct_sign",
+   "type": "text",
+   "attributes": {
+    "objname": "pct_sign",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 88,
+    "y": 212,
+    "w": 100,
+    "h": 18,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "  %",
+    "txt_maxl": 50,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "progress_pct",
+   "type": "number",
+   "attributes": {
+    "objname": "progress_pct",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 86,
+    "y": 212,
+    "w": 47,
+    "h": 18,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 2,
+    "ycen": 1,
+    "val": 0,
+    "lenth": 0,
+    "format": 0,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "retract_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "retract_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 410,
+    "w": 50,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_retract_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_retract_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 5,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "extrude_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "extrude_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 78,
+    "y": 410,
+    "w": 50,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:print_filament_extrude_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:print_filament_extrude_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 6,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "thumb",
+   "type": "col_pic",
+   "attributes": {
+    "objname": "thumb",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 10,
+    "w": 160,
+    "h": 160,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "write": 357,
+    "close": 101,
+    "buffsize": 60000,
+    "buff": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,540 @@
+{
+ "name": "auto_heaterbed",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_auto_heaterbed"
+   }
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"推荐先预热热床至打印耗材对应的设置温度后，再进行调平，以此使调平结果更精准。\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Перед выравниванием\\rрекомендуется прогреть\\rстол до температуры\\rпечати используемого\\rфиламента: так\\rрезультат будет точнее.\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Preheat the bed to the\\rprinting temperature of\\rthe filament before\\rleveling for a more\\raccurate result.\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"より正確な結果を得るため、レベリングの前にベッドをフィラメントの印刷温度まで予熱してください。\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"Préchauffez le plateau à la\\rtempérature d'impression\\rdu filament avant le\\rnivellement pour un\\rrésultat plus précis.\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"Heizen Sie das Heizbett vor\\rdem Nivellieren auf die\\rDrucktemperatur des\\rFilaments vor, das\\rErgebnis wird genauer.\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"Preriscalda il piano alla\\rtemperatura di stampa del\\rfilamento prima del\\rlivellamento per un\\rrisultato più preciso.\"",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"Precaliente la cama a la\\rtemperatura de impresión\\rdel filamento antes de\\rnivelar para un resultado\\rmás preciso.\"",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"더 정확한 결과를 위해 레벨링\\r전에 베드를 필라멘트 출력 온도로\\r예열하세요.\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"Pré-aqueça a mesa à\\rtemperatura de impressão\\rdo filamento antes de\\rnivelar para um resultado\\rmais preciso.\"",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"سخّن السرير مسبقًا إلى درجة حرارة طباعة الخيط قبل المعايرة للحصول على نتيجة أدق.\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"Daha doğru sonuç için\\rseviyelemeden önce tablayı\\rfilamentin baskı sıcaklığına\\rısıtın.\"",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"לפני הפילוס, חמם מראש את מיטת ההדפסה לטמפרטורת ההדפסה של הנימה לקבלת תוצאה מדויקת יותר.\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "temp_down",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_down",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 120,
+    "w": 80,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:auto_heaterbed_temp_down"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:auto_heaterbed_temp_down_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_up",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_up",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 174,
+    "y": 120,
+    "w": 80,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:auto_heaterbed_temp_up"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:auto_heaterbed_temp_up_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "heat_toggle",
+   "type": "button",
+   "attributes": {
+    "objname": "heat_toggle",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 10,
+    "y": 65,
+    "w": 252,
+    "h": 49,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:auto_heaterbed_heat_bed_off"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:auto_heaterbed_heat_bed_on_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "back_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "back_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 0,
+    "w": 50,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "next_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "next_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 420,
+    "w": 236,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:next_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:next_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 10,
+    "y": 166,
+    "w": 252,
+    "h": 242,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 0,
+    "pw": 0,
+    "txt": "Preheat the bed to the\r\nprinting temperature of\r\nthe filament before\r\nleveling for a more\r\naccurate result.",
+    "txt_maxl": 300,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "temp_now",
+   "type": "text",
+   "attributes": {
+    "objname": "temp_now",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 67,
+    "y": 69,
+    "w": 89,
+    "h": 41,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "120/",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click heat_toggle,1"
+    ],
+    "codesup": [
+     "click heat_toggle,0"
+    ]
+   }
+  },
+  {
+   "key": "temp_target",
+   "type": "number",
+   "attributes": {
+    "objname": "temp_target",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 156,
+    "y": 69,
+    "w": 89,
+    "h": 41,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 120,
+    "lenth": 0,
+    "format": 0,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click heat_toggle,1"
+    ],
+    "codesup": [
+     "click heat_toggle,0"
+    ]
+   }
+  }
+ ]
+}

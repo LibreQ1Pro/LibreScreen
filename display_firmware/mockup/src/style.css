@@ -1,0 +1,154 @@
+:root{
+  --bg:#181818; --panel:#212021; --card:#292829; --btn:#313039; --btn-hi:#42414a; --btn-press:#292831; --line:#393842;
+  --text:#f7f7f7; --text2:#a5a6b5; --text3:#6b6d7b; --accent:#3979ff; --accent-press:#3161ce; --danger:#e7494a; --danger-bg:#4a2429;
+  --ok:#31a26b; --warn:#f7a621; --nav:#101010;
+  --font:'Noto Sans','Noto Sans CJK SC','Noto Sans CJK JP','Noto Sans CJK KR','Noto Sans Arabic','Noto Sans Hebrew',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#080808;color:#ddd;font-family:system-ui,'Noto Sans',sans-serif}
+body{display:flex;min-height:100vh}
+#side{position:sticky;top:0;align-self:flex-start;width:260px;height:100vh;overflow:auto;background:#101010;border-right:1px solid #292829;padding:14px;flex:none}
+#side h1{font-size:15px;margin:0 0 4px;color:#fff}
+#side p{font-size:12px;color:#8c8a94;margin:0 0 12px;line-height:1.4}
+#side label{display:block;font-size:12px;color:#9c9aa5;margin:10px 0 4px}
+#side select,#side button{width:100%;background:#212021;color:#ddd;border:1px solid #313039;border-radius:6px;padding:6px 8px;font-size:13px}
+#side .row{display:flex;gap:6px}
+#side .row button{flex:1}
+#side button.on{background:#294d9c;border-color:#3979ff;color:#fff}
+#side nav a{display:block;color:#bdbac6;text-decoration:none;font-size:13px;padding:3px 0}
+#side nav a:hover{color:#fff}
+#side nav b{display:block;margin:12px 0 2px;font-size:11px;letter-spacing:.08em;color:#6b6d7b;text-transform:uppercase}
+#main{flex:1;padding:24px 28px 80px;min-width:0}
+h2{font-size:18px;color:#fff;margin:36px 0 12px;border-bottom:1px solid #292829;padding-bottom:6px}
+h2:first-child{margin-top:0}
+.grid{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.item{display:flex;flex-direction:column;gap:6px}
+.cap{font-size:12px;color:#9c9aa5;display:flex;gap:8px;align-items:center}
+.cap code{color:#7ba6ff;font-size:11px}
+.cap a{color:#7ba6ff;cursor:pointer;font-size:11px;text-decoration:underline}
+.scr{position:relative;width:272px;height:480px;background:var(--bg);overflow:hidden;font-family:var(--font);color:var(--text);
+  font-size:16px;font-weight:500;line-height:1.2;border-radius:6px;box-shadow:0 0 0 1px #292829;transform-origin:0 0}
+.zoomwrap{overflow:hidden}
+.scr *{position:absolute}
+.scr .grid-ov{inset:0;pointer-events:none;z-index:50;display:none;
+  background-image:linear-gradient(to right,rgba(255,0,120,.25) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,0,120,.25) 1px,transparent 1px);
+  background-size:8px 8px}
+.showgrid .scr .grid-ov{display:block}
+.scr .guide{z-index:51;pointer-events:none;border:1px dashed rgba(0,200,255,.6);display:none}
+.showgrid .scr .guide{display:block}
+.show-names .scr [data-w]{outline:1px solid rgba(255,200,0,.5)}
+.scr [data-w]:hover{outline:1px solid #ffc700}
+/* components */
+.card{background:var(--panel);border-radius:14px}
+.card.hi{background:var(--card)}
+.line{background:var(--line);height:1px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);border-radius:10px;font-size:16px;font-weight:500;text-align:center;overflow:hidden;white-space:nowrap}
+.btn *{position:static}
+.btn.sec{background:var(--btn)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.danger{background:var(--danger-bg);color:#ff8e94}
+.btn.ghost{background:transparent;border:1.5px solid var(--line)}
+.btn.press{background:var(--btn-press)}
+.btn.primary.press{background:var(--accent-press)}
+.btn.dim{background:#292829;color:var(--text3)}
+.btn.col{flex-direction:column;gap:2px}
+.btn.wrap{white-space:normal;line-height:1.15}
+.ico{display:block;flex:none}
+.ico svg{width:100%;height:100%;display:block}
+.t{display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.t.c{align-items:center;text-align:center}
+.t.r{align-items:flex-end;text-align:right}
+.t.top{justify-content:flex-start}
+.t.bottom{justify-content:flex-end}
+/* the six fonts of the screen: text 13 / 16 / 19 and digits 20 / 28 / 32 (one size and weight = one font resource) */
+.r-t13{font-size:13px;font-weight:400}
+.r-t16{font-size:16px;font-weight:500}
+.r-t19{font-size:19px;font-weight:600}
+.r-d20{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.r-d28{font-size:28px;font-weight:600;font-variant-numeric:tabular-nums}
+.r-d32{font-size:32px;font-weight:600;font-variant-numeric:tabular-nums}
+.t.r-t13{color:var(--text2)}
+.t.scroll{overflow:hidden;justify-content:flex-start}
+.t.nw span{white-space:nowrap}
+.hit,.rowhit{background:transparent}
+.key.off{background:#292829;color:var(--text3)}
+.t.mute{color:var(--text2)}
+.t.acc{color:#6b9aff}
+.t.red{color:#ff696b}
+.t.rtl,.rtl{direction:rtl;unicode-bidi:plaintext}
+.scr .t *{position:static}
+.nav{left:0;top:424px;width:272px;height:56px;background:var(--nav);border-top:1px solid #212021}
+.nav .it{top:0;width:68px;height:55px;display:flex;align-items:center;justify-content:center}
+.nav .it .pill{position:static;width:48px;height:32px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--text2)}
+.nav .it.on .pill{background:var(--accent);color:#fff}
+.nav .it .pill *{position:static}
+.hdr-title{font-size:19px;font-weight:600}
+.sw{width:44px;height:26px;border-radius:13px;background:#4a4952}
+.sw::after{content:'';position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff}
+.sw.on{background:var(--accent)}
+.sw.on::after{left:21px}
+.radio{width:22px;height:22px;border-radius:50%;border:2px solid #8c8a94}
+.radio.on{border-color:var(--accent)}
+.radio.on::after{content:'';position:absolute;left:4px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.bar{background:#292831;border-radius:6px;overflow:hidden}
+.bar i{display:block;position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:6px}
+.thumb{background:#313039;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#7b7984}
+.tabs{background:#101010;border-radius:12px}
+.tabs .tab{display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:var(--text2);border-radius:10px}
+.tabs .tab.on{background:var(--btn);color:#fff}
+.key{display:flex;align-items:center;justify-content:center;background:var(--btn);border-radius:8px;font-size:28px;font-weight:600}
+.key.k19{font-size:19px}
+.key *{position:static}
+.key.fn{background:#292831;color:var(--text2)}
+.dim-bg{background:rgba(0,0,0,.7)}
+.popup{background:var(--card);border-radius:16px}
+.anim{background:#292829;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#6b6d7b;font-size:12px;letter-spacing:.06em}
+.step{width:26px;height:26px;border-radius:50%;background:#313039;color:#9c9aa5;font-size:13px;font-weight:400;display:flex;align-items:center;justify-content:center}
+.step.on{background:var(--accent);color:#fff}
+.step.done{background:var(--ok);color:#fff}
+.vline{width:2px;background:#313039}
+/* gallery */
+.sw-row{display:flex;gap:10px;flex-wrap:wrap}
+.sw-c{width:120px;border-radius:8px;overflow:hidden;background:#181818;font-size:11px;color:#aaa}
+.sw-c div{height:48px}
+.sw-c span{display:block;padding:5px 8px}
+.type-sample{background:#181818;border-radius:8px;padding:12px 16px;color:#f7f7f7;font-family:var(--font);margin:6px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:100;display:none;overflow:auto;padding:30px}
+.modal.on{display:block}
+.modal .box{max-width:1700px;margin:0 auto}
+.modal h3{color:#fff;margin:0 0 14px;display:flex;gap:14px;align-items:center}
+.modal h3 button{background:#222;color:#ddd;border:1px solid #444;border-radius:6px;padding:5px 12px}
+.langgrid{display:flex;flex-wrap:wrap;gap:16px}
+.langgrid .cap{font-size:13px;color:#ccc}
+#insp{position:fixed;right:16px;bottom:16px;background:#101010;border:1px solid #313039;border-radius:8px;padding:8px 12px;font-size:12px;color:#ddd;z-index:200;min-width:200px;display:none}
+.chips{display:flex;flex-wrap:wrap;gap:4px;max-width:420px}
+.chip{font-size:11px;color:#9c9aa5;border:1px solid #313039;border-radius:10px;padding:1px 8px;cursor:pointer;background:#181818}
+.chip.on{background:#294d9c;border-color:#3979ff;color:#fff}
+/* the waiting circle turns in 8 steps (a screen animation is a few frames, not a smooth rotation) */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin .8s steps(8) infinite}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
+
+/* the static layer (?bare=ID&static=1): what the background pictures hold; text, thumbnails, animations and the fill of a bar are widgets */
+body.static .t, body.static .btn > span:not(.ico), body.static .thumb > *, body.static .thumb, body.static .anim > *, body.static .bar i, body.static .rowhit .t { visibility:hidden }
+body.static .scr .grid-ov, body.static .scr .guide { display:none }
+body.static .key, body.static .tabs .tab { color:transparent }
+body.static .tabs .tab .ico { color:var(--text2) }
+body.static .tabs .tab.on .ico { color:#fff }
+body.static .key.fn .ico, body.static .key.off .ico { color:#a5a6b5 !important }
+
+/* the static layer of the decor (?nobtn=1): what lies under the buttons, without the buttons (they are components of their own on the page) */
+body.nobtn .btn, body.nobtn .key, body.nobtn .rowhit, body.nobtn .nav .it { visibility:hidden }
+
+/* the static layer is the pixels of the screen: no rounded corners and no frame (they would be baked into the corners of the pictures) */
+body.static .scr{border-radius:0;box-shadow:none}
+
+/* the layer of the buttons (?bare=ID&static=1&onlybtn=1): only what belongs to a button, on a transparent background; the anti-aliased edge of the corners is the browser's own,
+   so the alpha of the tiles of the screen is the alpha of the HTML (tools/gen_project.py ``screenshot(..., layer=True)``) */
+body.onlybtn .scr{background:transparent !important;box-shadow:none}
+body.onlybtn .scr *{visibility:hidden !important}
+body.onlybtn .scr .btn, body.onlybtn .scr .btn *, body.onlybtn .scr .key, body.onlybtn .scr .key *, body.onlybtn .scr .rowhit, body.onlybtn .scr .rowhit *,
+body.onlybtn .scr .nav .it, body.onlybtn .scr .nav .it *, body.onlybtn .scr .lyr, body.onlybtn .scr .lyr *{visibility:visible !important}
+body.onlybtn.static .scr .t, body.onlybtn.static .scr .btn > span:not(.ico), body.onlybtn.static .scr .rowhit .t, body.onlybtn.static .scr .lyr .t{visibility:hidden !important}
+/* ?hide=a,b: widgets of the screen that are left out of a rendering (they are components of their own on the page; their pieces must not be in the picture of the decor) */
+body .hid, body .hid *{visibility:hidden !important}

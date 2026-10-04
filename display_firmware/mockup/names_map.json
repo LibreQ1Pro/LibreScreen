@@ -1,0 +1,1744 @@
+{
+ "auto_finish": {
+  "page": "auto_level_done",
+  "screen": "auto_level_done",
+  "same": [
+   "msg",
+   "ok"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "auto_heaterbed": {
+  "page": "auto_level_preheat",
+  "screen": "auto_level_preheat",
+  "same": [
+   "temp_down",
+   "temp_up",
+   "heat_toggle",
+   "back_btn",
+   "next_btn",
+   "msg"
+  ],
+  "new": [
+   "title",
+   "heat_card",
+   "heat_temp",
+   "heat_set",
+   "heat_unit",
+   "heat_row"
+  ],
+  "gone": [
+   "temp_now",
+   "temp_target"
+  ]
+ },
+ "auto_moving": {
+  "page": "auto_level_progress",
+  "screen": "auto_level_progress",
+  "same": [
+   "step1_txt",
+   "step2_txt",
+   "step3_txt",
+   "step4_txt",
+   "bed_temp"
+  ],
+  "new": [
+   "bed_set",
+   "bed_unit"
+  ],
+  "gone": [
+   "steps_bar",
+   "spin1",
+   "spin2",
+   "spin3",
+   "spin4",
+   "bed_lbl"
+  ]
+ },
+ "auto_unload": {
+  "page": "unload_auto",
+  "screen": "unload_auto",
+  "same": [
+   "load_btn",
+   "ok",
+   "step1_txt",
+   "step2_txt",
+   "step3_txt"
+  ],
+  "new": [
+   "nozzle_temp",
+   "nozzle_set",
+   "nozzle_unit"
+  ],
+  "gone": [
+   "steps_bar",
+   "temp_txt",
+   "spin1",
+   "spin2",
+   "spin3"
+  ]
+ },
+ "auto_warning": {
+  "page": "set_temperature_warning",
+  "screen": "set_temperature_warning",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "bed_calibrate": {
+  "page": "nut_adjust",
+  "screen": "nut_adjust",
+  "same": [
+   "next_btn",
+   "msg",
+   "step_txt"
+  ],
+  "new": [
+   "art_up",
+   "art_down"
+  ],
+  "gone": [
+   "anim_timer",
+   "screw_pic"
+  ]
+ },
+ "bed_finish": {
+  "page": "nut_choose",
+  "screen": "nut_choose",
+  "same": [
+   "ok",
+   "screw1",
+   "screw2",
+   "screw3",
+   "msg"
+  ],
+  "new": [
+   "panel"
+  ],
+  "gone": [
+   "touch",
+   "sleep_counter",
+   "z_tilt"
+  ]
+ },
+ "bed_moving": {
+  "page": "bed_moving",
+  "screen": "bed_moving",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "cal_warning": {
+  "page": "before_calibration",
+  "screen": "before_calibration",
+  "same": [
+   "msg",
+   "next_btn",
+   "back_btn"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "common_set": {
+  "page": "settings",
+  "screen": "settings",
+  "same": [
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "tab_settings",
+   "tab_calib",
+   "lang_btn",
+   "network_btn",
+   "sysinfo_btn",
+   "sleep_btn",
+   "reset_btn"
+  ],
+  "new": [
+   "about_btn"
+  ],
+  "gone": [
+   "lang_lbl",
+   "network_lbl",
+   "sysinfo_lbl",
+   "sleep_lbl",
+   "reset_lbl",
+   "guide_txt",
+   "sleep_counter",
+   "touch"
+  ]
+ },
+ "detect_error": {
+  "page": "error",
+  "screen": "error",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "fila_set_fan": {
+  "page": "fila_set_fan",
+  "screen": null,
+  "same": [],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter",
+   "fan1_slider",
+   "fan2_slider",
+   "fan3_slider",
+   "fan1_name",
+   "fan2_name",
+   "fan3_name",
+   "fan1_val",
+   "fan2_val",
+   "fan3_val",
+   "fan1_toggle",
+   "fan2_toggle",
+   "fan3_toggle",
+   "fan1_inc",
+   "fan2_inc",
+   "fan3_inc",
+   "back_btn",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "output",
+   "fan1_p20",
+   "fan1_p40",
+   "fan1_p60",
+   "fan1_p80",
+   "fan1_p100",
+   "fan2_p100",
+   "fan2_p80",
+   "fan2_p60",
+   "fan2_p40",
+   "fan2_p20",
+   "fan3_p100",
+   "fan3_p80",
+   "fan3_p60",
+   "fan3_p20",
+   "fan3_p40"
+  ]
+ },
+ "filament": {
+  "page": "filament",
+  "screen": "filament",
+  "same": [
+   "chamber_row",
+   "tab_manual",
+   "tab_load",
+   "nozzle_row",
+   "bed_row",
+   "load_btn",
+   "replace_btn",
+   "extr_up",
+   "extr_down",
+   "step_10",
+   "step_50",
+   "step_100",
+   "nozzle_temp",
+   "nozzle_toggle",
+   "bed_toggle",
+   "nozzle_set",
+   "bed_temp",
+   "bed_set",
+   "chamber_temp",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "chamber_toggle",
+   "chamber_set"
+  ],
+  "new": [
+   "nozzle_card",
+   "nozzle_unit",
+   "bed_card",
+   "bed_unit",
+   "chamber_card",
+   "chamber_unit",
+   "fan1_btn",
+   "fan1_val",
+   "fan2_btn",
+   "fan2_val",
+   "fan3_btn",
+   "fan3_val"
+  ],
+  "gone": [
+   "fan_btn",
+   "sleep_counter",
+   "touch"
+  ]
+ },
+ "filamentVideo0": {
+  "page": "setup_spool_holder",
+  "screen": "setup_spool_holder",
+  "same": [
+   "next",
+   "title",
+   "msg",
+   "anim"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "filamentVideo1": {
+  "page": "setup_load_insert",
+  "screen": "setup_load_insert",
+  "same": [
+   "next",
+   "title",
+   "anim",
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "filamentVideo2": {
+  "page": "setup_load_heat",
+  "screen": "setup_load_heat",
+  "same": [
+   "title",
+   "msg_heat",
+   "msg_wait",
+   "temp_down",
+   "temp_up",
+   "next",
+   "heat_toggle"
+  ],
+  "new": [
+   "heat_card",
+   "heat_temp",
+   "heat_set",
+   "heat_unit",
+   "heat_row"
+  ],
+  "gone": [
+   "temp_target",
+   "temp_now",
+   "cur_str",
+   "cur_val"
+  ]
+ },
+ "filamentVideo3": {
+  "page": "setup_load_extrude",
+  "screen": "setup_load_extrude",
+  "same": [
+   "title",
+   "anim",
+   "msg",
+   "next",
+   "extrude"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "filament_kb": {
+  "page": "keypad",
+  "screen": "keypad",
+  "same": [
+   "key_0",
+   "input_show",
+   "key_ok",
+   "key_1",
+   "key_2",
+   "key_3",
+   "key_4",
+   "key_5",
+   "key_6",
+   "key_7",
+   "key_8",
+   "key_del",
+   "key_9",
+   "back_btn",
+   "title",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings"
+  ],
+  "new": [
+   "input_unit",
+   "input_max"
+  ],
+  "gone": [
+   "input_bg",
+   "str_len",
+   "input",
+   "txt_to_val",
+   "inputlenth",
+   "temp"
+  ]
+ },
+ "filament_pop_1": {
+  "page": "filament_nozzle_cold",
+  "screen": "filament_nozzle_cold",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "filament_pop_2": {
+  "page": "unload_steps",
+  "screen": "unload_steps",
+  "same": [
+   "step1_txt",
+   "step2_txt",
+   "step3_txt",
+   "done_btn",
+   "alt_btn",
+   "anim",
+   "next_btn",
+   "hint",
+   "back_btn"
+  ],
+  "new": [
+   "nozzle_temp",
+   "nozzle_set",
+   "nozzle_unit"
+  ],
+  "gone": [
+   "steps_bar",
+   "temp_txt",
+   "spin1",
+   "spin2",
+   "spin3",
+   "spin4"
+  ]
+ },
+ "filament_pop_3": {
+  "page": "load_steps",
+  "screen": "load_steps",
+  "same": [
+   "step1_txt",
+   "step2_txt",
+   "step3_txt",
+   "done_btn",
+   "alt_btn",
+   "anim",
+   "hint",
+   "next_btn",
+   "back_btn"
+  ],
+  "new": [
+   "nozzle_temp",
+   "nozzle_set",
+   "nozzle_unit"
+  ],
+  "gone": [
+   "steps_bar",
+   "temp_txt",
+   "spin1",
+   "spin2",
+   "spin3",
+   "spin4"
+  ]
+ },
+ "filelist": {
+  "page": "file_list",
+  "screen": "file_list",
+  "same": [
+   "file1",
+   "file2",
+   "file3",
+   "file4",
+   "file1_name",
+   "file2_name",
+   "file3_name",
+   "file4_name",
+   "prev",
+   "next",
+   "usb_tab",
+   "local_tab",
+   "up_dir",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "file1_pic",
+   "file2_pic",
+   "file3_pic",
+   "file4_pic"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter",
+   "empty_msg",
+   "file1_mark",
+   "unlocker"
+  ]
+ },
+ "gcode_error": {
+  "page": "gcode_error",
+  "screen": "gcode_error",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "internet": {
+  "page": "wifi_no_network",
+  "screen": "wifi_no_network",
+  "same": [
+   "back_btn",
+   "ip_txt",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "refresh_btn",
+   "msg",
+   "title"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "internet_page": {
+  "page": "network",
+  "screen": "network",
+  "same": [
+   "ip_txt",
+   "back_btn",
+   "title",
+   "wifi_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "info_btn"
+  ],
+  "new": [
+   "wifi_tab",
+   "lan_tab"
+  ],
+  "gone": [
+   "ip_box",
+   "source_switch",
+   "saved_btn",
+   "hidden_btn",
+   "saved_lbl",
+   "hidden_lbl",
+   "info_lbl"
+  ]
+ },
+ "keybdB": {
+  "page": "print_keypad",
+  "screen": "print_keypad",
+  "same": [
+   "key_0",
+   "input_show",
+   "key_ok",
+   "key_1",
+   "key_2",
+   "key_3",
+   "key_4",
+   "key_5",
+   "key_6",
+   "key_7",
+   "key_8",
+   "key_del",
+   "key_9",
+   "back_btn",
+   "title",
+   "pause_btn",
+   "stop_btn",
+   "time_elapsed",
+   "time_left",
+   "progress",
+   "file_name",
+   "progress_pct",
+   "thumb",
+   "mute_btn"
+  ],
+  "new": [
+   "progress_pct_u",
+   "input_unit"
+  ],
+  "gone": [
+   "loadpageid",
+   "loadcmpid",
+   "input",
+   "temp",
+   "inputlenth",
+   "tempstr",
+   "temp2",
+   "pct_sign",
+   "refresh"
+  ]
+ },
+ "language": {
+  "page": "language",
+  "screen": "language",
+  "same": [
+   "lang_cn",
+   "lang_cn_name",
+   "lang_ru",
+   "lang_ru_name",
+   "lang_en",
+   "lang_en_name",
+   "lang_jp",
+   "lang_jp_name",
+   "lang_fr",
+   "lang_fr_name",
+   "lang_de",
+   "lang_de_name",
+   "back_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "title",
+   "lang_it",
+   "lang_it_name",
+   "lang_es",
+   "lang_es_name",
+   "prev_page",
+   "next_page"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "language2": {
+  "page": "language_2",
+  "screen": "language_2",
+  "same": [
+   "lang_kr",
+   "lang_kr_name",
+   "lang_pt",
+   "lang_pt_name",
+   "lang_ar",
+   "lang_ar_name",
+   "lang_tr",
+   "lang_tr_name",
+   "lang_he",
+   "lang_he_name",
+   "back_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "title",
+   "prev_page",
+   "next_page"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "level_error": {
+  "page": "leveling_error",
+  "screen": "leveling_error",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "level_mode": {
+  "page": "calibration_menu",
+  "screen": "calibration_menu",
+  "same": [
+   "tab_settings",
+   "tab_calib",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "auto_level",
+   "shaping",
+   "bed_calib",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "logo": {
+  "page": "boot_logo",
+  "screen": "boot_logo",
+  "same": [
+   "boot_msg"
+  ],
+  "new": [],
+  "gone": [
+   "boot_timer",
+   "boot_count",
+   "version"
+  ]
+ },
+ "main": {
+  "page": "home",
+  "screen": "home",
+  "same": [
+   "bed_btn",
+   "chamber_btn",
+   "nozzle_btn",
+   "light_btn",
+   "beep_btn",
+   "stop_btn",
+   "nozzle_temp",
+   "bed_temp",
+   "chamber_temp",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "last_file_btn",
+   "last_file_name",
+   "last_file_pic",
+   "ver_warning",
+   "ui_ver_lbl",
+   "soc_ver_lbl",
+   "soc_ver"
+  ],
+  "new": [
+   "nozzle_set",
+   "nozzle_unit",
+   "bed_set",
+   "bed_unit",
+   "chamber_set",
+   "chamber_unit",
+   "ui_ver"
+  ],
+  "gone": [
+   "sleep_counter",
+   "touch",
+   "wifi_icon",
+   "usb_icon"
+  ]
+ },
+ "memory_warning": {
+  "page": "memory_full",
+  "screen": "memory_full",
+  "same": [
+   "msg",
+   "ok"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "move": {
+  "page": "move",
+  "screen": "move",
+  "same": [
+   "dist_01",
+   "dist_1",
+   "dist_10",
+   "z_up",
+   "motors_off",
+   "z_down",
+   "y_up",
+   "x_up",
+   "y_down",
+   "x_down",
+   "home_btn",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "x_pos",
+   "y_pos",
+   "z_pos",
+   "tab_manual",
+   "tab_load"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "move_pop_1": {
+  "page": "move_out_of_range",
+  "screen": "move_out_of_range",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "move_pop_2": {
+  "page": "move_home_confirm",
+  "screen": "move_home_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "net_confirm": {
+  "page": "forget_network",
+  "screen": "forget_network",
+  "same": [
+   "back_btn",
+   "title",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "msg",
+   "forget_btn",
+   "cancel"
+  ],
+  "new": [
+   "ssid_msg",
+   "msg2"
+  ],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "net_detail": {
+  "page": "network_details",
+  "screen": "network_details",
+  "same": [
+   "back_btn",
+   "title",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "ssid_txt",
+   "status_txt",
+   "connect_btn",
+   "passwd_btn",
+   "auto_btn",
+   "forget_btn"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "net_info": {
+  "page": "network_info",
+  "screen": "network_info",
+  "same": [
+   "back_btn",
+   "title",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "wifi_txt",
+   "lan_txt",
+   "radio_btn"
+  ],
+  "new": [
+   "wifi_ssid_l",
+   "wifi_ssid",
+   "wifi_ip_l",
+   "wifi_ip",
+   "wifi_gw_l",
+   "wifi_gw",
+   "lan_ip_l",
+   "lan_ip",
+   "lan_gw_l",
+   "lan_gw"
+  ],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "net_saved": {
+  "page": "saved_networks",
+  "screen": "saved_networks",
+  "same": [
+   "back_btn",
+   "title",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "row1",
+   "row2",
+   "row3",
+   "row4",
+   "row5",
+   "prev_btn",
+   "next_btn"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter",
+   "row1_txt",
+   "row2_txt",
+   "row3_txt",
+   "row4_txt",
+   "row5_txt"
+  ]
+ },
+ "open_calibrate": {
+  "page": "open_calibrate",
+  "screen": null,
+  "same": [],
+  "new": [],
+  "gone": [
+   "sleep_counter"
+  ]
+ },
+ "open_finish": {
+  "page": "setup_done",
+  "screen": "setup_done",
+  "same": [
+   "msg",
+   "finish",
+   "msg_level"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "open_heaterbed": {
+  "page": "open_heaterbed",
+  "screen": null,
+  "same": [],
+  "new": [],
+  "gone": []
+ },
+ "open_language": {
+  "page": "setup_language",
+  "screen": "setup_language",
+  "same": [
+   "title",
+   "lang_cn",
+   "lang_cn_name",
+   "lang_ru",
+   "lang_ru_name",
+   "lang_en",
+   "lang_en_name",
+   "lang_jp",
+   "lang_jp_name",
+   "lang_fr",
+   "lang_fr_name",
+   "lang_de",
+   "lang_de_name",
+   "next",
+   "skip",
+   "lang_it",
+   "lang_it_name",
+   "lang_es",
+   "lang_es_name",
+   "prev_page",
+   "next_page"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "open_language2": {
+  "page": "setup_language_2",
+  "screen": "setup_language_2",
+  "same": [
+   "title",
+   "lang_kr",
+   "lang_kr_name",
+   "lang_pt",
+   "lang_pt_name",
+   "lang_ar",
+   "lang_ar_name",
+   "lang_tr",
+   "lang_tr_name",
+   "lang_he",
+   "lang_he_name",
+   "next",
+   "skip",
+   "prev_page",
+   "next_page"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "open_moving": {
+  "page": "setup_wait",
+  "screen": "setup_wait",
+  "same": [
+   "title",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "timeout_timer",
+   "count"
+  ]
+ },
+ "open_pop": {
+  "page": "setup_skip_confirm",
+  "screen": "setup_skip_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "open_video_1": {
+  "page": "setup_unbox_1",
+  "screen": "setup_unbox_1",
+  "same": [
+   "title",
+   "anim",
+   "msg",
+   "next"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "open_video_2": {
+  "page": "setup_unbox_2",
+  "screen": "setup_unbox_2",
+  "same": [
+   "msg",
+   "next",
+   "title",
+   "anim"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "open_video_3": {
+  "page": "open_video_3",
+  "screen": null,
+  "same": [],
+  "new": [],
+  "gone": []
+ },
+ "open_warning": {
+  "page": "setup_unbox_warning",
+  "screen": "setup_unbox_warning",
+  "same": [
+   "title",
+   "msg",
+   "next"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "pre_bed_cal": {
+  "page": "reference_point",
+  "screen": "reference_point",
+  "same": [
+   "step_001",
+   "step_005",
+   "step_01",
+   "step_05",
+   "z_up",
+   "z_down",
+   "enter_btn",
+   "msg",
+   "title"
+  ],
+  "new": [
+   "art"
+  ],
+  "gone": []
+ },
+ "pre_heat": {
+  "page": "preheat",
+  "screen": "preheat",
+  "same": [
+   "temp_opt1",
+   "temp_opt2",
+   "temp_opt3",
+   "next_btn",
+   "msg",
+   "back_btn"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "preview": {
+  "page": "file_preview",
+  "screen": "file_preview",
+  "same": [
+   "back_btn",
+   "est_time",
+   "fil_weight",
+   "fil_length",
+   "fil_type",
+   "start_btn",
+   "level_btn",
+   "nav_main",
+   "nav_adjust",
+   "nav_files",
+   "nav_settings",
+   "preview_pic",
+   "timelapse_btn"
+  ],
+  "new": [],
+  "gone": [
+   "err_msg",
+   "cp_data",
+   "cp_pad",
+   "level_lbl",
+   "timelapse_lbl"
+  ]
+ },
+ "preview_pop_1": {
+  "page": "closed_chamber_warning",
+  "screen": "closed_chamber_warning",
+  "same": [
+   "msg",
+   "ok",
+   "no_more"
+  ],
+  "new": [],
+  "gone": [
+   "close_timer",
+   "idle_count"
+  ]
+ },
+ "preview_pop_2": {
+  "page": "doors_cover_warning",
+  "screen": "doors_cover_warning",
+  "same": [
+   "msg",
+   "no_more",
+   "ok"
+  ],
+  "new": [],
+  "gone": [
+   "close_timer",
+   "idle_count"
+  ]
+ },
+ "print_filament": {
+  "page": "print_filament",
+  "screen": "print_filament",
+  "same": [
+   "title",
+   "heat_btn",
+   "temp_up",
+   "temp_down",
+   "replace_btn",
+   "pause_btn",
+   "stop_btn",
+   "time_elapsed",
+   "time_left",
+   "progress",
+   "file_name",
+   "progress_pct",
+   "retract_btn",
+   "extrude_btn",
+   "thumb"
+  ],
+  "new": [
+   "progress_pct_u",
+   "nozzle_temp",
+   "nozzle_set",
+   "nozzle_unit"
+  ],
+  "gone": [
+   "temp_now",
+   "temp_set",
+   "pct_sign"
+  ]
+ },
+ "print_finish": {
+  "page": "print_done",
+  "screen": "print_done",
+  "same": [
+   "msg",
+   "ok",
+   "time_txt"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "print_log_f": {
+  "page": "logs_failed",
+  "screen": "logs_failed",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_log_s": {
+  "page": "logs_exported",
+  "screen": "logs_exported",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_lowtemp": {
+  "page": "print_nozzle_cold",
+  "screen": "print_nozzle_cold",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "print_no_fil": {
+  "page": "no_filament",
+  "screen": "no_filament",
+  "same": [
+   "msg",
+   "ok"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_no_fil2": {
+  "page": "filament_tangle",
+  "screen": "filament_tangle",
+  "same": [
+   "msg",
+   "ok"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_stop": {
+  "page": "print_stop_confirm",
+  "screen": "print_stop_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_stopping": {
+  "page": "print_stopping",
+  "screen": "print_stopping",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "print_zoffset": {
+  "page": "print_z_offset",
+  "screen": "print_z_offset",
+  "same": [
+   "back_btn",
+   "title",
+   "gcode_z",
+   "z_offset",
+   "step_001",
+   "step_005",
+   "step_01",
+   "step_05",
+   "z_up",
+   "z_down",
+   "pause_btn",
+   "stop_btn",
+   "time_elapsed",
+   "time_left",
+   "progress",
+   "file_name",
+   "progress_pct",
+   "thumb"
+  ],
+  "new": [
+   "progress_pct_u",
+   "gcode_z_lbl",
+   "z_offset_lbl"
+  ],
+  "gone": [
+   "pct_sign"
+  ]
+ },
+ "printing": {
+  "page": "printing",
+  "screen": "printing",
+  "same": [
+   "chamber_btn",
+   "fan2_btn",
+   "fan1_btn",
+   "pause_btn",
+   "stop_btn",
+   "time_elapsed",
+   "time_left",
+   "progress",
+   "nozzle_btn",
+   "nozzle_temp",
+   "nozzle_set",
+   "bed_btn",
+   "bed_temp",
+   "bed_set",
+   "speed_btn",
+   "fan1_val",
+   "flow_btn",
+   "fan2_val",
+   "fan3_btn",
+   "file_name",
+   "chamber_set",
+   "progress_pct",
+   "fan3_val",
+   "chamber_temp",
+   "thumb"
+  ],
+  "new": [
+   "progress_pct_u",
+   "nozzle_unit",
+   "bed_unit",
+   "chamber_unit"
+  ],
+  "gone": [
+   "pct_sign",
+   "thumb_flag"
+  ]
+ },
+ "printing_2": {
+  "page": "print_adjust",
+  "screen": "print_adjust",
+  "same": [
+   "pause_btn",
+   "stop_btn",
+   "time_elapsed",
+   "time_left",
+   "progress",
+   "file_name",
+   "progress_pct",
+   "speed_btn",
+   "speed_val",
+   "flow_btn",
+   "flow_val",
+   "zoffset_btn",
+   "zoffset_val",
+   "back_btn",
+   "thumb",
+   "light_btn"
+  ],
+  "new": [
+   "progress_pct_u",
+   "speed_lbl",
+   "speed_val_u",
+   "flow_lbl",
+   "flow_val_u",
+   "zoffset_lbl",
+   "zoffset_val_u",
+   "fan1_btn",
+   "fan1_val",
+   "fan2_btn",
+   "fan2_val",
+   "fan3_btn",
+   "fan3_val"
+  ],
+  "gone": [
+   "pct_sign"
+  ]
+ },
+ "re_printing": {
+  "page": "print_resuming",
+  "screen": "print_resuming",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "reset": {
+  "page": "klipper_error",
+  "screen": "klipper_error",
+  "same": [
+   "restart_klip",
+   "restart_fw",
+   "err_msg",
+   "back_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "export_logs",
+   "title"
+  ],
+  "new": [],
+  "gone": [
+   "touch",
+   "sleep_counter"
+  ]
+ },
+ "restart": {
+  "page": "restart_needed",
+  "screen": "restart_needed",
+  "same": [
+   "title",
+   "hint"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "restore_config": {
+  "page": "factory_reset_confirm",
+  "screen": "factory_reset_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "resume_print": {
+  "page": "resume_print_confirm",
+  "screen": "resume_print_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "screen_sleep": {
+  "page": "screen_asleep",
+  "screen": "screen_asleep",
+  "same": [
+   "touch"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "shutdown": {
+  "page": "shutting_down",
+  "screen": "shutting_down",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "sleep_mode": {
+  "page": "screen",
+  "screen": "screen",
+  "same": [
+   "opt_5min",
+   "opt_15min",
+   "opt_30min",
+   "opt_never",
+   "brightness_lbl",
+   "brightness_slider",
+   "back_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "title"
+  ],
+  "new": [
+   "brightness_val",
+   "brightness_val_u"
+  ],
+  "gone": [
+   "opt_5min_lbl",
+   "opt_15min_lbl",
+   "opt_30min_lbl",
+   "opt_never_lbl"
+  ]
+ },
+ "stop_confirm": {
+  "page": "emergency_stop_confirm",
+  "screen": "emergency_stop_confirm",
+  "same": [
+   "msg",
+   "ok",
+   "cancel"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "syntony_finish": {
+  "page": "shaping_done",
+  "screen": "shaping_done",
+  "same": [
+   "msg",
+   "ok"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "syntony_move": {
+  "page": "shaping_progress",
+  "screen": "shaping_progress",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "idle_timer"
+  ]
+ },
+ "sys_ok": {
+  "page": "klipper_status",
+  "screen": "klipper_status",
+  "same": [
+   "msg",
+   "back_btn",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "export_logs",
+   "title"
+  ],
+  "new": [
+   "restart_klip",
+   "restart_fw"
+  ],
+  "gone": [
+   "touch",
+   "sleep_counter",
+   "info_txt"
+  ]
+ },
+ "unload_finish": {
+  "page": "unload_done",
+  "screen": "unload_done",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "unload_mode": {
+  "page": "unload_choose",
+  "screen": "unload_choose",
+  "same": [
+   "manual_btn",
+   "auto_btn",
+   "msg",
+   "hint",
+   "warn",
+   "back_btn"
+  ],
+  "new": [],
+  "gone": []
+ },
+ "update_success": {
+  "page": "update_done",
+  "screen": "update_done",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "wifi_connect": {
+  "page": "wifi_connecting",
+  "screen": "wifi_connecting",
+  "same": [
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "timeout_timer",
+   "count"
+  ]
+ },
+ "wifi_fail": {
+  "page": "wifi_failed",
+  "screen": "wifi_failed",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "wifi_kb": {
+  "page": "wifi_keyboard",
+  "screen": "wifi_keyboard",
+  "same": [
+   "back_btn",
+   "key_a",
+   "key_b",
+   "key_c",
+   "key_d",
+   "key_e",
+   "key_f",
+   "key_g",
+   "key_h",
+   "key_i",
+   "key_j",
+   "key_k",
+   "key_l",
+   "key_m",
+   "key_n",
+   "key_o",
+   "key_p",
+   "key_q",
+   "key_r",
+   "key_s",
+   "key_t",
+   "key_u",
+   "key_v",
+   "key_w",
+   "key_x",
+   "key_y",
+   "key_z",
+   "key_space",
+   "key_del",
+   "key_shift",
+   "key_sym",
+   "key_ok",
+   "input_show",
+   "title"
+  ],
+  "new": [],
+  "gone": [
+   "ok_timer",
+   "input",
+   "refresh_show",
+   "temp",
+   "inputlenth"
+  ]
+ },
+ "wifi_list": {
+  "page": "wifi_list",
+  "screen": "wifi_list",
+  "same": [
+   "back_btn",
+   "refresh_btn",
+   "prev_btn",
+   "next_btn",
+   "row1",
+   "row2",
+   "row3",
+   "row4",
+   "row5",
+   "nav_settings",
+   "nav_files",
+   "nav_adjust",
+   "nav_main",
+   "title",
+   "saved_btn",
+   "hidden_btn"
+  ],
+  "new": [],
+  "gone": [
+   "row1_txt",
+   "row2_txt",
+   "row3_txt",
+   "row4_txt",
+   "touch",
+   "sleep_counter",
+   "row5_txt"
+  ]
+ },
+ "wifi_success": {
+  "page": "wifi_connected",
+  "screen": "wifi_connected",
+  "same": [
+   "ok",
+   "msg"
+  ],
+  "new": [],
+  "gone": [
+   "popup_bg"
+  ]
+ },
+ "zoffset": {
+  "page": "z_offset_table",
+  "screen": "z_offset_table",
+  "same": [
+   "back_btn"
+  ],
+  "new": [
+   "title"
+  ],
+  "gone": [
+   "cell_0",
+   "cell_1",
+   "cell_2",
+   "cell_3",
+   "cell_4",
+   "cell_5",
+   "cell_6",
+   "cell_7",
+   "cell_8",
+   "cell_9",
+   "cell_10",
+   "cell_11",
+   "cell_12",
+   "cell_13",
+   "cell_14",
+   "cell_15",
+   "cell_16",
+   "cell_17",
+   "cell_18",
+   "cell_19",
+   "cell_20",
+   "cell_21",
+   "cell_22",
+   "cell_23",
+   "cell_24",
+   "cell_25",
+   "cell_26",
+   "cell_27",
+   "cell_28",
+   "cell_29"
+  ]
+ }
+}

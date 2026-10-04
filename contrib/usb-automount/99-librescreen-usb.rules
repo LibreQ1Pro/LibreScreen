@@ -1,0 +1,2 @@
+# Mount USB drive partitions with librescreen-usb-mount@<name>.service
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd[a-z]*", ENV{ID_BUS}=="usb", ENV{ID_FS_USAGE}=="filesystem", TAG+="systemd", ENV{SYSTEMD_WANTS}+="librescreen-usb-mount@%k.service"

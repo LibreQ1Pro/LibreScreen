@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+display_firmware/out/
+monkey_out/

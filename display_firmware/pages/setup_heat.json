@@ -1,0 +1,803 @@
+{
+ "name": "setup_heat",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  title.txt=\"装载耗材(3/3)\"",
+    "  msg_heat.txt=\"点击上方加减按钮，开始加热并设\\r置温度。\"",
+    "  msg_wait.txt=\"等待温度达到设定温度。\"",
+    "}else if(lang==1)",
+    "{",
+    "  title.txt=\"Загрузка (3/3)\"",
+    "  msg_heat.txt=\"Нажмите «-» или «+» выше,\\rчтобы начать нагрев и\\rзадать температуру сопла.\"",
+    "  msg_wait.txt=\"Ожидание достижения\\rзаданной температуры.\"",
+    "}else if(lang==2)",
+    "{",
+    "  title.txt=\"Load Filament (3/3)\"",
+    "  msg_heat.txt=\"Tap the “-” or “+” button above\\rto start heating and set the\\rnozzle temperature.\"",
+    "  msg_wait.txt=\"Waiting for the temperature\\rto reach the set value.\"",
+    "}else if(lang==3)",
+    "{",
+    "  title.txt=\"フィラメント装填 (3/3)\"",
+    "  msg_heat.txt=\"上の「-」または「+」をタップし\\rて加熱を開始し、ノズル温度を設\\r定します。\"",
+    "  msg_wait.txt=\"設定温度に達するのを待ってい\\rます。\"",
+    "}else if(lang==4)",
+    "{",
+    "  title.txt=\"Charger le filament (3/3)\"",
+    "  msg_heat.txt=\"Appuyez sur « - » ou « + »\\rci-dessus pour lancer le\\rchauffage et régler la\\rtempérature de la buse.\"",
+    "  msg_wait.txt=\"Attente que la température\\ratteigne la valeur réglée.\"",
+    "}else if(lang==5)",
+    "{",
+    "  title.txt=\"Filament laden (3/3)\"",
+    "  msg_heat.txt=\"Tippen Sie oben auf „-“ oder\\r„+“, um zu heizen und die\\rTemperatur einzustellen.\"",
+    "  msg_wait.txt=\"Warten, bis die eingestellte\\rTemperatur erreicht ist.\"",
+    "}else if(lang==6)",
+    "{",
+    "  title.txt=\"Carica filamento (3/3)\"",
+    "  msg_heat.txt=\"Tocca “-” o “+” sopra per avviare\\ril riscaldamento e impostare la\\rtemperatura dell'ugello.\"",
+    "  msg_wait.txt=\"In attesa che la temperatura\\rraggiunga il valore\\rimpostato.\"",
+    "}else if(lang==7)",
+    "{",
+    "  title.txt=\"Cargar filamento (3/3)\"",
+    "  msg_heat.txt=\"Pulse “-” o “+” arriba para iniciar\\rel calentamiento y ajustar la\\rtemperatura de la boquilla.\"",
+    "  msg_wait.txt=\"Esperando a que la\\rtemperatura alcance el valor\\rajustado.\"",
+    "}else if(lang==8)",
+    "{",
+    "  title.txt=\"필라멘트 로드 (3/3)\"",
+    "  msg_heat.txt=\"위의 “-” 또는 “+”를 눌러 가열을\\r시작하고 노즐 온도를 설정하세요.\"",
+    "  msg_wait.txt=\"설정 온도에 도달하기를 기다리는\\r중입니다.\"",
+    "}else if(lang==9)",
+    "{",
+    "  title.txt=\"Carregar filamento (3/3)\"",
+    "  msg_heat.txt=\"Toque em “-” ou “+” acima para\\riniciar o aquecimento e definir\\ra temperatura do bico.\"",
+    "  msg_wait.txt=\"Aguardando a temperatura\\ratingir o valor definido.\"",
+    "}else if(lang==10)",
+    "{",
+    "  title.txt=\"تحميل الخيط (3/3)\"",
+    "  msg_heat.txt=\"اضغط على «-» أو «+» أعلاه لبدء\\rالتسخين وضبط درجة حرارة\\rالفوهة.\"",
+    "  msg_wait.txt=\"في انتظار وصول الحرارة إلى\\rالقيمة المحددة.\"",
+    "}else if(lang==11)",
+    "{",
+    "  title.txt=\"Filament yükle (3/3)\"",
+    "  msg_heat.txt=\"Isıtmayı başlatmak ve nozul\\rsıcaklığını ayarlamak için\\ryukarıdaki “-” veya “+”\\rdüğmesine dokunun.\"",
+    "  msg_wait.txt=\"Sıcaklığın ayar değerine\\rulaşması bekleniyor.\"",
+    "}else if(lang==12)",
+    "{",
+    "  title.txt=\"טעינת נימה (3/3)\"",
+    "  msg_heat.txt=\"הקש על “-” או “+” למעלה כדי\\rלהתחיל לחמם ולהגדיר את\\rטמפרטורת הזרבובית.\"",
+    "  msg_wait.txt=\"ממתין שהטמפרטורה תגיע לערך\\rשהוגדר.\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "cur_str",
+   "type": "variable",
+   "attributes": {
+    "objname": "cur_str",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 1,
+    "txt": "",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {}
+  },
+  {
+   "key": "cur_val",
+   "type": "variable",
+   "attributes": {
+    "objname": "cur_val",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {}
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 16,
+    "y": 8,
+    "w": 240,
+    "h": 32,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t19"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Load Filament (3/3)",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bg2",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg2",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 52,
+    "w": 248,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:auto_level_preheat_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_card",
+   "type": "picture",
+   "attributes": {
+    "objname": "heat_card",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 52,
+    "w": 248,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:auto_level_preheat_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "nozzle_icon",
+   "type": "picture",
+   "attributes": {
+    "objname": "nozzle_icon",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 64,
+    "w": 26,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:filament_nozzle_icon_off"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_temp",
+   "type": "text",
+   "attributes": {
+    "objname": "heat_temp",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 56,
+    "y": 56,
+    "w": 52,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_d28"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 64459,
+    "xcen": 2,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "---",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_set",
+   "type": "text",
+   "attributes": {
+    "objname": "heat_set",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 111,
+    "y": 73,
+    "w": 34,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 27503,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "/ ---",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_unit",
+   "type": "text",
+   "attributes": {
+    "objname": "heat_unit",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 148,
+    "y": 73,
+    "w": 18,
+    "h": 20,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t13"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "°C",
+    "txt_maxl": 512,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "heat_toggle",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "heat_toggle",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 52,
+    "w": 248,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_down",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_down",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 110,
+    "w": 120,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:setup_heat_temp_down"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:setup_heat_temp_down_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "temp_up",
+   "type": "button",
+   "attributes": {
+    "objname": "temp_up",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 140,
+    "y": 110,
+    "w": 120,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:setup_heat_temp_up"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:setup_heat_temp_up_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "msg_heat",
+   "type": "text",
+   "attributes": {
+    "objname": "msg_heat",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 16,
+    "y": 177,
+    "w": 240,
+    "h": 82,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Tap the “-” or “+” button\\rabove to start heating and\\rset the nozzle temperature.",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "bg26",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg26",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 264,
+    "w": 248,
+    "h": 132,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:setup_heat_decor_1"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "msg_wait",
+   "type": "text",
+   "attributes": {
+    "objname": "msg_wait",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 323,
+    "w": 224,
+    "h": 62,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Waiting for the\\rtemperature to\\rreach the set. va.",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "next",
+   "type": "button",
+   "attributes": {
+    "objname": "next",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 196,
+    "y": 404,
+    "w": 64,
+    "h": 64,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:setup_heat_next_wait"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:setup_heat_next_wait_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "tmp_val.val=cur_val.val+10",
+     "if(tar_val.val>0&&tmp_val.val>=tar_val.val&&tmp_val.val>=185)",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 2,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "tar_val",
+   "type": "variable",
+   "attributes": {
+    "objname": "tar_val",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "tmp_val",
+   "type": "variable",
+   "attributes": {
+    "objname": "tmp_val",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

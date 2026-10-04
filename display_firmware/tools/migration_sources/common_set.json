@@ -1,0 +1,1225 @@
+{
+ "name": "common_set",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01420300000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_common_set"
+   }
+  },
+  "events": {
+   "codesload": [
+    "sys0=0",
+    "vis guide_txt,0",
+    "if(lang==0)",
+    "{",
+    "  tab_settings.txt=\"通用设置\"",
+    "  tab_calib.txt=\"校准设置\"",
+    "  lang_lbl.txt=\"语言\"",
+    "  network_lbl.txt=\"网络\"",
+    "  sysinfo_lbl.txt=\"系统信息\"",
+    "  sleep_lbl.txt=\"屏幕\"",
+    "  reset_lbl.txt=\"恢复出厂设置\"",
+    "  guide_txt.txt=\"开机引导\"",
+    "}else if(lang==1)",
+    "{",
+    "  tab_settings.txt=\"Общие\"",
+    "  tab_calib.txt=\"Калибровка\"",
+    "  lang_lbl.txt=\"Язык\"",
+    "  network_lbl.txt=\"Сеть\"",
+    "  sysinfo_lbl.txt=\"Статус Klipper\"",
+    "  sleep_lbl.txt=\"Экран\"",
+    "  reset_lbl.txt=\"Сброс к заводским\\rнастройкам\"",
+    "  guide_txt.txt=\"Мастер настройки\"",
+    "}else if(lang==2)",
+    "{",
+    "  tab_settings.txt=\"General\"",
+    "  tab_calib.txt=\"Calibration\"",
+    "  lang_lbl.txt=\"Language\"",
+    "  network_lbl.txt=\"Network\"",
+    "  sysinfo_lbl.txt=\"Klipper Status\"",
+    "  sleep_lbl.txt=\"Screen\"",
+    "  reset_lbl.txt=\"Restore Factory\\rSettings\"",
+    "  guide_txt.txt=\"Setup Guide\"",
+    "}else if(lang==3)",
+    "{",
+    "  tab_settings.txt=\"一般\"",
+    "  tab_calib.txt=\"キャリブレーション\"",
+    "  lang_lbl.txt=\"言語\"",
+    "  network_lbl.txt=\"ネットワーク\"",
+    "  sysinfo_lbl.txt=\"Klipperステータス\"",
+    "  sleep_lbl.txt=\"画面\"",
+    "  reset_lbl.txt=\"工場出荷時の設定に戻す\"",
+    "  guide_txt.txt=\"初期設定ガイド\"",
+    "}else if(lang==4)",
+    "{",
+    "  tab_settings.txt=\"Général\"",
+    "  tab_calib.txt=\"Calibrage\"",
+    "  lang_lbl.txt=\"Langue\"",
+    "  network_lbl.txt=\"Réseau\"",
+    "  sysinfo_lbl.txt=\"État de Klipper\"",
+    "  sleep_lbl.txt=\"Écran\"",
+    "  reset_lbl.txt=\"Rétablir les réglages\\rd'usine\"",
+    "  guide_txt.txt=\"Guide de démarrage\"",
+    "}else if(lang==5)",
+    "{",
+    "  tab_settings.txt=\"Allgemein\"",
+    "  tab_calib.txt=\"Kalibrierung\"",
+    "  lang_lbl.txt=\"Sprache\"",
+    "  network_lbl.txt=\"Netzwerk\"",
+    "  sysinfo_lbl.txt=\"Klipper-Status\"",
+    "  sleep_lbl.txt=\"Bildschirm\"",
+    "  sleep_lbl.font=${font:font_small14}",
+    "  reset_lbl.txt=\"Werkseinstellungen\\rwiederherstellen\"",
+    "  guide_txt.txt=\"Einrichtung\"",
+    "}else if(lang==6)",
+    "{",
+    "  tab_settings.txt=\"Generale\"",
+    "  tab_calib.txt=\"Calibrazione\"",
+    "  tab_calib.font=${font:font_small14}",
+    "  tab_settings.font=${font:font_small14}",
+    "  lang_lbl.txt=\"Lingua\"",
+    "  network_lbl.txt=\"Rete\"",
+    "  sysinfo_lbl.txt=\"Stato di Klipper\"",
+    "  sleep_lbl.txt=\"Schermo\"",
+    "  reset_lbl.txt=\"Ripristino di fabbrica\"",
+    "  guide_txt.txt=\"Guida iniziale\"",
+    "}else if(lang==7)",
+    "{",
+    "  tab_settings.txt=\"General\"",
+    "  tab_calib.txt=\"Calibración\"",
+    "  tab_settings.font=${font:font_small14}",
+    "  lang_lbl.txt=\"Idioma\"",
+    "  network_lbl.txt=\"Red\"",
+    "  sysinfo_lbl.txt=\"Estado de Klipper\"",
+    "  sleep_lbl.txt=\"Pantalla\"",
+    "  reset_lbl.txt=\"Restaurar ajustes de\\rfábrica\"",
+    "  guide_txt.txt=\"Guía de inicio\"",
+    "}else if(lang==8)",
+    "{",
+    "  tab_settings.txt=\"일반\"",
+    "  tab_calib.txt=\"보정\"",
+    "  lang_lbl.txt=\"언어\"",
+    "  network_lbl.txt=\"네트워크\"",
+    "  sysinfo_lbl.txt=\"Klipper 상태\"",
+    "  sleep_lbl.txt=\"화면\"",
+    "  reset_lbl.txt=\"공장 초기화\"",
+    "  guide_txt.txt=\"시작 가이드\"",
+    "}else if(lang==9)",
+    "{",
+    "  tab_settings.txt=\"Geral\"",
+    "  tab_calib.txt=\"Calibração\"",
+    "  tab_settings.font=${font:font_small14}",
+    "  lang_lbl.txt=\"Idioma\"",
+    "  network_lbl.txt=\"Rede\"",
+    "  sysinfo_lbl.txt=\"Status do Klipper\"",
+    "  sleep_lbl.txt=\"Tela\"",
+    "  reset_lbl.txt=\"Restaurar de fábrica\"",
+    "  guide_txt.txt=\"Guia inicial\"",
+    "}else if(lang==10)",
+    "{",
+    "  tab_settings.txt=\"عام\"",
+    "  tab_calib.txt=\"المعايرة\"",
+    "  lang_lbl.txt=\"اللغة\"",
+    "  network_lbl.txt=\"الشبكة\"",
+    "  sysinfo_lbl.txt=\"حالة Klipper\"",
+    "  sleep_lbl.txt=\"الشاشة\"",
+    "  reset_lbl.txt=\"استعادة إعدادات المصنع\"",
+    "  guide_txt.txt=\"دليل الإعداد\"",
+    "}else if(lang==11)",
+    "{",
+    "  tab_settings.txt=\"Genel\"",
+    "  tab_calib.txt=\"Kalibrasyon\"",
+    "  tab_calib.font=${font:font_small14}",
+    "  lang_lbl.txt=\"Dil\"",
+    "  network_lbl.txt=\"Ağ\"",
+    "  sysinfo_lbl.txt=\"Klipper durumu\"",
+    "  sleep_lbl.txt=\"Ekran\"",
+    "  reset_lbl.txt=\"Fabrika ayarlarına\\rdön\"",
+    "  guide_txt.txt=\"Kurulum kılavuzu\"",
+    "}else if(lang==12)",
+    "{",
+    "  tab_settings.txt=\"כללי\"",
+    "  tab_calib.txt=\"כיול\"",
+    "  lang_lbl.txt=\"שפה\"",
+    "  network_lbl.txt=\"רשת\"",
+    "  sysinfo_lbl.txt=\"מצב Klipper\"",
+    "  sleep_lbl.txt=\"מסך\"",
+    "  reset_lbl.txt=\"שחזור הגדרות יצרן\"",
+    "  guide_txt.txt=\"מדריך הפעלה\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "nav_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 200,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 33,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_files",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_files",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_files"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_files_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 32,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_adjust",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_adjust",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 72,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_adjust"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_adjust_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 31,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_main",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_main",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_main"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_main_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 30,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "tab_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "tab_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 5,
+    "w": 130,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_tab_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_tab_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "General",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "sys0+=1",
+     "if(sys0==5)",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 23,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  wepo 2,100",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "tab_calib",
+   "type": "button",
+   "attributes": {
+    "objname": "tab_calib",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 6,
+    "y": 5,
+    "w": 130,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_tab_calib"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_tab_calib_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Calibration",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 22,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "lang_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 66,
+    "w": 242,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_lang_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_lang_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "lang_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 66,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Language",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_btn,1"
+    ],
+    "codesup": [
+     "click lang_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "network_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "network_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 116,
+    "w": 242,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_lang_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_lang_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "network_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "network_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 116,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Network",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click network_btn,1"
+    ],
+    "codesup": [
+     "click network_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "sysinfo_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "sysinfo_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 166,
+    "w": 242,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_lang_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_lang_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "sysinfo_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "sysinfo_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 166,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Klipper Status",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click sysinfo_btn,1"
+    ],
+    "codesup": [
+     "click sysinfo_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "sleep_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "sleep_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 216,
+    "w": 242,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_lang_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_lang_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "sleep_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "sleep_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 216,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Screen",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click sleep_btn,1"
+    ],
+    "codesup": [
+     "click sleep_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "reset_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "reset_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 266,
+    "w": 242,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:common_set_reset_oobe_off"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:common_set_reset_oobe_off_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "if(reset_btn.pic==${picture:common_set_reset_oobe_off})",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 6,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}else if(reset_btn.pic==${picture:common_set_reset_oobe_on})",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 7,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  wepo lang,100",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "reset_lbl",
+   "type": "text",
+   "attributes": {
+    "objname": "reset_lbl",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 28,
+    "y": 266,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Restore Factory\r\nSettings",
+    "txt_maxl": 100,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click reset_btn,1"
+    ],
+    "codesup": [
+     "click reset_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "guide_txt",
+   "type": "text",
+   "attributes": {
+    "objname": "guide_txt",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 0,
+    "w": 203,
+    "h": 48,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Setup Guide",
+    "txt_maxl": 40,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "sleep_counter",
+   "type": "timer",
+   "attributes": {
+    "objname": "sleep_counter",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "if(reset_btn.pic==${picture:common_set_reset_oobe_on})",
+     "{",
+     "  reset_lbl.txt=guide_txt.txt",
+     "}",
+     "sleep_counts+=1",
+     "if(sleep_counts==sleep_time)",
+     "{",
+     "  prints 0x65,1",
+     "  prints 4,1",
+     "  prints 1,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "touch",
+   "type": "touch_capture",
+   "attributes": {
+    "objname": "touch",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [
+     "sleep_counts=0",
+     "dim=max_dim"
+    ],
+    "codesup": []
+   }
+  }
+ ]
+}

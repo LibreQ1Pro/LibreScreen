@@ -1,0 +1,2368 @@
+{
+ "name": "wifi_kb",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_keyboard"
+   }
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  title.txt=\"输入密码\"",
+    "}else if(lang==1)",
+    "{",
+    "  title.txt=\"Введите пароль\"",
+    "}else if(lang==2)",
+    "{",
+    "  title.txt=\"Enter Password\"",
+    "}else if(lang==3)",
+    "{",
+    "  title.txt=\"パスワードを入力\"",
+    "}else if(lang==4)",
+    "{",
+    "  title.txt=\"Saisir le mot de\\rpasse\"",
+    "}else if(lang==5)",
+    "{",
+    "  title.txt=\"Passwort\\reingeben\"",
+    "}else if(lang==6)",
+    "{",
+    "  title.txt=\"Inserisci la\\rpassword\"",
+    "}else if(lang==7)",
+    "{",
+    "  title.txt=\"Introduzca la\\rcontraseña\"",
+    "}else if(lang==8)",
+    "{",
+    "  title.txt=\"비밀번호 입력\"",
+    "}else if(lang==9)",
+    "{",
+    "  title.txt=\"Digite a senha\"",
+    "}else if(lang==10)",
+    "{",
+    "  title.txt=\"أدخل كلمة المرور\"",
+    "}else if(lang==11)",
+    "{",
+    "  title.txt=\"Parolayı girin\"",
+    "}else if(lang==12)",
+    "{",
+    "  title.txt=\"הזן סיסמה\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "back_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "back_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 0,
+    "y": 0,
+    "w": 272,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_back_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_back_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "key_a",
+   "type": "button",
+   "attributes": {
+    "objname": "key_a",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 123,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "a",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_a.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_b",
+   "type": "button",
+   "attributes": {
+    "objname": "key_b",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 123,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "b",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_b.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_c",
+   "type": "button",
+   "attributes": {
+    "objname": "key_c",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 123,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "c",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_c.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_d",
+   "type": "button",
+   "attributes": {
+    "objname": "key_d",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 123,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "d",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_d.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_e",
+   "type": "button",
+   "attributes": {
+    "objname": "key_e",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 173,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "e",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_e.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_f",
+   "type": "button",
+   "attributes": {
+    "objname": "key_f",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 173,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "f",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_f.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_g",
+   "type": "button",
+   "attributes": {
+    "objname": "key_g",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 173,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "g",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_g.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_h",
+   "type": "button",
+   "attributes": {
+    "objname": "key_h",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 173,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "h",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_h.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_i",
+   "type": "button",
+   "attributes": {
+    "objname": "key_i",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 223,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "i",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_i.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_j",
+   "type": "button",
+   "attributes": {
+    "objname": "key_j",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 223,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "j",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_j.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_k",
+   "type": "button",
+   "attributes": {
+    "objname": "key_k",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 223,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "k",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_k.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_l",
+   "type": "button",
+   "attributes": {
+    "objname": "key_l",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 223,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "l",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_l.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_m",
+   "type": "button",
+   "attributes": {
+    "objname": "key_m",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 273,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "m",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_m.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_n",
+   "type": "button",
+   "attributes": {
+    "objname": "key_n",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 273,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "n",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_n.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_o",
+   "type": "button",
+   "attributes": {
+    "objname": "key_o",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 273,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "o",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_o.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_p",
+   "type": "button",
+   "attributes": {
+    "objname": "key_p",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 273,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "p",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_p.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_q",
+   "type": "button",
+   "attributes": {
+    "objname": "key_q",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 323,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "q",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_q.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_r",
+   "type": "button",
+   "attributes": {
+    "objname": "key_r",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 323,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "r",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_r.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_s",
+   "type": "button",
+   "attributes": {
+    "objname": "key_s",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 323,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "s",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_s.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_t",
+   "type": "button",
+   "attributes": {
+    "objname": "key_t",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 323,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "t",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_t.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_u",
+   "type": "button",
+   "attributes": {
+    "objname": "key_u",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 373,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "u",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_u.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_v",
+   "type": "button",
+   "attributes": {
+    "objname": "key_v",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 373,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "v",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_v.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_w",
+   "type": "button",
+   "attributes": {
+    "objname": "key_w",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 373,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "w",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_w.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_x",
+   "type": "button",
+   "attributes": {
+    "objname": "key_x",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 165,
+    "y": 373,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "x",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_x.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_y",
+   "type": "button",
+   "attributes": {
+    "objname": "key_y",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 15,
+    "y": 423,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "y",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_y.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_z",
+   "type": "button",
+   "attributes": {
+    "objname": "key_z",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 65,
+    "y": 423,
+    "w": 42,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_a"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_a_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "z",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=key_z.txt",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_space",
+   "type": "button",
+   "attributes": {
+    "objname": "key_space",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 115,
+    "y": 423,
+    "w": 92,
+    "h": 42,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_space"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_space_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<inputlenth.val)",
+     "{",
+     "  input.txt+=\" \"",
+     "  input_show.txt=input.txt",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "key_del",
+   "type": "button",
+   "attributes": {
+    "objname": "key_del",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 215,
+    "y": 123,
+    "w": 42,
+    "h": 92,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_del"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_del_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "input.txt-=1",
+     "input_show.txt=input.txt"
+    ]
+   }
+  },
+  {
+   "key": "key_shift",
+   "type": "button",
+   "attributes": {
+    "objname": "key_shift",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 215,
+    "y": 223,
+    "w": 42,
+    "h": 67,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_shift"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_shift_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "if(key_shift.pic==${picture:wifi_kb_key_shift_off})",
+     "{",
+     "  key_shift.pic=${picture:wifi_kb_key_shift}",
+     "  key_shift.pic2=${picture:wifi_kb_key_shift_press}",
+     "}else if(key_shift.pic==${picture:wifi_kb_key_shift})",
+     "{",
+     "  key_shift.pic=${picture:wifi_kb_key_shift_off}",
+     "  key_shift.pic2=${picture:wifi_kb_key_shift_press_42x67}",
+     "}else if(key_shift.txt==\"1/2\")",
+     "{",
+     "  key_shift.txt=\"2/2\"",
+     "}else if(key_shift.txt==\"2/2\")",
+     "{",
+     "  key_shift.txt=\"1/2\"",
+     "}",
+     "click refresh_show,0"
+    ]
+   }
+  },
+  {
+   "key": "key_sym",
+   "type": "button",
+   "attributes": {
+    "objname": "key_sym",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 215,
+    "y": 298,
+    "w": 42,
+    "h": 67,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_small14"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_sym"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_sym_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "123,.",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "if(key_sym.txt==\"123,.\")",
+     "{",
+     "  key_sym.txt=\"abc\"",
+     "  key_shift.pic=${picture:wifi_kb_key_shift_sym_page}",
+     "  key_shift.pic2=${picture:wifi_kb_key_sym_press}",
+     "  key_shift.txt=\"1/2\"",
+     "}else",
+     "{",
+     "  key_sym.txt=\"123,.\"",
+     "  key_shift.pic=${picture:wifi_kb_key_shift}",
+     "  key_shift.pic2=${picture:wifi_kb_key_shift_press}",
+     "  key_shift.txt=\"\"",
+     "}",
+     "click refresh_show,0"
+    ]
+   }
+  },
+  {
+   "key": "key_ok",
+   "type": "button",
+   "attributes": {
+    "objname": "key_ok",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 215,
+    "y": 373,
+    "w": 42,
+    "h": 92,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:wifi_kb_key_ok"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:wifi_kb_key_ok_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 5,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "if(temp.val>=kbmin)",
+     "{",
+     "  prints 112,1",
+     "  prints kbmode,1",
+     "  prints sys2,1",
+     "  prints input_show.txt,0",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "input_show",
+   "type": "text",
+   "attributes": {
+    "objname": "input_show",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 51,
+    "w": 248,
+    "h": 71,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "",
+    "txt_maxl": 64,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 50,
+    "y": 0,
+    "w": 172,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Enter Password",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click back_btn,1"
+    ],
+    "codesup": [
+     "click back_btn,0"
+    ]
+   }
+  },
+  {
+   "key": "ok_timer",
+   "type": "timer",
+   "attributes": {
+    "objname": "ok_timer",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 100,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "btlen input.txt,temp.val",
+     "if(temp.val<kbmin)",
+     "{",
+     "  key_ok.pic=${picture:wifi_kb_key_ok_press}",
+     "}else",
+     "{",
+     "  key_ok.pic=${picture:wifi_kb_key_ok}",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "input",
+   "type": "variable",
+   "attributes": {
+    "objname": "input",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 1,
+    "txt": "",
+    "txt_maxl": 64,
+    "val": 0
+   },
+   "events": {}
+  },
+  {
+   "key": "refresh_show",
+   "type": "touch_hotspot",
+   "attributes": {
+    "objname": "refresh_show",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 272,
+    "y": 0,
+    "w": 95,
+    "h": 60,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "if(key_shift.pic==${picture:wifi_kb_key_shift})",
+     "{",
+     "  key_a.txt=\"a\"",
+     "  key_b.txt=\"b\"",
+     "  key_c.txt=\"c\"",
+     "  key_d.txt=\"d\"",
+     "  key_e.txt=\"e\"",
+     "  key_f.txt=\"f\"",
+     "  key_g.txt=\"g\"",
+     "  key_h.txt=\"h\"",
+     "  key_i.txt=\"i\"",
+     "  key_j.txt=\"j\"",
+     "  key_k.txt=\"k\"",
+     "  key_l.txt=\"l\"",
+     "  key_m.txt=\"m\"",
+     "  key_n.txt=\"n\"",
+     "  key_o.txt=\"o\"",
+     "  key_p.txt=\"p\"",
+     "  key_q.txt=\"q\"",
+     "  key_r.txt=\"r\"",
+     "  key_s.txt=\"s\"",
+     "  key_t.txt=\"t\"",
+     "  key_u.txt=\"u\"",
+     "  key_v.txt=\"v\"",
+     "  key_w.txt=\"w\"",
+     "  key_x.txt=\"x\"",
+     "  key_y.txt=\"y\"",
+     "  key_z.txt=\"z\"",
+     "}else if(key_shift.pic==${picture:wifi_kb_key_shift_off})",
+     "{",
+     "  key_a.txt=\"A\"",
+     "  key_b.txt=\"B\"",
+     "  key_c.txt=\"C\"",
+     "  key_d.txt=\"D\"",
+     "  key_e.txt=\"E\"",
+     "  key_f.txt=\"F\"",
+     "  key_g.txt=\"G\"",
+     "  key_h.txt=\"H\"",
+     "  key_i.txt=\"I\"",
+     "  key_j.txt=\"J\"",
+     "  key_k.txt=\"K\"",
+     "  key_l.txt=\"L\"",
+     "  key_m.txt=\"M\"",
+     "  key_n.txt=\"N\"",
+     "  key_o.txt=\"O\"",
+     "  key_p.txt=\"P\"",
+     "  key_q.txt=\"Q\"",
+     "  key_r.txt=\"R\"",
+     "  key_s.txt=\"S\"",
+     "  key_t.txt=\"T\"",
+     "  key_u.txt=\"U\"",
+     "  key_v.txt=\"V\"",
+     "  key_w.txt=\"W\"",
+     "  key_x.txt=\"X\"",
+     "  key_y.txt=\"Y\"",
+     "  key_z.txt=\"Z\"",
+     "}else if(key_shift.txt==\"1/2\")",
+     "{",
+     "  key_a.txt=\"1\"",
+     "  key_b.txt=\"2\"",
+     "  key_c.txt=\"3\"",
+     "  key_d.txt=\"4\"",
+     "  key_e.txt=\"5\"",
+     "  key_f.txt=\"6\"",
+     "  key_g.txt=\"7\"",
+     "  key_h.txt=\"8\"",
+     "  key_i.txt=\"9\"",
+     "  key_j.txt=\"0\"",
+     "  key_k.txt=\"-\"",
+     "  key_l.txt=\"/\"",
+     "  key_m.txt=\":\"",
+     "  key_n.txt=\";\"",
+     "  key_o.txt=\"(\"",
+     "  key_p.txt=\")\"",
+     "  key_q.txt=\"$\"",
+     "  key_r.txt=\"&\"",
+     "  key_s.txt=\"@\"",
+     "  key_t.txt=\"\\\"\"",
+     "  key_u.txt=\".\"",
+     "  key_v.txt=\",\"",
+     "  key_w.txt=\"?\"",
+     "  key_x.txt=\"!\"",
+     "  key_y.txt=\"‘\"",
+     "  key_z.txt=\"’\"",
+     "}else if(key_shift.txt==\"2/2\")",
+     "{",
+     "  key_a.txt=\"[\"",
+     "  key_b.txt=\"]\"",
+     "  key_c.txt=\"{\"",
+     "  key_d.txt=\"}\"",
+     "  key_e.txt=\"#\"",
+     "  key_f.txt=\"%\"",
+     "  key_g.txt=\"^\"",
+     "  key_h.txt=\"*\"",
+     "  key_i.txt=\"+\"",
+     "  key_j.txt=\"=\"",
+     "  key_k.txt=\"_\"",
+     "  key_l.txt=\"\\\\\"",
+     "  key_m.txt=\"|\"",
+     "  key_n.txt=\"~\"",
+     "  key_o.txt=\"<\"",
+     "  key_p.txt=\">\"",
+     "  key_q.txt=\"€\"",
+     "  key_r.txt=\"£\"",
+     "  key_s.txt=\"¥\"",
+     "  key_t.txt=\"•\"",
+     "  key_u.txt=\"`\"",
+     "  key_v.txt=\"“\"",
+     "  key_w.txt=\"”\"",
+     "  key_x.txt=\"、\"",
+     "  key_y.txt=\"《\"",
+     "  key_z.txt=\"》\"",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "temp",
+   "type": "variable",
+   "attributes": {
+    "objname": "temp",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {}
+  },
+  {
+   "key": "inputlenth",
+   "type": "variable",
+   "attributes": {
+    "objname": "inputlenth",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 64
+   },
+   "events": {}
+  }
+ ]
+}

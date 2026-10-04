@@ -1,0 +1,160 @@
+{
+ "name": "shutdown",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410000000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 4259
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"正在关机\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Выключение\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Shutting down…\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"シャットダウン中\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"ARRÊT EN COURS\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"WIRD HERUNTERGEFAHREN\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"ARRESTO IN CORSO\"",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"APAGANDO\"",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"종료 중\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"DESLIGANDO\"",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"جارٍ إيقاف التشغيل\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"KAPANIYOR\"",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"מכבה\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "ico1",
+   "type": "picture",
+   "attributes": {
+    "objname": "ico1",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 116,
+    "y": 170,
+    "w": 40,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:icon_power_off_40x40_5e23318d"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 16,
+    "y": 230,
+    "w": 240,
+    "h": 50,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 1,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 4259,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Shutting down…",
+    "txt_maxl": 150,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

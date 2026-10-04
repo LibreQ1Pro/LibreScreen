@@ -1,0 +1,987 @@
+{
+ "name": "open_language2",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_open_language"
+   }
+  },
+  "events": {
+   "codesload": [
+    "if(lang==8)",
+    "{",
+    "  lang_kr.pic=${picture:open_language_lang_cn_btn_selected}",
+    "  lang_kr_name.pco=65535",
+    "  lang_kr.pic2=${picture:open_language_lang_cn_btn_selected_press}",
+    "}else if(lang==9)",
+    "{",
+    "  lang_pt.pic=${picture:open_language_lang_cn_btn_selected}",
+    "  lang_pt_name.pco=65535",
+    "  lang_pt.pic2=${picture:open_language_lang_cn_btn_selected_press}",
+    "}else if(lang==10)",
+    "{",
+    "  lang_ar.pic=${picture:open_language_lang_cn_btn_selected}",
+    "  lang_ar_name.pco=65535",
+    "  lang_ar.pic2=${picture:open_language_lang_cn_btn_selected_press}",
+    "}else if(lang==11)",
+    "{",
+    "  lang_tr.pic=${picture:open_language_lang_cn_btn_selected}",
+    "  lang_tr_name.pco=65535",
+    "  lang_tr.pic2=${picture:open_language_lang_cn_btn_selected_press}",
+    "}else if(lang==12)",
+    "{",
+    "  lang_he.pic=${picture:open_language_lang_cn_btn_selected}",
+    "  lang_he_name.pco=65535",
+    "  lang_he.pic2=${picture:open_language_lang_cn_btn_selected_press}",
+    "}",
+    "if(lang==0)",
+    "{",
+    "  title.txt=\"语言选择(1/3)\"",
+    "  next.txt=\"下一步\"",
+    "  skip.txt=\"跳过\"",
+    "}else if(lang==1)",
+    "{",
+    "  title.txt=\"Язык (1/3)\"",
+    "  next.txt=\"Далее\"",
+    "  skip.txt=\"Пропустить\"",
+    "}else if(lang==2)",
+    "{",
+    "  title.txt=\"Language (1/3)\"",
+    "  next.txt=\"Next\"",
+    "  skip.txt=\"Skip\"",
+    "}else if(lang==3)",
+    "{",
+    "  title.txt=\"言語 (1/3)\"",
+    "  next.txt=\"次へ\"",
+    "  skip.txt=\"スキップ\"",
+    "}else if(lang==4)",
+    "{",
+    "  title.txt=\"Langue (1/3)\"",
+    "  next.txt=\"Suivant\"",
+    "  skip.txt=\"Ignorer\"",
+    "}else if(lang==5)",
+    "{",
+    "  title.txt=\"Sprache (1/3)\"",
+    "  next.txt=\"Weiter\"",
+    "  skip.txt=\"Überspringen\"",
+    "}else if(lang==6)",
+    "{",
+    "  title.txt=\"Lingua (1/3)\"",
+    "  next.txt=\"Avanti\"",
+    "  skip.txt=\"Salta\"",
+    "}else if(lang==7)",
+    "{",
+    "  title.txt=\"Idioma (1/3)\"",
+    "  next.txt=\"Siguiente\"",
+    "  skip.txt=\"Omitir\"",
+    "}else if(lang==8)",
+    "{",
+    "  title.txt=\"언어 (1/3)\"",
+    "  next.txt=\"다음\"",
+    "  skip.txt=\"건너뛰기\"",
+    "}else if(lang==9)",
+    "{",
+    "  title.txt=\"Idioma (1/3)\"",
+    "  next.txt=\"Avançar\"",
+    "  skip.txt=\"Pular\"",
+    "}else if(lang==10)",
+    "{",
+    "  title.txt=\"اللغة (1/3)\"",
+    "  next.txt=\"التالي\"",
+    "  skip.txt=\"تخطي\"",
+    "}else if(lang==11)",
+    "{",
+    "  title.txt=\"Dil (1/3)\"",
+    "  next.txt=\"İleri\"",
+    "  skip.txt=\"Atla\"",
+    "}else if(lang==12)",
+    "{",
+    "  title.txt=\"שפה (1/3)\"",
+    "  next.txt=\"הבא\"",
+    "  skip.txt=\"דלג\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 16,
+    "y": 0,
+    "w": 240,
+    "h": 38,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 0,
+    "ycen": 2,
+    "pw": 0,
+    "txt": "Language (1/3)",
+    "txt_maxl": 50,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "lang_kr",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_kr",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 54,
+    "w": 110,
+    "h": 66,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:lang_cn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:lang_cn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "lang=8",
+     "wepo lang,100",
+     "prints 0xa0,1",
+     "prints lang,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "page dp"
+    ]
+   }
+  },
+  {
+   "key": "lang_kr_name",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_kr_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 90,
+    "w": 98,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 48631,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "한국어",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_kr,1"
+    ],
+    "codesup": [
+     "click lang_kr,0"
+    ]
+   }
+  },
+  {
+   "key": "lang_pt",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_pt",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 144,
+    "y": 54,
+    "w": 110,
+    "h": 66,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:lang_cn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:lang_cn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "lang=9",
+     "wepo lang,100",
+     "prints 0xa0,1",
+     "prints lang,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "page dp"
+    ]
+   }
+  },
+  {
+   "key": "lang_pt_name",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_pt_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 150,
+    "y": 90,
+    "w": 98,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 48631,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Português",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_pt,1"
+    ],
+    "codesup": [
+     "click lang_pt,0"
+    ]
+   }
+  },
+  {
+   "key": "lang_ar",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_ar",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 130,
+    "w": 110,
+    "h": 66,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:lang_cn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:lang_cn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "lang=10",
+     "wepo lang,100",
+     "prints 0xa0,1",
+     "prints lang,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "page dp"
+    ]
+   }
+  },
+  {
+   "key": "lang_ar_name",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_ar_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 166,
+    "w": 98,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 48631,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "العربية",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_ar,1"
+    ],
+    "codesup": [
+     "click lang_ar,0"
+    ]
+   }
+  },
+  {
+   "key": "lang_tr",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_tr",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 144,
+    "y": 130,
+    "w": 110,
+    "h": 66,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:lang_cn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:lang_cn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "lang=11",
+     "wepo lang,100",
+     "prints 0xa0,1",
+     "prints lang,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "page dp"
+    ]
+   }
+  },
+  {
+   "key": "lang_tr_name",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_tr_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 150,
+    "y": 166,
+    "w": 98,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 48631,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Türkçe",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_tr,1"
+    ],
+    "codesup": [
+     "click lang_tr,0"
+    ]
+   }
+  },
+  {
+   "key": "lang_he",
+   "type": "button",
+   "attributes": {
+    "objname": "lang_he",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 206,
+    "w": 110,
+    "h": 66,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:lang_cn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:lang_cn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "lang=12",
+     "wepo lang,100",
+     "prints 0xa0,1",
+     "prints lang,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "page dp"
+    ]
+   }
+  },
+  {
+   "key": "lang_he_name",
+   "type": "text",
+   "attributes": {
+    "objname": "lang_he_name",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 24,
+    "y": 242,
+    "w": 98,
+    "h": 26,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 48631,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "עברית",
+    "txt_maxl": 20,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [
+     "click lang_he,1"
+    ],
+    "codesup": [
+     "click lang_he,0"
+    ]
+   }
+  },
+  {
+   "key": "next",
+   "type": "button",
+   "attributes": {
+    "objname": "next",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 141,
+    "y": 430,
+    "w": 123,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:open_language_next"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:open_language_next_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Next",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints 5,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "skip",
+   "type": "button",
+   "attributes": {
+    "objname": "skip",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 430,
+    "w": 123,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:open_language_next"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:open_language_next_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Skip",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints 5,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "prev_page",
+   "type": "button",
+   "attributes": {
+    "objname": "prev_page",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 364,
+    "w": 110,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:language2_prev_page"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:language2_prev_page_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "page ${page:open_language}"
+    ]
+   }
+  },
+  {
+   "key": "next_page",
+   "type": "button",
+   "attributes": {
+    "objname": "next_page",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 144,
+    "y": 364,
+    "w": 110,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:language2_next_page"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:language2_next_page_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

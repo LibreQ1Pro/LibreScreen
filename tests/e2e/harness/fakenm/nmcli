@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+"""
+A small stand-in for ``nmcli`` for the dev server (devserver.py): the subset librescreen/system/network.py uses, with a
+stateful Wi-Fi.  Three networks are in range and the password of each is its own name, so the list on the screen
+tells what to type:
+
+    "12345678"  "qwerty123"  "letmein99"
+
+State is kept in /tmp/fake_nm.json (connections, radio).  The wired interface is always connected.
+"""
+import json
+import os
+import sys
+import time
+import uuid
+
+STATE = "/tmp/fake_nm.json"
+WIFI_DEV, ETH_DEV = "wlan0", "eth0"
+NETWORKS = [("12345678", 82), ("qwerty123", 61), ("letmein99", 37)]    # ssid (= password), signal
+WIFI_MAC, ETH_MAC = "AA:BB:CC:00:00:01", "AA:BB:CC:00:00:02"
+NS = uuid.UUID("6f1d2a8e-0000-4000-8000-000000000001")
+
+
+def load():
+    try:
+        with open(STATE) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {"radio": True, "connections": [], "active": None}
+
+
+def save(st):
+    tmp = STATE + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(st, f)
+    os.replace(tmp, STATE)
+
+
+def esc(value):
+    return str(value).replace("\\", "\\\\").replace(":", "\\:")
+
+
+def fail(code, text):
+    sys.stderr.write("Error: %s\n" % text)
+    sys.exit(code)
+
+
+def find(st, uid):
+    for c in st["connections"]:
+        if c["uuid"] == uid:
+            return c
+    fail(10, "unknown connection '%s'." % uid)
+
+
+def wifi_state(st):
+    return "100 (connected)" if st["radio"] and st["active"] else (
+        "30 (disconnected)" if st["radio"] else "20 (unavailable)")
+
+
+def dev_values(st, dev):
+    if dev == ETH_DEV:
+        return {"GENERAL.STATE": "100 (connected)", "GENERAL.CON-UUID": str(uuid.uuid5(NS, "eth")),
+                "GENERAL.HWADDR": ETH_MAC, "IP4.ADDRESS[1]": "192.168.1.50/24", "IP4.GATEWAY": "192.168.1.1"}
+    vals = {"GENERAL.STATE": wifi_state(st), "GENERAL.CON-UUID": "", "GENERAL.HWADDR": WIFI_MAC,
+            "IP4.ADDRESS[1]": "", "IP4.GATEWAY": ""}
+    if st["radio"] and st["active"]:
+        vals.update({"GENERAL.CON-UUID": st["active"], "IP4.ADDRESS[1]": "192.168.1.77/24", "IP4.GATEWAY": "192.168.1.1"})
+    return vals
+
+
+def print_fields(fields, values):
+    """Terse output: one line per requested field (a field "X" also matches the values "X[1]")."""
+    for f in fields:
+        for key, value in values.items():
+            if key == f or key.startswith(f + "["):
+                print("%s:%s" % (key, esc(value)))
+
+
+def conn_values(c):
+    return {"802-11-wireless.ssid": c["ssid"], "connection.autoconnect": "yes" if c["autoconnect"] else "no",
+            "connection.timestamp": str(c["timestamp"]),
+            "802-11-wireless-security.key-mgmt": "wpa-psk" if c["psk"] else "", "connection.id": c["name"]}
+
+
+def main(argv):
+    terse, fields = False, []
+    args = list(argv)
+    rest = []
+    i = 0
+    while i < len(args):
+        a = args[i]
+        if a == "-t":
+            terse = True
+        elif a == "-f":
+            fields = args[i + 1].split(",")
+            i += 1
+        elif a == "-w":
+            i += 1
+        else:
+            rest.append(a)
+        i += 1
+    st = load()
+    if not rest:
+        fail(2, "missing command")
+    cmd = rest[0]
+
+    if cmd == "monitor":
+        last = None
+        while True:
+            try:
+                m = os.stat(STATE).st_mtime
+            except OSError:
+                m = 0
+            if last is not None and m != last:
+                print("changed", flush=True)
+            last = m
+            time.sleep(0.5)
+
+    if cmd == "radio":
+        if len(rest) == 2:
+            print("enabled" if st["radio"] else "disabled")
+        else:
+            st["radio"] = rest[2] == "on"
+            if not st["radio"]:
+                st["active"] = None
+            save(st)
+        return
+
+    if cmd == "dev":
+        sub = rest[1] if len(rest) > 1 else "status"
+        if sub == "show":
+            print_fields(fields, dev_values(st, rest[2]))
+        elif sub == "disconnect":
+            st["active"] = None
+            save(st)
+        elif sub == "wifi":
+            if rest[2] == "list":
+                if not st["radio"]:
+                    fail(1, "Wi-Fi is disabled.")
+                if "--rescan" in rest:
+                    time.sleep(1)
+                for ssid, signal in NETWORKS:
+                    print("%s:%d" % (esc(ssid), signal))
+            elif rest[2] == "connect":
+                ssid = rest[3]
+                psk = rest[rest.index("password") + 1] if "password" in rest else None
+                if not st["radio"]:
+                    fail(1, "Wi-Fi is disabled.")
+                if ssid not in [n[0] for n in NETWORKS]:
+                    fail(10, "No network with SSID '%s' found." % ssid)
+                time.sleep(2)           # associating
+                if psk != ssid:
+                    fail(4, "Connection activation failed: (7) Secrets were required, but not provided.")
+                st["connections"] = [c for c in st["connections"] if c["ssid"] != ssid]
+                uid = str(uuid.uuid4())
+                st["connections"].append({"name": ssid, "uuid": uid, "ssid": ssid, "psk": psk, "autoconnect": True,
+                                          "timestamp": int(time.time())})
+                st["active"] = uid
+                save(st)
+                print("Device '%s' successfully activated with '%s'." % (WIFI_DEV, uid))
+        else:       # dev (list)
+            for dev, kind in ((WIFI_DEV, "wifi"), (ETH_DEV, "ethernet")):
+                print("%s:%s" % (dev, kind))
+        return
+
+    if cmd == "con":
+        sub = rest[1] if len(rest) > 1 else "show"
+        if sub == "show" and len(rest) == 2:
+            for c in st["connections"]:
+                row = {"NAME": c["name"], "UUID": c["uuid"], "TYPE": "802-11-wireless",
+                       "ACTIVE": "yes" if st["active"] == c["uuid"] else "no"}
+                print(":".join(esc(row[f]) for f in fields))
+            row = {"NAME": "Wired", "UUID": str(uuid.uuid5(NS, "eth")), "TYPE": "802-3-ethernet", "ACTIVE": "yes"}
+            print(":".join(esc(row[f]) for f in fields))
+        elif sub == "show":                     # con show uuid X
+            print_fields(fields, conn_values(find(st, rest[3])))
+        elif sub == "delete":
+            c = find(st, rest[3])
+            st["connections"].remove(c)
+            if st["active"] == c["uuid"]:
+                st["active"] = None
+            save(st)
+        elif sub == "modify":
+            c = find(st, rest[3])
+            for k in range(4, len(rest) - 1, 2):
+                if rest[k] == "connection.autoconnect":
+                    c["autoconnect"] = rest[k + 1] == "yes"
+                elif rest[k] in ("wifi-sec.psk", "802-11-wireless-security.psk"):
+                    c["psk"] = rest[k + 1]
+            save(st)
+        elif sub == "up":
+            c = find(st, rest[3])
+            time.sleep(2)
+            if c["psk"] != c["ssid"]:
+                fail(4, "Connection activation failed: (7) Secrets were required, but not provided.")
+            c["timestamp"] = int(time.time())
+            st["active"] = c["uuid"]
+            save(st)
+        return
+    fail(2, "unsupported by the fake nmcli: %s" % " ".join(argv))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

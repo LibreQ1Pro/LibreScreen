@@ -1,0 +1,176 @@
+{
+ "name": "wifi_connect",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_message"
+   }
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"Wi-Fi正在连接...\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Подключение к Wi-Fi...\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Connecting to Wi-Fi...\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"Wi-Fiに接続しています...\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"Connexion au Wi-Fi...\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"Verbindung mit dem\\rWi-Fi...\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"Connessione al Wi-Fi...\"",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"Conectando al Wi-Fi...\"",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"Wi-Fi에 연결하는 중입니다...\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"Conectando ao Wi-Fi...\"",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"جارٍ الاتصال بشبكة Wi-Fi...\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"Wi-Fi'ye bağlanılıyor...\"",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"מתחבר ל-Wi-Fi...\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 77,
+    "w": 256,
+    "h": 234,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Connecting to Wi-Fi...",
+    "txt_maxl": 150,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "timeout_timer",
+   "type": "timer",
+   "attributes": {
+    "objname": "timeout_timer",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "count.val++",
+     "if(count.val==120)",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 0,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "count",
+   "type": "variable",
+   "attributes": {
+    "objname": "count",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 0,
+    "txt": "newtxt",
+    "txt_maxl": 10,
+    "val": 0
+   },
+   "events": {}
+  }
+ ]
+}

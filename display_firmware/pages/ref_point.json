@@ -1,0 +1,679 @@
+{
+ "name": "ref_point",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01410500000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 1,
+   "bco": 6339,
+   "pic": 65535
+  },
+  "events": {
+   "codesload": [
+    "if(lang==0)",
+    "{",
+    "  title.txt=\"正在调节平台参考点。\"",
+    "  msg.txt=\"选择数字并用上下按钮调整，直到\\r调平卡在喷嘴与平台之间移动会有\\r轻微的摩擦感。\"",
+    "}else if(lang==1)",
+    "{",
+    "  title.txt=\"Регулировка опорной\\rточки платформы.\"",
+    "  msg.txt=\"Выберите число и\\rрегулируйте кнопками со\\rстрелками вверх и вниз, пока\\rкалибровочный щуп не\\rначнёт двигаться между\\rсоплом и платформой с\\rлёгким трением.\"",
+    "}else if(lang==2)",
+    "{",
+    "  title.txt=\"Adjusting the platform\\rreference point.\"",
+    "  msg.txt=\"Select a number and adjust it\\rwith the up and down arrow\\rbuttons until the calibration\\rfeeler gauge moves between\\rthe nozzle and the platform\\rwith slight friction.\"",
+    "}else if(lang==3)",
+    "{",
+    "  title.txt=\"プラットフォームの基準点を\\r調整しています。\"",
+    "  msg.txt=\"数字を選び、上下の矢印ボタンで\\r、キャリブレーション用シックネ\\rスゲージがノズルとプラットフォ\\rームの間を軽い摩擦で動くまで調\\r整します。\"",
+    "}else if(lang==4)",
+    "{",
+    "  title.txt=\"Réglage du point de\\rréférence de la\\rplateforme.\"",
+    "  msg.txt=\"Sélectionnez un chiffre et\\rréglez-le avec les boutons\\rfléchés haut et bas jusqu'à ce\\rque la cale d'épaisseur\\rd'étalonnage glisse entre la\\rbuse et la plateforme avec un\\rléger frottement.\"",
+    "}else if(lang==5)",
+    "{",
+    "  title.txt=\"Referenzpunkt der\\rPlattform wird eingestellt.\"",
+    "  msg.txt=\"Wählen Sie eine Zahl und\\rstellen Sie sie mit den\\rPfeiltasten nach oben und\\runten ein, bis sich die\\rKalibrier-Fühlerlehre mit\\rleichtem Widerstand zwischen\\rDüse und Plattform bewegt.\"",
+    "}else if(lang==6)",
+    "{",
+    "  title.txt=\"Regolazione punto di\\rriferimento.\"",
+    "  msg.txt=\"Seleziona un numero e\\rregolalo con le frecce su e giù\\rfinché lo spessimetro di\\rcalibrazione scorre tra ugello e\\rpiattaforma con un leggero\\rattrito.\"",
+    "}else if(lang==7)",
+    "{",
+    "  title.txt=\"Ajuste del punto de\\rreferencia.\"",
+    "  msg.txt=\"Seleccione un número y\\rajústelo con las flechas hacia\\rarriba y abajo hasta que la\\rgalga de calibración se mueva\\rentre la boquilla y la\\rplataforma con un ligero roce.\"",
+    "}else if(lang==8)",
+    "{",
+    "  title.txt=\"플랫폼 기준점을 조정하는\\r중입니다.\"",
+    "  msg.txt=\"숫자를 선택하고 위/아래 화살표\\r버튼으로 교정용 두께 게이지가\\r노즐과 플랫폼 사이에서 약간의\\r마찰과 함께 움직일 때까지\\r조정하세요.\"",
+    "}else if(lang==9)",
+    "{",
+    "  title.txt=\"Ajustando o ponto de\\rreferência da plataforma.\"",
+    "  msg.txt=\"Selecione um número e ajuste\\rcom as setas para cima e para\\rbaixo até o calibre de folga se\\rmover entre o bico e a\\rplataforma com leve atrito.\"",
+    "}else if(lang==10)",
+    "{",
+    "  title.txt=\"جارٍ ضبط نقطة مرجع\\rالمنصة.\"",
+    "  msg.txt=\"اختر رقمًا واضبطه بزري\\rالسهم لأعلى ولأسفل حتى\\rيتحرك مقياس الفجوات بين\\rالفوهة والمنصة باحتكاك\\rخفيف.\"",
+    "}else if(lang==11)",
+    "{",
+    "  title.txt=\"Platform referans noktası\\rayarlanıyor.\"",
+    "  msg.txt=\"Bir sayı seçin ve kalibrasyon\\ryaprak mastarı nozul ile\\rplatform arasında hafif\\rsürtünmeyle hareket edene\\rkadar yukarı ve aşağı ok\\rdüğmeleriyle ayarlayın.\"",
+    "}else if(lang==12)",
+    "{",
+    "  title.txt=\"מכוונן את נקודת הייחוס של\\rהפלטפורמה.\"",
+    "  msg.txt=\"בחר מספר וכוונן אותו בחצים\\rלמעלה ולמטה עד שמד העובי נע\\rבין הזרבובית לפלטפורמה בחיכוך\\rקל.\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "bg0",
+   "type": "picture",
+   "attributes": {
+    "objname": "bg0",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 12,
+    "w": 248,
+    "h": 80,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:ref_point_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "art",
+   "type": "picture",
+   "attributes": {
+    "objname": "art",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 12,
+    "w": 248,
+    "h": 80,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "pic": {
+     "$ref": "picture:ref_point_decor"
+    }
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "cstep_001",
+   "type": "button",
+   "attributes": {
+    "objname": "cstep_001",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 100,
+    "w": 56,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_cstep_001"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_cstep_001_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "cstep_005",
+   "type": "button",
+   "attributes": {
+    "objname": "cstep_005",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 76,
+    "y": 100,
+    "w": 56,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_cstep_005"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_cstep_005_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "cstep_01",
+   "type": "button",
+   "attributes": {
+    "objname": "cstep_01",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 140,
+    "y": 100,
+    "w": 56,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_cstep_01"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_cstep_01_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "cstep_05",
+   "type": "button",
+   "attributes": {
+    "objname": "cstep_05",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 204,
+    "y": 100,
+    "w": 56,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_cstep_05"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_cstep_05_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 3,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "z_up",
+   "type": "button",
+   "attributes": {
+    "objname": "z_up",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 154,
+    "w": 120,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_z_up"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_z_up_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 4,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "z_down",
+   "type": "button",
+   "attributes": {
+    "objname": "z_down",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 140,
+    "y": 154,
+    "w": 120,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:ref_point_z_down"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:ref_point_z_down_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 5,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "attributes": {
+    "objname": "title",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 199,
+    "w": 248,
+    "h": 80,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t19"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 27871,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Adjusting the platform\\rreference point.",
+    "txt_maxl": 512,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 16,
+    "y": 274,
+    "w": 240,
+    "h": 142,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 42294,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Select a number and adjust\\rit with the up and down\\rarrow buttons until the\\rcalibration feeler gauge\\rmoves between the nozzle\\rand the platform with\\rslight friction.",
+    "txt_maxl": 842,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  },
+  {
+   "key": "enter_btn",
+   "type": "button",
+   "attributes": {
+    "objname": "enter_btn",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 12,
+    "y": 420,
+    "w": 248,
+    "h": 46,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 0,
+    "borderc": 0,
+    "borderw": 0,
+    "font": {
+     "$ref": "font:font_t16"
+    },
+    "pic": {
+     "$ref": "picture:level_preheat_enter_btn"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_preheat_enter_btn_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 63422,
+    "pco2": 63422,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 1,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "sys0=1",
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 6,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  }
+ ]
+}

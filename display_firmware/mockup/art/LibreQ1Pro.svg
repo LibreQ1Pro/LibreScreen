@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">LibreQ1Pro</title>
+  <desc id="desc">Isometric hexagonal Q-shaped cube logo: white and blue ring with a Q tail on a dark rounded square.</desc>
+  <rect width="512" height="512" rx="64" fill="#181818"/>
+  <path fill="#F7F7F7" d="M405.0 160.0 L256.0 74.0 L107.0 160.0 L107.0 332.0 L256.0 418.0 L256.0 364.9 L153.0 305.4 L153.0 186.6 L256.0 127.1 L359.0 186.6 Z"/>
+  <path fill="#3979FF" d="M405.0 160.0 L405.0 332.0 L256.0 418.0 L256.0 364.9 L359.0 305.4 L359.0 186.6 Z"/>
+  <path fill="#292829" d="M256.0 246.0 L343.0 195.8 L343.0 296.2 L256.0 346.4 Z"/>
+  <path fill="#3979FF" d="M309.1 336.1 L395.7 386.1 L372.7 425.9 L286.1 375.9 Z"/>
+</svg>

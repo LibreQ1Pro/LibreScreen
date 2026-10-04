@@ -1,0 +1,803 @@
+{
+ "name": "level_mode",
+ "header": {
+  "lock": "0000000000552100",
+  "writer": "01420300000000000000000000000000"
+ },
+ "root": {
+  "attributes": {
+   "vscope": 0,
+   "drag": 0,
+   "sendkey": 0,
+   "aph": 127,
+   "movex": 0,
+   "movey": 0,
+   "x": 0,
+   "y": 0,
+   "w": 272,
+   "h": 480,
+   "effect": 0,
+   "first": 0,
+   "time": 300,
+   "lockobj": 0,
+   "groupid0": 0,
+   "groupid1": 0,
+   "up": 255,
+   "down": 255,
+   "left": 255,
+   "right": 255,
+   "sta": 2,
+   "bco": 65535,
+   "pic": {
+    "$ref": "picture:bg_level_mode"
+   }
+  },
+  "events": {
+   "codesload": [
+    "sys0=0",
+    "if(lang==0)",
+    "{",
+    "  msg.txt=\"请确认喷嘴干净，且热床上无杂物。\"",
+    "  auto_level.txt=\"自动调平\"",
+    "  shaping.txt=\"共振补偿\"",
+    "  bed_calib.txt=\"平台校准\"",
+    "  tab_settings.txt=\"通用设置\"",
+    "  tab_calib.txt=\"校准设置\"",
+    "}else if(lang==1)",
+    "{",
+    "  msg.txt=\"Убедитесь, что сопло\\rчистое и на столе нет\\rпосторонних\\rпредметов.\"",
+    "  auto_level.txt=\"Автовыравнивание\\rстола\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Калибровка платформы\"",
+    "  tab_settings.txt=\"Общие\"",
+    "  tab_calib.txt=\"Калибровка\"",
+    "}else if(lang==2)",
+    "{",
+    "  msg.txt=\"Please make sure the\\rnozzle is clean and there\\rare no foreign objects on\\rthe bed.\"",
+    "  auto_level.txt=\"Auto Bed Leveling\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Platform Calibration\"",
+    "  tab_settings.txt=\"General\"",
+    "  tab_calib.txt=\"Calibration\"",
+    "}else if(lang==3)",
+    "{",
+    "  msg.txt=\"ノズルがきれいで、ベッドに異物がないことを確認してください。\"",
+    "  auto_level.txt=\"自動ベッドレベリング\"",
+    "  shaping.txt=\"インプットシェーピング\"",
+    "  bed_calib.txt=\"プラットフォーム校正\"",
+    "  tab_settings.txt=\"一般\"",
+    "  tab_calib.txt=\"キャリブレーション\"",
+    "}else if(lang==4)",
+    "{",
+    "  msg.txt=\"Vérifiez que la buse est\\rpropre et qu'il n'y a\\raucun corps étranger sur\\rle plateau.\"",
+    "  auto_level.txt=\"Nivellement auto du\\rplateau\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Calibrage de la\\rplateforme\"",
+    "  tab_settings.txt=\"Général\"",
+    "  tab_calib.txt=\"Calibrage\"",
+    "}else if(lang==5)",
+    "{",
+    "  msg.txt=\"Stellen Sie sicher, dass\\rdie Düse sauber ist und\\rsich keine Fremdkörper\\rauf dem Druckbett\\rbefinden.\"",
+    "  auto_level.txt=\"Automatische\\rBettnivellierung\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Plattformkalibrierung\"",
+    "  tab_settings.txt=\"Allgemein\"",
+    "  tab_calib.txt=\"Kalibrierung\"",
+    "}else if(lang==6)",
+    "{",
+    "  msg.txt=\"Assicurati che l'ugello\\rsia pulito e che non ci\\rsiano corpi estranei sul\\rpiano.\"",
+    "  auto_level.txt=\"Livellamento automatico\\rdel piano\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Calibrazione\\rpiattaforma\"",
+    "  tab_settings.txt=\"Generale\"",
+    "  tab_calib.txt=\"Calibrazione\"",
+    "  tab_calib.font=${font:font_small14}",
+    "  tab_settings.font=${font:font_small14}",
+    "}else if(lang==7)",
+    "{",
+    "  msg.txt=\"Asegúrese de que la\\rboquilla esté limpia y de\\rque no haya objetos\\rextraños sobre la cama.\"",
+    "  auto_level.txt=\"Nivelación automática\\rde la cama\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Calibración de\\rplataforma\"",
+    "  tab_settings.txt=\"General\"",
+    "  tab_calib.txt=\"Calibración\"",
+    "  tab_settings.font=${font:font_small14}",
+    "}else if(lang==8)",
+    "{",
+    "  msg.txt=\"노즐이 깨끗하고 베드에\\r이물질이 없는지 확인하세요.\"",
+    "  auto_level.txt=\"자동 베드 레벨링\"",
+    "  shaping.txt=\"인풋 쉐이핑\"",
+    "  bed_calib.txt=\"플랫폼 보정\"",
+    "  tab_settings.txt=\"일반\"",
+    "  tab_calib.txt=\"보정\"",
+    "}else if(lang==9)",
+    "{",
+    "  msg.txt=\"Verifique se o bico está\\rlimpo e se não há\\robjetos estranhos na\\rmesa.\"",
+    "  auto_level.txt=\"Nivelamento automático\\rda mesa\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Calibração da\\rplataforma\"",
+    "  tab_settings.txt=\"Geral\"",
+    "  tab_calib.txt=\"Calibração\"",
+    "  tab_settings.font=${font:font_small14}",
+    "}else if(lang==10)",
+    "{",
+    "  msg.txt=\"تأكد من أن الفوهة نظيفة وأنه لا توجد أجسام غريبة على السرير.\"",
+    "  auto_level.txt=\"معايرة السرير التلقائية\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"معايرة المنصة\"",
+    "  tab_settings.txt=\"عام\"",
+    "  tab_calib.txt=\"المعايرة\"",
+    "}else if(lang==11)",
+    "{",
+    "  msg.txt=\"Nozulun temiz\\rolduğundan ve tablada\\ryabancı cisim\\rbulunmadığından emin\\rolun.\"",
+    "  auto_level.txt=\"Otomatik tabla\\rseviyeleme\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"Platform kalibrasyonu\"",
+    "  tab_settings.txt=\"Genel\"",
+    "  tab_calib.txt=\"Kalibrasyon\"",
+    "  tab_calib.font=${font:font_small14}",
+    "}else if(lang==12)",
+    "{",
+    "  msg.txt=\"ודא שהזרבובית נקייה ושאין חפצים זרים על המיטה.\"",
+    "  auto_level.txt=\"פילוס מיטה אוטומטי\"",
+    "  shaping.txt=\"Input Shaping\"",
+    "  bed_calib.txt=\"כיול פלטפורמה\"",
+    "  tab_settings.txt=\"כללי\"",
+    "  tab_calib.txt=\"כיול\"",
+    "}"
+   ],
+   "codesloadend": [],
+   "codesdown": [],
+   "codesup": [],
+   "codesunload": []
+  }
+ },
+ "objects": [
+  {
+   "key": "tab_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "tab_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 7,
+    "w": 130,
+    "h": 45,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:level_mode_tab_settings_130x45"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_mode_tab_settings_130x45_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "General",
+    "txt_maxl": 30,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 23,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "tab_calib",
+   "type": "button",
+   "attributes": {
+    "objname": "tab_calib",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 6,
+    "y": 7,
+    "w": 130,
+    "h": 45,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:level_mode_tab_calib"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_mode_tab_calib_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Calibration",
+    "txt_maxl": 30,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "sys0+=1",
+     "if(sys0==5)",
+     "{",
+     "  prints 0x65,1",
+     "  prints dp,1",
+     "  prints 24,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "nav_main",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_main",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 8,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_main"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_main_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 30,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_adjust",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_adjust",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 72,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_adjust"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_adjust_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 31,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_files",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_files",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 136,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_files"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_files_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 32,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "nav_settings",
+   "type": "button",
+   "attributes": {
+    "objname": "nav_settings",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 200,
+    "y": 424,
+    "w": 64,
+    "h": 56,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:nav_settings"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:nav_settings_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 0,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "",
+    "txt_maxl": 10,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 33,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "auto_level",
+   "type": "button",
+   "attributes": {
+    "objname": "auto_level",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 218,
+    "w": 236,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:level_mode_auto_level"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_mode_auto_level_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Auto Bed Leveling",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 0,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "shaping",
+   "type": "button",
+   "attributes": {
+    "objname": "shaping",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 268,
+    "w": 236,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:level_mode_auto_level"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_mode_auto_level_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Input Shaping",
+    "txt_maxl": 50,
+    "isbr": 0,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 1,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "touch",
+   "type": "touch_capture",
+   "attributes": {
+    "objname": "touch",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "val": 0
+   },
+   "events": {
+    "codesdown": [
+     "sleep_counts=0",
+     "dim=max_dim"
+    ],
+    "codesup": []
+   }
+  },
+  {
+   "key": "sleep_counter",
+   "type": "timer",
+   "attributes": {
+    "objname": "sleep_counter",
+    "vscope": 0,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "tim": 1000,
+    "en": 1
+   },
+   "events": {
+    "codestimer": [
+     "sleep_counts+=1",
+     "if(sleep_counts==sleep_time)",
+     "{",
+     "  prints 0x65,1",
+     "  prints 4,1",
+     "  prints 1,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "  prints 0xff,1",
+     "}"
+    ]
+   }
+  },
+  {
+   "key": "bed_calib",
+   "type": "button",
+   "attributes": {
+    "objname": "bed_calib",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 18,
+    "y": 318,
+    "w": 236,
+    "h": 40,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 2,
+    "style": 4,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "pic": {
+     "$ref": "picture:level_mode_auto_level"
+    },
+    "picc": 65535,
+    "bco": 50712,
+    "pic2": {
+     "$ref": "picture:level_mode_auto_level_press"
+    },
+    "picc2": 65535,
+    "bco2": 1024,
+    "pco": 65535,
+    "pco2": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "val": 0,
+    "txt": "Platform Calibration",
+    "txt_maxl": 50,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": [
+     "prints 0x65,1",
+     "prints dp,1",
+     "prints 2,1",
+     "prints 0xff,1",
+     "prints 0xff,1",
+     "prints 0xff,1"
+    ]
+   }
+  },
+  {
+   "key": "msg",
+   "type": "text",
+   "attributes": {
+    "objname": "msg",
+    "vscope": 0,
+    "drag": 0,
+    "sendkey": 0,
+    "aph": 127,
+    "movex": 0,
+    "movey": 0,
+    "x": 20,
+    "y": 63,
+    "w": 232,
+    "h": 141,
+    "effect": 0,
+    "first": 0,
+    "time": 300,
+    "lockobj": 0,
+    "groupid0": 0,
+    "groupid1": 0,
+    "sta": 3,
+    "style": 0,
+    "key": 255,
+    "borderc": 0,
+    "borderw": 2,
+    "font": {
+     "$ref": "font:font_title18"
+    },
+    "bco": 65535,
+    "picc": 65535,
+    "pic": 65535,
+    "pco": 65535,
+    "xcen": 1,
+    "ycen": 1,
+    "pw": 0,
+    "txt": "Please make sure the\r\nnozzle is clean and there\r\nare no foreign objects on\r\nthe bed.",
+    "txt_maxl": 200,
+    "isbr": 1,
+    "spax": 0,
+    "spay": 0
+   },
+   "events": {
+    "codesdown": [],
+    "codesup": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+# /etc/systemd/system/librescreen.service
+# Edit User= and the paths, then: sudo systemctl enable --now librescreen
+[Unit]
+Description=librescreen: TJC screen backend for Klipper / Moonraker
+After=moonraker.service NetworkManager.service
+Wants=moonraker.service
+
+[Service]
+User=mks
+SupplementaryGroups=dialout
+WorkingDirectory=/home/mks/librescreen
+ExecStart=/usr/bin/python3 /home/mks/librescreen/main.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/mks/.local/share/librescreen /home/mks/printer_data
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+RestrictRealtime=yes
+SystemCallArchitectures=native
+
+[Install]
+WantedBy=multi-user.target
