@@ -50,6 +50,12 @@ speeds, Moonraker's address, the data directory (`settings.ini`, the settings th
 
 **Screen firmware.** `.tft` files are built in `display_firmware/`. With the service stopped:
 `python3 main.py --flash-screen out/firmware.tft`.
+The command waits for an acknowledgement of every block, including the last. UART writes (including `tcdrain`) and
+acknowledgement waits have 10-second deadlines (with wire time added for data blocks). The previous sender's baud-switch
+sequence, 2048-byte drains and transfer pauses are retained. Exit status (also for `python3 -m xindi`):
+`0` — the entire download was acknowledged, `1` — UART / transfer failure, `2` — invalid file or baud rate, `130` — interrupted.
+Acknowledgements do not verify firmware integrity or a successful reboot: wait for the normal screen UI before starting
+the service. A reply to `sendme` alone is not a successful boot check.
 
 **USB drive.** xindi expects the drive mounted in the gcode directory as `sda1`; `contrib/usb-automount` has the udev rule,
 systemd unit and mount script (see its README). Without it the USB tab of the file list stays empty.
@@ -61,7 +67,7 @@ guide stays off; Settings has a switch to run it again) and sets the z offset to
 
 | Original | Replacement | Notes |
 |---|---|---|
-| `/root/uart` (aarch64 ELF, built from `uart.cpp`) | `xindi/screen/flash.py` | Reverse engineered from the disassembly and checked against a development copy of `uart.cpp` (which differs only in the file name and baud rate). Flashes a `.tft` file into the screen with `whmi-wri <size>,921600,0`, sending a 4096 byte block for every `0x05` the screen returns, written in 2048 byte pieces. `main.py --flash-screen FILE` calls it. |
+| `/root/uart` (aarch64 ELF, built from `uart.cpp`) | `xindi/screen/flash.py` | The protocol was reverse engineered from the disassembly and checked against a development copy of `uart.cpp`. Sends `whmi-wri <size>,<transfer_baud>,0`, then blocks of up to 4096 bytes in writes of up to 2048 bytes, with bounded I/O and an ACK for every block, including the last. `main.py --flash-screen FILE` reports transfer errors through its exit status. |
 | `/home/mks/gene4.py` | `xindi/screen/colpic.py` | The same Pillow code (resize, `ImageOps.pad`, RGB565). It is called directly instead of through `python3 …`, and the result stays in memory instead of `/home/mks/tjc`. |
 | `/home/mks/libColPic.so` (aarch64) | `xindi/screen/colpic.py` (`col_pic_encode_str` …) | Reverse engineered (`ad_list0`, `byte8bit_encode`, `col_pic_encode`, `col_pic_encode_str`). Output is byte-identical to the original library, including its quirks. |
 | wpa_supplicant control socket (`mks_wpa_cli.cpp`, libwpa_client) | `xindi/system/network.py` | Not ported: Wi-Fi scan / connect / status and the addresses of the Wi-Fi and LAN interfaces go through NetworkManager (`nmcli`), so the screen, KlipperScreen and `nmcli` share one state. The interfaces are looked up, not assumed to be `wlan0` / `eth0`. The status keeps the wpa_supplicant words the screen code uses (`wpa_state` is `COMPLETED` when connected). |

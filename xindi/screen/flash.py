@@ -1,297 +1,181 @@
-"""Flashes the screen firmware (the ``/root/uart`` helper of the original, built in).
+"""Download a .tft into the screen with the service stopped.
 
-On the printer the C++ program runs ``/root/uart; mv /root/800_480.tft
-/root/800_480.tft.bak`` at start-up when a screen firmware file is present.
-The port does it on request instead: ``python3 main.py --flash-screen FILE.tft``
-(with the service stopped, the serial port has one user).  The device and the
-speeds come from the configuration (``[screen]``, see ``xindi/config/runtime.py``).
-
-The port follows a copy of uart.cpp recovered from the printer's eMMC.  That
-copy is a development variant: SEND_FILE_NAME is "UI/MATE_272_480.tft" and
-TRANSFER_BAUD is 115200.  The binary /root/uart (aarch64, GCC 8.3) was built
-from the same code with the two values below (checked against its
-disassembly); /root/uart-230400 on the eMMC differs only in TRANSFER_BAUD.
-
-Strings printed by the original (partly Chinese) are translated to English.
+The screen receives ``whmi-wri <size>,<baud>,0`` at its current baud rate,
+then acknowledges at the transfer baud rate. Each block of at most 4096
+bytes needs a 0x05 acknowledgement, including the last block.
 """
 
-import fcntl
 import os
+import select
+import signal
+import stat
+import sys
 import termios
 import time
 
 from xindi.config import runtime
 from xindi.screen.serial import cfmakeraw_zeroed
-from xindi.util.cpp import substr, to_string
 
 
-SEND_FILE_NAME = ""                      # uart.cpp: "UI/MATE_272_480.tft"; set by main()
-UART_DEV = "/dev/ttyS1"                  # the three below too
-INIT_BAUD = 115200
-TRANSFER_BAUD = 921600                   # uart.cpp: 115200
-
-FNDELAY = os.O_NONBLOCK
+BLOCK_SIZE = 4096
+WRITE_SIZE = 2048
+IO_TIMEOUT = 10.0
+ACK_TIMEOUT = 10.0
 
 
-def _init_globals():
-    """Static initialisation of the globals of uart.cpp (a fresh process)."""
-    global tftfile, tft_buff, tft_start, tft_end, tft_s, tft_data, tft_len, filesize
-    global send_finish, fd
-    tftfile = None
-    tft_buff = 4096
-    tft_start = 0
-    tft_end = 0
-    tft_s = b""
-    tft_data = b""
-    tft_len = 0
-    filesize = 0
-
-    send_finish = True
+def _baud_speed(baud):
+    speed = getattr(termios, "B%d" % baud, None)
+    if baud <= 0 or speed is None:
+        raise ValueError("unsupported baud rate: %s" % baud)
+    return speed
 
 
-    fd = -1         # serial port descriptor
+def _set_baud(fd, baud):
+    iflag, oflag, cflag, lflag, cc = cfmakeraw_zeroed()
+    cc[termios.VMIN] = 0
+    cc[termios.VTIME] = 0
+    speed = _baud_speed(baud)
+    termios.tcflush(fd, termios.TCIOFLUSH)
+    termios.tcsetattr(fd, termios.TCSANOW,
+                      [iflag, oflag, cflag | termios.CREAD, lflag, speed, speed, cc])
 
 
-_init_globals()
-
-
-def _open(path, flags):
+def _open_port(port, baud):
+    fd = os.open(port, os.O_RDWR | os.O_NONBLOCK | os.O_NOCTTY)
     try:
-        return os.open(path, flags)
-    except OSError:
-        return -1
-
-
-def _read(fd, size):
-    try:
-        return os.read(fd, size)
-    except OSError:
-        return b""
-
-
-def _write(fd, data):
-    try:
-        return os.write(fd, data)
-    except OSError:
-        return -1
-
-
-def _close(fd):
-    try:
+        _set_baud(fd, baud)
+    except BaseException:
         os.close(fd)
-    except OSError:
-        pass
+        raise
+    return fd
 
 
-# first_ack = 0
+def _wait_ready(fd, reading, deadline, operation):
+    while True:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError("timed out %s" % operation)
+        try:
+            readable, writable, _ = select.select([fd] if reading else [], [] if reading else [fd], [], remaining)
+        except InterruptedError:
+            continue
+        if readable or writable:
+            return
+
+
+def _drain_timeout(signum, frame):
+    raise TimeoutError("timed out draining the screen UART")
+
+
+def _drain(fd, deadline):
+    # Flashing runs on the CLI's main thread. An alarm bounds the real
+    # tcdrain(), preserving its UART semantics rather than polling TIOCOUTQ.
+    started = time.monotonic()
+    remaining = deadline - started
+    if remaining <= 0:
+        raise TimeoutError("timed out draining the screen UART")
+    previous_timer = signal.getitimer(signal.ITIMER_REAL)
+    previous_handler = signal.signal(signal.SIGALRM, _drain_timeout)
+    try:
+        signal.setitimer(signal.ITIMER_REAL, remaining)
+        while True:
+            try:
+                termios.tcdrain(fd)
+                return
+            except InterruptedError:
+                continue
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_handler)
+        if previous_timer[0]:
+            remaining = max(0.000001, previous_timer[0] - (time.monotonic() - started))
+            signal.setitimer(signal.ITIMER_REAL, remaining, previous_timer[1])
+
+
+def _write_all(fd, data, timeout):
+    deadline = time.monotonic() + timeout
+    for start in range(0, len(data), WRITE_SIZE):
+        chunk = data[start:start + WRITE_SIZE]
+        offset = 0
+        while offset < len(chunk):
+            _wait_ready(fd, False, deadline, "writing to the screen")
+            try:
+                written = os.write(fd, chunk[offset:])
+            except (BlockingIOError, InterruptedError):
+                continue
+            if written <= 0:
+                raise OSError("serial write returned no data")
+            offset += written
+        # The hardware-tested sender drains each full 2048-byte piece;
+        # a short tail is followed by the screen's block ACK instead.
+        if len(chunk) == WRITE_SIZE:
+            _drain(fd, deadline)
+
+
+def _wait_ack(fd, operation, timeout=ACK_TIMEOUT):
+    deadline = time.monotonic() + timeout
+    while True:
+        _wait_ready(fd, True, deadline, operation)
+        try:
+            data = os.read(fd, 1)
+        except (BlockingIOError, InterruptedError):
+            continue
+        if not data:
+            raise OSError("serial port closed while %s" % operation)
+        if data == b"\x05":
+            return
+
 
 def main(tft_file):
-    """Download ``tft_file`` into the screen; returns 0 (like the original, see the messages printed for the result)."""
-    global fd, SEND_FILE_NAME, UART_DEV, INIT_BAUD, TRANSFER_BAUD
-    SEND_FILE_NAME = tft_file
-    UART_DEV = runtime.cfg.screen_port
-    INIT_BAUD = runtime.cfg.screen_baud
-    TRANSFER_BAUD = runtime.cfg.transfer_baud
-    _init_globals()
+    """Return 0 after the final ACK, 1 on transfer failure, 2 on bad input, 130 on interruption."""
+    cfg = runtime.cfg
+    fd = None
+    confirmed = 0
+    try:
+        try:
+            _baud_speed(cfg.screen_baud)
+            _baud_speed(cfg.transfer_baud)
+            with open(tft_file, "rb") as source:
+                if not stat.S_ISREG(os.fstat(source.fileno()).st_mode):
+                    raise ValueError("firmware is not a regular file")
+                data = source.read()
+            if not data:
+                raise ValueError("firmware file is empty")
+        except (OSError, ValueError) as e:
+            print("xindi: invalid screen firmware or configuration: %s" % e, file=sys.stderr)
+            return 2
 
-    count = 0
+        print("Screen firmware: %s (%d bytes)" % (tft_file, len(data)), flush=True)
+        fd = _open_port(cfg.screen_port, cfg.screen_baud)
+        command = ("whmi-wri %d,%d,0\xff\xff\xff" % (len(data), cfg.transfer_baud)).encode("latin-1")
+        _write_all(fd, command, IO_TIMEOUT)
+        time.sleep(0.01)
+        if cfg.transfer_baud != cfg.screen_baud:
+            # Keep the baud-switch sequence of the hardware-tested sender.
+            old_fd, fd = fd, None
+            os.close(old_fd)
+            fd = _open_port(cfg.screen_port, cfg.transfer_baud)
+        _wait_ack(fd, "waiting for the screen to accept the firmware download")
 
-    buff = b""
-
-    fd = _open(UART_DEV, os.O_RDWR | os.O_NDELAY | os.O_NOCTTY)
-    if fd < 0:
-        print("OPEN TTY failed")
+        for offset in range(0, len(data), BLOCK_SIZE):
+            block = data[offset:offset + BLOCK_SIZE]
+            timeout = IO_TIMEOUT + len(block) * 10 / cfg.transfer_baud
+            _write_all(fd, block, timeout)
+            time.sleep(0.005)
+            _wait_ack(fd, "waiting for ACK at %d / %d bytes" % (offset + len(block), len(data)),
+                      ACK_TIMEOUT + len(block) * 10 / cfg.transfer_baud)
+            confirmed += len(block)
+            if confirmed == len(data) or confirmed % (512 * 1024) == 0:
+                print("%s %d / %d bytes (%d%%) acknowledged" %
+                      (time.strftime("%H:%M:%S"), confirmed, len(data), 100 * confirmed // len(data)), flush=True)
+        print("Screen firmware download acknowledged in full", flush=True)
         return 0
-    else:
-        set_option(fd, INIT_BAUD, 8, 'N', 1)
-        fcntl.fcntl(fd, fcntl.F_SETFL, FNDELAY)
-        if os.path.exists(SEND_FILE_NAME):
-            init_download_to_screen()
-            # first_ack = 0
-            send_cmd_download(fd, filesize)
-            time.sleep(0.01)
-            if TRANSFER_BAUD != INIT_BAUD:
-                _close(fd)
-
-                fd = _open(UART_DEV, os.O_RDWR | os.O_NDELAY | os.O_NOCTTY)
-                if fd < 0:
-                    return -1
-                set_option(fd, TRANSFER_BAUD, 8, 'N', 1)
-
-            print("open file ok")
-        else:
-            print("open file fail")
-
-    while not send_finish:
-
-        buff = _read(fd, 4096)
-        count = len(buff)
-        if count > 0:
-            cmd = buff
-            parse_cmd(cmd)
-            buff = b""
-
-        time.sleep(0.005)
-    _close(fd)
-    return 0
-
-
-def parse_cmd(cmd):
-    # std::cout << "Receive " << (int)cmd[0] << std::endl;
-    c = cmd[0] if len(cmd) > 0 else 0
-    if c == 0x5:
-        download_to_screen()
-
-
-def set_option(fd, baudrate, bits, parity, stopbit):
-    if isinstance(parity, str):
-        parity = ord(parity)
-
-    try:
-        termios.tcgetattr(fd)
-    except (termios.error, OSError, ValueError):
-        # error while reading the serial port parameters
-        return -1
-
-    iflag, oflag, cflag, lflag, cc = cfmakeraw_zeroed()      # raw mode
-
-    # enable the receiver
-    cflag |= termios.CREAD
-
-    # clear the data bits
-    cflag &= ~termios.CSIZE
-
-    if bits == 7:
-        cflag |= termios.CS7
-    elif bits == 8:
-        cflag |= termios.CS8
-    else:
-        cflag |= termios.CS8
-
-    if parity in (ord('O'), ord('o')):
-        cflag |= (termios.PARENB | termios.PARODD)
-        cflag |= termios.INPCK              # (sic) INPCK is an input flag, kept as in the original
-    elif parity in (ord('E'), ord('e')):
-        cflag |= termios.PARENB
-        cflag &= ~termios.PARODD
-        iflag |= termios.INPCK
-    else:
-        cflag &= ~termios.PARENB
-        iflag &= ~termios.INPCK
-
-    # baud rate
-    if baudrate == 115200:
-        speed = termios.B115200
-    elif baudrate == 230400:
-        speed = termios.B230400
-        print("Baud rate is 230400")
-    elif baudrate == 921600:
-        speed = termios.B921600
-        print("Baud rate is 921600")
-    else:
-        speed = termios.B115200
-
-    # stop bits
-    if stopbit == 1:
-        cflag &= ~termios.CSTOPB
-    elif stopbit == 2:
-        cflag |= termios.CSTOPB
-    else:
-        cflag &= ~termios.CSTOPB
-
-    # MIN and TIME set to 0
-    cc[termios.VTIME] = 0
-    cc[termios.VMIN] = 0
-
-    # flush the buffers
-    try:
-        termios.tcflush(fd, termios.TCIOFLUSH)
-    except (termios.error, OSError):
-        return -1
-
-    # apply the configuration
-    try:
-        termios.tcsetattr(fd, termios.TCSANOW, [iflag, oflag, cflag, lflag, speed, speed, cc])
-    except (termios.error, OSError):
-        return -1
-
-    return 0
-
-
-def init_download_to_screen():
-    global tftfile, tft_data, filesize, tft_len, tft_end, send_finish
-    if os.path.exists(SEND_FILE_NAME):
-        tft_data = b""
-        try:
-            tftfile = open(SEND_FILE_NAME, "rb")
-        except OSError:
-            tftfile = None      # failed std::ifstream: rdbuf() yields nothing
-        try:
-            filesize = os.stat(SEND_FILE_NAME).st_size
-        except OSError:
-            pass                # (uninitialised struct stat in C++)
-        print("File size: " + to_string(filesize))
-        temp = b""
-        if tftfile is not None:
-            try:
-                temp = tftfile.read()
-            except OSError:
-                temp = b""
-        tft_data = temp
-        print("Length of the read data: " + to_string(len(tft_data)))
-
-        tft_len = len(tft_data)
-        tft_end = tft_buff
-
-        send_finish = False
-
-        if tftfile is not None:
-            tftfile.close()
-
-
-def download_to_screen():
-    global tft_s, tft_start, tft_end, send_finish
-    # std::cout << "start of data " << tft_start << std::endl;
-    if tft_start < tft_len:
-        if tft_end > tft_len:
-            tft_s = substr(tft_data, tft_start, tft_len - tft_start)
-            # std::cout << "sending download data == " << tft_start << "/" << filesize << std::endl;
-            send_cmd_download_data(fd, tft_s)
-            send_finish = True
-        else:
-            tft_s = substr(tft_data, tft_start, tft_buff)
-            tft_start = tft_end
-            tft_end = tft_end + tft_buff
-            send_cmd_download_data(fd, tft_s)
-            if (tft_start // tft_buff) % 128 == 0:      # a line every 512 KB (with the time: the progress can be matched with the logs of the system)
-                print("%s %d / %d bytes (%d%%)" % (time.strftime("%H:%M:%S"), tft_start, tft_len, 100 * tft_start // max(1, tft_len)), flush=True)
-
-
-def send_cmd_download_data(fd, data):
-
-    num = 2048
-    length = len(data)
-    end = num
-    sub_data = b""
-    # printf("download data: %d\n", len);
-
-    start = 0
-    while start < length:
-        if end > length:
-            sub_data = substr(data, start, length - start)
-            _write(fd, sub_data)
-            break
-        sub_data = substr(data, start, num)
-        _write(fd, sub_data)
-        start = end
-        end = end + num
-        # time.sleep(1.55);
-        try:
-            termios.tcdrain(fd)
-        except (termios.error, OSError):
-            print("Transfer error")
-
-
-def send_cmd_download(fd, filesize):
-    cmd = "whmi-wri " + to_string(filesize) + "," + to_string(TRANSFER_BAUD) + ",0\xff\xff\xff"
-    _write(fd, cmd.encode("latin-1"))
+    except KeyboardInterrupt:
+        print("xindi: screen flash interrupted (%d bytes acknowledged)" % confirmed, file=sys.stderr)
+        return 130
+    except (OSError, termios.error) as e:
+        print("xindi: screen flash failed (%d bytes acknowledged): %s" % (confirmed, e), file=sys.stderr)
+        return 1
+    finally:
+        if fd is not None:
+            os.close(fd)

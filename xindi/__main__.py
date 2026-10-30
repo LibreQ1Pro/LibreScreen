@@ -3,4 +3,4 @@
 from xindi.main import run
 
 
-run()
+raise SystemExit(run())

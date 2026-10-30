@@ -730,7 +730,7 @@ class Harness(object):
             # the screen firmware goes in first, with the service not running (--flash-screen)
             import fixtures
             flash_cmd = ["nice", "-n", "10", "python3", "/opt/src_py/main.py", "--flash-screen", fixtures.TFT_FILE]
-            subprocess.run(flash_cmd, stdout=self.sut_log, stderr=subprocess.STDOUT, env=env, cwd="/", timeout=120)
+            subprocess.run(flash_cmd, stdout=self.sut_log, stderr=subprocess.STDOUT, env=env, cwd="/", timeout=120, check=True)
         self.proc = subprocess.Popen(cmd, stdout=self.sut_log, stderr=subprocess.STDOUT, env=env,
                                      cwd="/", start_new_session=True)
 

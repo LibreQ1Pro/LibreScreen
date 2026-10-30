@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Screen flashing: bounded UART writes and drains, partial-write retries, an ACK for the final block (also for exact
+  multiples of 4096 bytes), and nonzero exit status on failure through both CLI entrypoints. Retains the previous sender's
+  baud-switch sequence, 2048-byte drains and transfer pauses.
 - Runs outside QIDI's image: ini configuration (`contrib/xindi.ini.example`), no `/root` and `/home/mks`, no shell
   commands, `--flash-screen FILE.tft`, USB drives through udev + systemd (`contrib/usb-automount`), systemd unit.
 - New screen design (`display_firmware/`), file list with 112 px thumbnails, names without `.gcode`.

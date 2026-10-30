@@ -189,8 +189,7 @@ def run():
         if not os.path.isfile(args.flash_screen):
             print("xindi: %s is not a file" % args.flash_screen, file=sys.stderr)
             return 2
-        flash.main(args.flash_screen)
-        return 0
+        return flash.main(args.flash_screen)
     try:
         faulthandler.register(signal.SIGUSR1, all_threads=True)       # kill -USR1 <pid> prints what every thread is doing (a stuck service)
         signal.signal(signal.SIGUSR2, print_state)
