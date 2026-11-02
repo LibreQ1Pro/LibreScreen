@@ -7,22 +7,17 @@ After=moonraker.service NetworkManager.service
 Wants=moonraker.service
 
 [Service]
-User=pi
-# the serial port of the screen (the group of /dev/ttyS1 or /dev/ttyUSB0 is dialout on Debian)
+User=mks
 SupplementaryGroups=dialout
 WorkingDirectory=/opt/xindi
 ExecStart=/usr/bin/python3 /opt/xindi/main.py --config /etc/xindi/xindi.ini
 Restart=always
 RestartSec=3
-
-# what xindi needs: its data directory, the gcode / config / log directories of Klipper (it reads and writes saved
-# variables and copies the logs to a USB drive), the serial port, Moonraker and NetworkManager (D-Bus, nmcli)
 NoNewPrivileges=yes
 PrivateTmp=yes
 ProtectSystem=strict
 ProtectHome=read-only
-# (in a system unit %h is root's home, so the paths are written out: change pi to User=)
-ReadWritePaths=/home/pi/.local/share/xindi /home/pi/printer_data
+ReadWritePaths=/home/mks/.local/share/xindi /home/mks/printer_data
 ProtectKernelTunables=yes
 ProtectKernelModules=yes
 ProtectControlGroups=yes
