@@ -9,8 +9,8 @@ Wants=moonraker.service
 [Service]
 User=mks
 SupplementaryGroups=dialout
-WorkingDirectory=/opt/xindi
-ExecStart=/usr/bin/python3 /opt/xindi/main.py
+WorkingDirectory=/home/mks/xindi
+ExecStart=/usr/bin/python3 /home/mks/xindi/main.py
 Restart=always
 RestartSec=3
 NoNewPrivileges=yes

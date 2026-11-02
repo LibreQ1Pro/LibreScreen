@@ -12,8 +12,7 @@ Python ≥ 3.9, Pillow ≥ 9.1, NetworkManager. The service user needs `dialout`
 ## Installation
 
 ```sh
-sudo mkdir -p /opt/xindi && sudo cp -r main.py xindi /opt/xindi/
-sudo -u mks install -D -m 644 contrib/xindi.ini.example ~mks/.config/xindi/xindi.ini  # optional, every key has a default
+sudo -u mks git clone https://github.com/LibreQ1Pro/xindi.git ~mks/xindi
 sudo install -m 644 contrib/systemd/xindi.service /etc/systemd/system/  # edit User= first
 sudo install -m 644 contrib/systemd/50-xindi.rules /etc/polkit-1/rules.d/  # edit mks in it to match User=
 sudo install -m 755 contrib/usb-automount/xindi-usb-mount /usr/local/sbin/
