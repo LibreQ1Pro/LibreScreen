@@ -347,8 +347,7 @@ def print(page_id, widget_id):
         if widget_id == ids.PRINT_NO_FILAMENT_2_YES:
             klipper.get_object_status()
             page_to(ids.PRINT_FILAMENT)
-        # NOTE: no "break" in the original - falls through into the next case
-    if widget_id == ids.PRINT_LOW_TEMP_YES:
+    elif widget_id == ids.PRINT_LOW_TEMP_YES:
         g.klippy.idle_timeout_state = "Ready"
         page_to(ids.PRINT_FILAMENT)
 
