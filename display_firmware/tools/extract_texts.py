@@ -61,10 +61,10 @@ def main():
                         pass
                     texts[widget][lang] = text.replace("\\r", "\n")
         out[page] = {k: v for k, v in texts.items()}
-    # the texts the host sends itself (xindi/util/netstrings.py)
+    # the texts the host sends itself (librescreen/util/netstrings.py)
     import sys
     sys.path.insert(0, os.path.dirname(ROOT))
-    from xindi.util.netstrings import TEXT
+    from librescreen.util.netstrings import TEXT
     out["net"] = {k: list(v) for k, v in TEXT.items()}
     os.makedirs(os.path.join(ROOT, "mockup"), exist_ok=True)
     with open(os.path.join(ROOT, "mockup", "texts.json"), "w", encoding="utf-8") as f:

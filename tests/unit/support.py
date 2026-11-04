@@ -1,14 +1,14 @@
 """What every unit test of the service shares: a clean state of the program for each test, and the screen port that records what it is sent.
 
-The state of the service is a handful of global objects (xindi.state) and the state of the network pages (connections.S). A test that changes them must not
+The state of the service is a handful of global objects (librescreen.state) and the state of the network pages (connections.S). A test that changes them must not
 change what the next test sees, whatever the order the tests run in (tests/run_unit.py --shuffle runs them in a random one).
 """
 import copy
 import unittest
 from unittest.mock import patch
 
-from xindi import state as g
-from xindi.screen.tx import END, ScreenPort
+from librescreen import state as g
+from librescreen.screen.tx import END, ScreenPort
 
 GLOBALS = ("screen", "klippy", "shown", "levelling", "files", "net", "config", "update", "pictures", "rpc")
 
@@ -39,7 +39,7 @@ class IsolatedState(unittest.TestCase):
 
     def setUp(self):
         super().setUp()
-        from xindi.pages import connections
+        from librescreen.pages import connections
         targets = [getattr(g, name) for name in GLOBALS] + [connections.S]
         saved = [_snapshot(target) for target in targets]
         self.addCleanup(lambda: [_restore(target, state) for target, state in zip(targets, saved)])

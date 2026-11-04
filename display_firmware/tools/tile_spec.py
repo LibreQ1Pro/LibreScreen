@@ -1,8 +1,8 @@
 """The looks a widget gets from the host while the screen runs: (page, name of the group of tiles, widgets, states).
 
-A state is ``(sheet shown released, sheet shown pressed or None)``: the stock sheets that the host (xindi/pages) put
+A state is ``(sheet shown released, sheet shown pressed or None)``: the stock sheets that the host (librescreen/pages) put
 into ``<widget>.picc`` / ``<widget>.picc2``. tile_pictures.py turns every state into tiles and writes
-xindi/screen/faces.py: ``g.port.face(widget, state)`` sends the two tiles. A widget and a state name identify the tiles,
+librescreen/screen/faces.py: ``g.port.face(widget, state)`` sends the two tiles. A widget and a state name identify the tiles,
 so two pages that use the same widget name with different looks need different state names.
 """
 

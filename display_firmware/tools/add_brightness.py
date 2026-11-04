@@ -8,7 +8,7 @@
 * ``sleep_mode`` gets a label and a slider (10..100): moving the slider sets ``max_dim`` and ``dim`` at once, releasing
   it writes ``max_dim`` to the EEPROM (``wepo``);
 * ``screen_sleep`` wakes up to ``max_dim`` instead of 100.
-The label text of the 13 languages comes from xindi/util/netstrings.py ("brightness").
+The label text of the 13 languages comes from librescreen/util/netstrings.py ("brightness").
 """
 import json
 import os
@@ -16,7 +16,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(ROOT))
-from xindi.util.netstrings import TEXT, LANGUAGES   # noqa: E402
+from librescreen.util.netstrings import TEXT, LANGUAGES   # noqa: E402
 
 LABEL = {"key": "brightness_lbl", "type": "text", "events": {}}
 EEPROM_ADDRESS = 300

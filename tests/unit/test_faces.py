@@ -1,11 +1,11 @@
-"""The looks the host gives its widgets (xindi/screen/faces.py): every ``face(widget, state)`` it asks for exists."""
+"""The looks the host gives its widgets (librescreen/screen/faces.py): every ``face(widget, state)`` it asks for exists."""
 import ast
 import os
 import unittest
 
-from xindi.screen.faces import FACES
+from librescreen.screen.faces import FACES
 
-ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "xindi")
+ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "librescreen")
 
 
 def literal(node):

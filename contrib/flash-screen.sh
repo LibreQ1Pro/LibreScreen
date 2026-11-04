@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # flash-screen.sh FILE.tft [extra flasher arguments]
-# Stops the xindi service, flashes the screen firmware, then starts the service
+# Stops the librescreen service, flashes the screen firmware, then starts the service
 # again (on every exit path).
 
 set -u
@@ -18,8 +18,8 @@ if [ ! -f "$FILE" ]; then
 fi
 shift
 DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-SERVICE=${XINDI_SERVICE:-xindi}
-FLASH_TIMEOUT=${XINDI_FLASH_TIMEOUT:-1800}
+SERVICE=${LIBRESCREEN_SERVICE:-librescreen}
+FLASH_TIMEOUT=${LIBRESCREEN_FLASH_TIMEOUT:-1800}
 
 trap 'systemctl start "$SERVICE"; systemctl is-active "$SERVICE"' EXIT
 trap 'exit 130' INT

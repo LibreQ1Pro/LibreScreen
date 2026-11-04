@@ -7,7 +7,7 @@ warning of the main page, a long error) has chips under its title: click one to 
 names" outlines every widget and the tooltip says `page.widget x,y w×h`: these are the names and rectangles to use in the project.
 
 Rebuild after editing `src/*`: `python3 build_mockup.py` (texts come from `texts.json`, made by `../tools/extract_texts.py` from the pages
-and `xindi/util/netstrings.py`; the page list comes from `../project.json`; the icons are Lucide, ISC license, `icons/*.svg`; the short
+and `librescreen/util/netstrings.py`; the page list comes from `../project.json`; the icons are Lucide, ISC license, `icons/*.svg`; the short
 captions that belong to the mockup only are in `src/captions.js`). `shot.sh IDS out.png [lang|all] [zoom] [W H] [extra]` takes a screenshot
 with google-chrome (`./shot.sh home,file_list /tmp/a.png 2 1 1000 540`; the extra query picks a state: `./shot.sh print_keypad /tmp/a.png 2 1 600 560 '&variant=speed_mute'`;
 the window has to be big enough for the page: `all` needs about 1500 × 1700).

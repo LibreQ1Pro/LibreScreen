@@ -20,8 +20,8 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROJECT = "/opt/src_py/display_firmware"
-sys.path.insert(0, os.environ.get("XINDI_SRC_DIR", "/opt/src_py"))
-from xindi.screen import pageids as ids          # noqa: E402
+sys.path.insert(0, os.environ.get("LIBRESCREEN_SRC_DIR", "/opt/src_py"))
+from librescreen.screen import pageids as ids          # noqa: E402
 
 NAVIGATION = (0x1e, 0x1f, 0x20, 0x21)           # the four buttons of the bar at the bottom of the pages
 FILES = ("cube.gcode", "Benchy PLA.gcode", "part_abs.gcode", "models/inner.gcode", "big_petg.gcode", "z_last.gcode", "no such file.gcode",
@@ -65,7 +65,7 @@ def _number(line):
 
 def value_events():
     """(page, widget) pairs the host listens to for numbers (0x71): the keyboards of the temperatures, fans, speed and flow."""
-    from xindi.screen import events
+    from librescreen.screen import events
     return sorted(events.SETTED)
 
 

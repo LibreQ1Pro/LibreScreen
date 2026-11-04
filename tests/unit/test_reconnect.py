@@ -2,8 +2,8 @@
 import unittest
 from unittest.mock import patch
 
-from xindi import main
-from xindi import state as g
+from librescreen import main
+from librescreen import state as g
 
 
 class FakeClient:

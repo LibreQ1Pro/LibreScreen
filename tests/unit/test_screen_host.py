@@ -5,10 +5,10 @@ import sys
 import unittest
 from unittest.mock import patch
 
-from xindi import state as g
-from xindi.pages import file_list, guide, preview, widgets
-from xindi.screen import events, thumbnail
-from xindi.screen.faces import FACES
+from librescreen import state as g
+from librescreen.pages import file_list, guide, preview, widgets
+from librescreen.screen import events, thumbnail
+from librescreen.screen.faces import FACES
 from support import IsolatedState, PortRecorder as Recorder
 
 TOOLS = os.path.join(os.path.dirname(__file__), "..", "..", "display_firmware", "tools")
@@ -163,7 +163,7 @@ class ListRowTest(Recorder):
 
 class TemperatureFromHomeTest(Recorder):
     def test_a_heater_tile_opens_the_keyboard_in_its_mode_and_the_value_returns_home(self):
-        from xindi.clicks import printing
+        from librescreen.clicks import printing
         with patch.object(printing, "page_to") as page:
             printing.main(events.ids.MAIN, events.ids.MAIN_SET_TEMP_2)
         page.assert_called_once_with(events.ids.FILAMENT_KB)
@@ -177,7 +177,7 @@ class TemperatureFromHomeTest(Recorder):
 
 class NetworkInfoTest(Recorder):
     def show(self, wifi, lan, radio=True):
-        from xindi.pages import connections
+        from librescreen.pages import connections
         reports = {"wifi": wifi, "ethernet": lan}
         with patch.object(connections.network, "device_report", side_effect=lambda kind: reports[kind]), \
              patch.object(connections.network, "wifi_radio", return_value=radio):
@@ -209,8 +209,8 @@ class KnownNetworkTest(Recorder):
     SAVED = {"name": "Home", "uuid": "u1", "ssid": "Home", "autoconnect": True, "active": False, "stamp": 1}
 
     def click(self, ssid):
-        from xindi.clicks import system
-        from xindi.pages import connections
+        from librescreen.clicks import system
+        from librescreen.pages import connections
         g.net.wifi_ssid_list = [ssid, "", "", "", ""]
         g.screen.wifi_ssid_button_enabled[0] = True
         with patch.object(connections.network, "saved_wifi", return_value=[self.SAVED]), \
@@ -229,9 +229,9 @@ class KnownNetworkTest(Recorder):
         keyboard.assert_called_once()
 
     def test_forgetting_a_network_returns_to_the_list_it_was_opened_from(self):
-        from xindi.pages import connections
+        from librescreen.pages import connections
         connections.S.sel, connections.S.origin = self.SAVED, "list"
-        with patch.object(connections.network, "forget"), patch("xindi.pages.wifi.go_to_network") as back, patch.object(connections, "open_saved") as saved:
+        with patch.object(connections.network, "forget"), patch("librescreen.pages.wifi.go_to_network") as back, patch.object(connections, "open_saved") as saved:
             connections.confirm_clicked(1)
         back.assert_called_once()
         saved.assert_not_called()
@@ -239,7 +239,7 @@ class KnownNetworkTest(Recorder):
 
 class LastPrintedTest(IsolatedState):
     def last(self, response):
-        from xindi.moonraker import gcode_files
+        from librescreen.moonraker import gcode_files
         with patch.object(gcode_files, "send_request", return_value=response):
             return gcode_files.last_printed_file()
 
@@ -256,7 +256,7 @@ class LastPrintedTest(IsolatedState):
 
 class FileOrderTest(IsolatedState):
     def order(self, entries, modified):
-        from xindi.moonraker import gcode_files
+        from librescreen.moonraker import gcode_files
         with patch.object(g.files, "list_modified", modified):
             return sorted(entries, key=gcode_files.entry_order)
 

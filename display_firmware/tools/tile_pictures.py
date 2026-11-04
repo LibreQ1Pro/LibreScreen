@@ -10,9 +10,9 @@ full-screen sheet (a sheet held the same button once per place it is used, once 
 * a page background is the background only (panels, headers, labels): the faces of the buttons are erased from it;
 * a button (or an indicator that cropped a sheet) shows ``pic`` / ``pic2``, a tile that has just its size; widgets that
   only crop were turned into pictures (``picture``);
-* the tiles that the screen's own code or the host switch (``codesload`` ..., xindi/pages) are named states:
+* the tiles that the screen's own code or the host switch (``codesload`` ..., librescreen/pages) are named states:
   ``g.port.face(widget, state)`` of the host sends the two pictures; tools/faces.json lists them (tile_spec.py) and
-  gen_faces.py writes xindi/screen/faces.py from it.
+  gen_faces.py writes librescreen/screen/faces.py from it.
 
 A tile is what the old project showed in the rectangle of the widget (tile_core.py), so the pages look as before; the
 pixels around rounded corners are transparent. ``tools/tile_check.py`` renders both projects and compares them.

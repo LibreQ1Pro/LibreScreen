@@ -6,7 +6,7 @@
 
 Why: ``prints`` / ``printh`` send the bytes as they are, without the end mark that the screen adds to the replies of
 its own commands (``get``, ``sendme``). The host splits the byte stream into frames by the terminator, so a frame that
-has none is glued to the next one and both are lost (see xindi/screen/rx.py).
+has none is glued to the next one and both are lost (see librescreen/screen/rx.py).
 
 A frame is the run of ``prints`` / ``printh`` lines of an event; the logic between them (``output.val=...``) does not
 end it. It is complete when the terminator (three ``prints 0xff,1`` lines, or ``printh ... ff ff ff``) follows, before

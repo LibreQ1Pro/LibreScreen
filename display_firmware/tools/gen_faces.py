@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Writes xindi/screen/faces.py from tools/faces.json (the names of the tiles of every look of a widget) and the
+"""Writes librescreen/screen/faces.py from tools/faces.json (the names of the tiles of every look of a widget) and the
 position of the pictures in project.json.
 
     python3 tools/gen_faces.py            writes the file
@@ -15,7 +15,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FACES_PY = os.path.join(os.path.dirname(ROOT), "xindi", "screen", "faces.py")
+FACES_PY = os.path.join(os.path.dirname(ROOT), "librescreen", "screen", "faces.py")
 
 
 def render():
@@ -41,7 +41,7 @@ def main():
     if "--check" in sys.argv:
         with open(FACES_PY, encoding="utf-8") as f:
             if f.read() != text:
-                print("xindi/screen/faces.py is out of date: run tools/gen_faces.py")
+                print("librescreen/screen/faces.py is out of date: run tools/gen_faces.py")
                 return 1
         print("faces.py ok")
         return 0

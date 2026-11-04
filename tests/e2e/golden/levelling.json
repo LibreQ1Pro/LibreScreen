@@ -11,18 +11,18 @@
   "/home/mks/gcode_files/.thumbs/last_print-160x160.png": "sha1:5a0b3b99b5febe9f:1683",
   "/home/mks/gcode_files/.thumbs/part_abs-112x112_QD.jpg": "sha1:15013ab210f2794e:4047",
   "/home/mks/gcode_files/.thumbs/part_abs-160x160.jpg": "sha1:bc1e24b92b24bce1:5249",
-  "/home/mks/gcode_files/Benchy PLA.gcode": "sha1:6ea7950f47676656:4311",
+  "/home/mks/gcode_files/Benchy PLA.gcode": "sha1:e27ca777843de5ff:4317",
   "/home/mks/gcode_files/big_petg.gcode": "sha1:fb0996f14638abd8:27",
-  "/home/mks/gcode_files/cube.gcode": "sha1:2e15189a714756be:4269",
-  "/home/mks/gcode_files/last_print.gcode": "sha1:fde4111ecf9f64e5:4317",
+  "/home/mks/gcode_files/cube.gcode": "sha1:6e404cfdec66b2b7:4275",
+  "/home/mks/gcode_files/last_print.gcode": "sha1:f16b149889ea39f5:4323",
   "/home/mks/gcode_files/models/deep/deeper.gcode": "sha1:6d807b2db29596cb:4",
   "/home/mks/gcode_files/models/inner.gcode": "sha1:6d807b2db29596cb:4",
   "/home/mks/gcode_files/notes.txt": "; gcode notes.txt\nG28\n",
-  "/home/mks/gcode_files/part_abs.gcode": "sha1:3a0314247caa6391:44801",
+  "/home/mks/gcode_files/part_abs.gcode": "sha1:9cae8194c3dae3a4:44807",
   "/home/mks/gcode_files/z_last.gcode": "sha1:57539c0d633d7184:25",
   "/home/mks/klipper_config/saved_variables.cfg": "[Variables]\nbed_temp = 80.0\nfilepath = ''\nhot_temp = 0.0\nlast_file = ''\npower_resume_z = 0.8\nprint_temp = 245.0\nprofile_name = 'kamp'\nwas_interrupted = False\nz_offset = 0.0\n",
   "/tmp/screen.tft": null,
-  "/var/lib/xindi/settings.ini": "\n[target]\nextruder                       = 220\nheaterbed                      = 60\nhot                            = 55\n\n\n[oobe]\nenable                         = 0\n\n\n"
+  "/var/lib/librescreen/settings.ini": "\n[target]\nextruder                       = 220\nheaterbed                      = 60\nhot                            = 55\n\n\n[oobe]\nenable                         = 0\n\n\n"
  },
  "http": [
   "GET /server/history/list?limit=20&order=desc",

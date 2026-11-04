@@ -2,8 +2,8 @@
 import unittest
 from unittest.mock import patch
 
-from xindi import state as g
-from xindi.screen import navigation
+from librescreen import state as g
+from librescreen.screen import navigation
 from support import PortRecorder
 
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Interactive printer for screen development - runs INSIDE the xindi-port-test image (start it with
+Interactive printer for screen development - runs INSIDE the librescreen-port-test image (start it with
 ``tests/e2e/emulator.py``). Instead of the harness' recording screen it runs the HMI emulator of hmi-builder
 (docs/EMULATOR.md) on /dev/ttyS1, next to the fake Moonraker of the E2E tests and the port itself:
 
-    browser (touch screen)  <->  hmi_emulator.py  <-- /dev/ttyS1 -->  xindi (main.py)  <->  fake Moonraker
+    browser (touch screen)  <->  hmi_emulator.py  <-- /dev/ttyS1 -->  librescreen (main.py)  <->  fake Moonraker
 
 The fake Moonraker takes commands over HTTP so that the printer can be played from a shell or the browser:
 
@@ -67,11 +67,11 @@ AMBIENT = 25.0
 TICK = 1.0
 
 # Macros of the LibreQ1Pro Klipper configuration (config/qidi-q1-pro/gcode_macro.cfg) that the port starts;
-# they report the "// action:xindi <event>" events with _XINDI.
+# they report the "// action:librescreen <event>" events with _LIBRESCREEN.
 MACROS = {
-    "M604": ["_XINDI EVENT=filament_heated", "M83", "G1 E80 F400", "M400", "_XINDI EVENT=filament_loaded"],
-    "M603": ["_XINDI EVENT=filament_heated", "G92 E0", "G0 E15 F400", "G4 P1000", "G92 E0", "G1 E-90 F800", "M400",
-             "_XINDI EVENT=filament_unloaded"],
+    "M604": ["_LIBRESCREEN EVENT=filament_heated", "M83", "G1 E80 F400", "M400", "_LIBRESCREEN EVENT=filament_loaded"],
+    "M603": ["_LIBRESCREEN EVENT=filament_heated", "G92 E0", "G0 E15 F400", "G4 P1000", "G92 E0", "G1 E-90 F800", "M400",
+             "_LIBRESCREEN EVENT=filament_unloaded"],
 }
 FANS = {"0": "cooling_fan", "2": "auxiliary_cooling_fan", "3": "chamber_circulation_fan"}      # M106 P<n>
 TARGET_CMD = {"M104": "extruder", "M109": "extruder", "M140": "heater_bed", "M190": "heater_bed",
@@ -270,8 +270,8 @@ class Moonraker(harness.Moonraker):
                 self.execute(sub)
         elif cmd == "M118":
             self.push_gcode("echo: " + line[4:].strip())
-        elif cmd == "_XINDI":
-            self.push_gcode("// action:xindi " + params["EVENT"])
+        elif cmd == "_LIBRESCREEN":
+            self.push_gcode("// action:librescreen " + params["EVENT"])
         elif cmd in ("M104", "M140", "M141") and "S" in params:
             self.set_target(TARGET_CMD[cmd], params["S"])
         elif cmd in ("M109", "M190", "M191") and "S" in params:
@@ -437,9 +437,9 @@ def main():
     if os.path.exists("/tmp/fake_nm.json"):
         os.unlink("/tmp/fake_nm.json")
 
-    env = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONDONTWRITEBYTECODE="1", XINDI_SHELL_LOG="/tmp/xindi_shell.log")
+    env = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONDONTWRITEBYTECODE="1", LIBRESCREEN_SHELL_LOG="/tmp/librescreen_shell.log")
     sut = subprocess.Popen(["python3", "/opt/src_py/main.py", "localhost"], env=env, cwd="/")
-    print("xindi started; web UI of the screen on port %s, control on 7125 (/emu/...)" % args.http.rsplit(":", 1)[-1],
+    print("librescreen started; web UI of the screen on port %s, control on 7125 (/emu/...)" % args.http.rsplit(":", 1)[-1],
           flush=True)
 
     def commands():
@@ -448,7 +448,7 @@ def main():
         while True:
             time.sleep(1)
             try:
-                with open("/tmp/xindi_shell.log", "rb") as f:
+                with open("/tmp/librescreen_shell.log", "rb") as f:
                     data = f.read()
             except OSError:
                 continue
@@ -466,7 +466,7 @@ def main():
     for p in (sut, emu):
         if p.poll() is None:
             p.terminate()
-    print("xindi exit code %r, emulator exit code %r" % (sut.poll(), emu.poll()), flush=True)
+    print("librescreen exit code %r, emulator exit code %r" % (sut.poll(), emu.poll()), flush=True)
 
 
 if __name__ == "__main__":

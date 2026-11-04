@@ -6,7 +6,7 @@
 The id of a page is its position in project.json. Removing a page moves every page after it, so this tool changes together:
 
 * project.json (the page list) and the page files, the pages of ``tools/migration_sources/`` (the source of the generator) and ``tools/migrated.json``;
-* xindi/screen/pageids.py: the block of the removed page goes, the number of every other page is its new position;
+* librescreen/screen/pageids.py: the block of the removed page goes, the number of every other page is its new position;
 * the page numbers that the code of a page writes as literals: ``prints 0x65,1`` followed by a page number (the sleep timer, the language pages) and
   ``prints 113,1`` (the value frames of the keyboards) followed by the page of the value;
 * mockup/pages.json (the readable names) and tests/e2e/golden is recorded again by hand afterwards.
@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import page_names  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-PAGEIDS = ROOT.parent / "xindi" / "screen" / "pageids.py"
+PAGEIDS = ROOT.parent / "librescreen" / "screen" / "pageids.py"
 
 
 def remap_lines(lines, mapping):

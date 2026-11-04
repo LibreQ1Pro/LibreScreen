@@ -1,4 +1,4 @@
-"""The migrated Home contract. Run in the xindi-port-test container, never on the host."""
+"""The migrated Home contract. Run in the librescreen-port-test container, never on the host."""
 import json
 from pathlib import Path
 import unittest
@@ -6,11 +6,11 @@ from unittest.mock import patch
 
 from PIL import Image
 
-from xindi import state as g
-from xindi.pages import home, file_list
-from xindi.screen import thumbnail
-from xindi.screen.text import fit_name, width
-from xindi.screen.tx import END
+from librescreen import state as g
+from librescreen.pages import home, file_list
+from librescreen.screen import thumbnail
+from librescreen.screen.text import fit_name, width
+from librescreen.screen.tx import END
 from support import PortRecorder
 
 ROOT = Path(__file__).resolve().parents[2]

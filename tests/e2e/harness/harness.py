@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-E2E test harness - runs INSIDE the xindi-port-test docker image.
+E2E test harness - runs INSIDE the librescreen-port-test docker image.
 
 It starts the Python screen backend (mounted at /opt/src_py) in a simulated printer environment
 and records everything the program does to the outside world:
@@ -36,7 +36,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 END = b"\xff\xff\xff"
-SHELL_LOG = "/tmp/xindi_shell.log"
+SHELL_LOG = "/tmp/librescreen_shell.log"
 
 
 def sha(data):
@@ -649,7 +649,7 @@ class Harness(object):
     def wait_page(self, page, timeout=6.0):
         t0 = time.time()
         ok = self.screen.wait_page(page, timeout)
-        if os.environ.get("XINDI_E2E_TIMING"):
+        if os.environ.get("LIBRESCREEN_E2E_TIMING"):
             print("wait_page %r: %.1fs" % (page, time.time() - t0), flush=True)
         if not ok:
             self.errors.append("timeout waiting for page %r (current %r)" % (page, self.screen.page))
@@ -661,7 +661,7 @@ class Harness(object):
         """Waits until the port went quiet (no instruction for QUIET seconds), at most ``seconds``; the
         scenarios say how long a step may take, the port usually needs a fraction of it."""
         start = time.time()
-        if os.environ.get("XINDI_E2E_TIMING"):
+        if os.environ.get("LIBRESCREEN_E2E_TIMING"):
             print("settle(%s) at %.1f" % (seconds, start - self.t_start), flush=True)
         if getattr(self, "mr", None) is not None:
             self.mr.drain(timeout=seconds)
@@ -716,9 +716,9 @@ class Harness(object):
         env = dict(os.environ)
         env.update({
             "LD_PRELOAD": "/opt/support/timescale.so",
-            "XINDI_SLEEP_SCALE": os.environ.get("XINDI_SLEEP_SCALE", "0.25"),
-            "XINDI_SLEEP_MIN": os.environ.get("XINDI_SLEEP_MIN", "1.5"),
-            "XINDI_SHELL_LOG": SHELL_LOG,
+            "LIBRESCREEN_SLEEP_SCALE": os.environ.get("LIBRESCREEN_SLEEP_SCALE", "0.25"),
+            "LIBRESCREEN_SLEEP_MIN": os.environ.get("LIBRESCREEN_SLEEP_MIN", "1.5"),
+            "LIBRESCREEN_SHELL_LOG": SHELL_LOG,
             "PYTHONDONTWRITEBYTECODE": "1",
             "PYTHONUNBUFFERED": "1",
         })
@@ -765,13 +765,13 @@ class Harness(object):
         t0 = self.t_start = time.time()
         self.setup()
         self.start_sut()
-        if os.environ.get("XINDI_E2E_TIMING"):
+        if os.environ.get("LIBRESCREEN_E2E_TIMING"):
             print("setup %.1fs" % (time.time() - t0), flush=True)
         try:
             func(self)
         except Exception:
             self.errors.append("scenario exception: " + traceback.format_exc())
-        if os.environ.get("XINDI_E2E_TIMING"):
+        if os.environ.get("LIBRESCREEN_E2E_TIMING"):
             print("scenario done after %.1fs" % (time.time() - t0), flush=True)
         time.sleep(1.0)
         rc = self.stop_sut()

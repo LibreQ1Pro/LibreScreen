@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""(One-off migration, written for the former xindi/event.py; its function names are gone.)
-Rewrites the component names that the Python xindi writes in instructions for the screen, following tools/names.json.
+"""(One-off migration, written for the former librescreen/event.py; its function names are gone.)
+Rewrites the component names that the Python librescreen writes in instructions for the screen, following tools/names.json.
 
     python3 display_firmware/tools/rename_host.py [--apply]       (run from src_py/)
 
@@ -84,13 +84,13 @@ DYNAMIC = [
 
 def page_constants():
     """ui.TJC_PAGE_X names that are page ids (used with page_to / comparisons) -> page key."""
-    ui = open(os.path.join(SRC, "xindi", "ui.py"), encoding="utf-8").read()
+    ui = open(os.path.join(SRC, "librescreen", "ui.py"), encoding="utf-8").read()
     values = {m.group(1): int(m.group(2), 0) for m in re.finditer(r"^(TJC_PAGE_\w+)\s*=\s*(0x[0-9a-fA-F]+|\d+)", ui, re.M)}
     out = {}
-    for name in set(re.findall(r"page_to\((?:ui\.)?(TJC_PAGE_\w+)\)", ui + open(os.path.join(SRC, "xindi", "event.py")).read())):
+    for name in set(re.findall(r"page_to\((?:ui\.)?(TJC_PAGE_\w+)\)", ui + open(os.path.join(SRC, "librescreen", "event.py")).read())):
         if name in values and values[name] < len(PAGES):
             out[name] = PAGES[values[name]]
-    for name in set(re.findall(r"(?:page_id|current_page_id|page) == (?:ui\.)?(TJC_PAGE_\w+)", ui + open(os.path.join(SRC, "xindi", "event.py")).read())):
+    for name in set(re.findall(r"(?:page_id|current_page_id|page) == (?:ui\.)?(TJC_PAGE_\w+)", ui + open(os.path.join(SRC, "librescreen", "event.py")).read())):
         if name in values and values[name] < len(PAGES):
             out.setdefault(name, PAGES[values[name]])
     return out
@@ -195,7 +195,7 @@ class Plan:
 
 
 def plan_file(name):
-    path = os.path.join(SRC, "xindi", name)
+    path = os.path.join(SRC, "librescreen", name)
     src = open(path, encoding="utf-8").read()
     tree = ast.parse(src)
     plan = Plan(name)
@@ -265,8 +265,8 @@ def verify():
                 self.warnings.append("%s:%d %s: %r used without a known page" % (self.path, node.lineno, func, value))
 
     bad = 0
-    for name in sorted(f for f in os.listdir(os.path.join(SRC, "xindi")) if f.endswith(".py")):
-        tree = ast.parse(open(os.path.join(SRC, "xindi", name), encoding="utf-8").read())
+    for name in sorted(f for f in os.listdir(os.path.join(SRC, "librescreen")) if f.endswith(".py")):
+        tree = ast.parse(open(os.path.join(SRC, "librescreen", name), encoding="utf-8").read())
         plan = Check(name)
         for fn in [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]:
             if fn.name in FUNC_PAGES:
@@ -282,7 +282,7 @@ def main():
         return verify()
     apply = "--apply" in sys.argv
     total = 0
-    for name in sorted(f for f in os.listdir(os.path.join(SRC, "xindi")) if f.endswith(".py")):
+    for name in sorted(f for f in os.listdir(os.path.join(SRC, "librescreen")) if f.endswith(".py")):
         path, src, plan = plan_file(name)
         if not plan.edits and not any(d[0] == name for d in DYNAMIC):
             continue

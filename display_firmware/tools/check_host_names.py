@@ -25,7 +25,7 @@ def widgets():
 def problems():
     """The writes of the host to a widget that no page has: ["file:line  method('name')", ...]."""
     have, problems = widgets(), []
-    for path in sorted((ROOT.parent / "xindi").rglob("*.py")):
+    for path in sorted((ROOT.parent / "librescreen").rglob("*.py")):
         tree = ast.parse(path.read_text(encoding="utf-8"))
         for node in ast.walk(tree):
             if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and node.func.attr in METHODS and node.args:

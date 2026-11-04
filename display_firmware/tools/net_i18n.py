@@ -4,7 +4,7 @@
     python3 tools/net_i18n.py            apply (run from display_firmware/)
     python3 tools/net_i18n.py --check    only report what would change
 
-The texts come from xindi/util/netstrings.py (the host uses the same table for the texts that depend on the state). For every
+The texts come from librescreen/util/netstrings.py (the host uses the same table for the texts that depend on the state). For every
 page the ``codesload`` event becomes the usual ``if(lang==0){...}else if(lang==1){...}`` chain of the stock pages, and the
 text of the component in the editor is the English one. The pages listed here have no other code in ``codesload``.
 """
@@ -14,7 +14,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(ROOT))
-from xindi.util.netstrings import TEXT, LANGUAGES    # noqa: E402
+from librescreen.util.netstrings import TEXT, LANGUAGES    # noqa: E402
 
 ENGLISH = LANGUAGES.index("en")
 PAGES = {

@@ -5,7 +5,7 @@
 
 A picture is used when a page refers to it (``"$ref": "picture:KEY"`` or ``${picture:KEY}`` in event code), when Program.s does, or when the host
 switches to it (a look of tools/faces.json); an animation by an ``animation`` component; a font by any component. The ids of the pictures are
-positions, so xindi/screen/faces.py is written again.
+positions, so librescreen/screen/faces.py is written again.
 """
 import json
 import re

@@ -6,7 +6,7 @@
 The buttons "RESTART KLIPPER" and "FIRMWARE RESTART" are crops of the sheets sys_ok_export_logs(_press), which had the
 English text drawn in. The text is removed from the sheets (renamed klipper_status_buttons(_press): they hold the
 faces of the buttons of the status pages) and the buttons get the text in the 13 languages of the screen
-(xindi/util/netstrings.py: restart_klipper, restart_firmware).
+(librescreen/util/netstrings.py: restart_klipper, restart_firmware).
 """
 import json
 import os
@@ -17,7 +17,7 @@ from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from pictures import Pictures, ROOT                       # noqa: E402
-from xindi.util.netstrings import TEXT, LANGUAGES         # noqa: E402
+from librescreen.util.netstrings import TEXT, LANGUAGES         # noqa: E402
 
 BUTTONS = (306, 356)            # y of the two buttons (x 15, 242 x 48)
 X0, X1 = 15, 257

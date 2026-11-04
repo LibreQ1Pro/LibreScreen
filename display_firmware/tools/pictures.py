@@ -6,10 +6,10 @@
     p.add("fan_slider_track", "/path/track.png")      # copies the file to pictures/<key>.png, appends the key
     p.rename("hdr_back_press", "header_back_press")  # file, project.json, every reference, names.json
     p.remove(["unused_one"])                          # refuses while the picture is still referenced
-    p.save()                                          # writes project.json and xindi/screen/faces.py
+    p.save()                                          # writes project.json and librescreen/screen/faces.py
 
 The id of a picture is its position in ``project.json``. The host sends the ids of the looks of its widgets from
-xindi/screen/faces.py, which gen_faces.py writes from tools/faces.json (save() runs it). A reference is
+librescreen/screen/faces.py, which gen_faces.py writes from tools/faces.json (save() runs it). A reference is
 ``"$ref": "picture:KEY"`` in the pages and ``${picture:KEY}`` in their code.
 """
 import glob

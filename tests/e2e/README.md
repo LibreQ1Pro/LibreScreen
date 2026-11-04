@@ -6,7 +6,7 @@ checked: a trace must not change unless the behaviour was changed on purpose.
 
 ## How it works
 
-`build_image.sh` builds the image `xindi-port-test` (Debian with Python, Pillow and aiohttp; native
+`build_image.sh` builds the image `librescreen-port-test` (Debian with Python, Pillow and aiohttp; native
 architecture, one minute). It holds only the test support: a `/bin/sh` wrapper that logs every
 `system()` / `popen()` command, no-op stubs for system tools (`systemctl`, `dpkg`, `curl`, ...), and an
 `LD_PRELOAD` shim (`timescale.c`) that shortens sleeps of 1.5 s and more to a quarter.
@@ -53,7 +53,7 @@ tests/e2e/golden.py check wifi     # selected scenarios
 tests/e2e/golden.py record -j 22   # accept a deliberate change of behaviour
 ```
 
-`XINDI_SRC=<checkout>` runs the port of another checkout (to record the traces of an older commit).
+`LIBRESCREEN_SRC=<checkout>` runs the port of another checkout (to record the traces of an older commit).
 
 A full run takes under a minute: the harness waits for the port to go quiet (nothing new on the screen for half a
 second) instead of fixed pauses, and the time-outs are a few seconds.
@@ -73,7 +73,7 @@ tests/e2e/emulator.py                    # open http://127.0.0.1:8765/ ; --scena
 curl -X POST localhost:7125/emu/preset/printing
 ```
 
-One container (`xindi-port-test`) holds the emulator on `/dev/ttyS1`, the fake Moonraker of the tests and the port, so
+One container (`librescreen-port-test`) holds the emulator on `/dev/ttyS1`, the fake Moonraker of the tests and the port, so
 nothing of the port runs on the development host. `display_firmware` is mounted and the emulator runs with `--watch`:
 edit a page or `Program.s`, save, and the emulator reloads while the port keeps running (the port does not resend a page it
 already showed, so touch the screen or use the page selector). hmi-builder is found like `display_firmware/tools/build_hmi.py`
@@ -94,8 +94,8 @@ The printer is played through the fake Moonraker (`harness/devserver.py`), which
 `M141`/`M191`, `SET_HEATER_TEMPERATURE`, `TURN_OFF_HEATERS`) are approached every second (extruder 6 °C/s up and 3 down, bed
 1.5 / 0.3, chamber 0.5 / 0.1, ambient 25 °C) and reported like `notify_status_update`. `M109`, `M190`, `M191` and
 `TEMPERATURE_WAIT` wait for the temperature, `G1` with `E` takes as long as the extrusion, `M603` / `M604` (unload / load
-filament) run the macros of the LibreQ1Pro Klipper configuration with their events (`// action:xindi filament_heated`,
-`// action:xindi filament_loaded`),
+filament) run the macros of the LibreQ1Pro Klipper configuration with their events (`// action:librescreen filament_heated`,
+`// action:librescreen filament_loaded`),
 `G0`/`G1` move the toolhead (absolute or relative with `G90`/`G91`, as long as the distance takes) and answer like Klipper when
 an axis is not homed (`!! Must home axis first: x y z [e]`, the rest of the script is dropped and a `G91` stays in force), when
 the target is out of range (`!! Move out of range`) or when extruding below 170 °C (`!! Extrude below minimum temp`); `G28`
@@ -117,7 +117,7 @@ the other system tools are stubs; the sleeps are the real ones.
 |---|---|
 | boot_main | start-up sequence, subscriptions, main page refresh, cached file picture (ColPic), LED / beeper / emergency stop |
 | boot_oobe | out-of-box guide pages, filament steps, `switch` fall-through 72 → 11 → 12 |
-| oobe_calibrate | guide heater bed page, automatic calibration steps (`// action:xindi` events) |
+| oobe_calibrate | guide heater bed page, automatic calibration steps (`// action:librescreen` events) |
 | screen_update | firmware download with `--flash-screen` (whmi-wri protocol), then the update-finished page of the screen |
 | boot_interrupted | power loss recovery question |
 | no_cache | start without a cached file |

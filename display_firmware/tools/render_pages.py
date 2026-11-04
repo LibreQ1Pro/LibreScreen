@@ -3,7 +3,7 @@
 
     python3 tools/render_pages.py OUT.png PAGE [PAGE ...] [--lang N]
 
-This runs only the display emulator, not xindi. Each pair is emulator left / mockup right.
+This runs only the display emulator, not librescreen. Each pair is emulator left / mockup right.
 Browser intermediates stay in the firmware's ignored out/static directory.
 """
 import argparse

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-A small stand-in for ``nmcli`` for the dev server (devserver.py): the subset xindi/system/network.py uses, with a
+A small stand-in for ``nmcli`` for the dev server (devserver.py): the subset librescreen/system/network.py uses, with a
 stateful Wi-Fi.  Three networks are in range and the password of each is its own name, so the list on the screen
 tells what to type:
 

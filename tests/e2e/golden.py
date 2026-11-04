@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Golden traces of the Python port alone (the C++ reference is obsolete since the port follows firmware 4.4.24).
-Every scenario of harness/scenarios.py runs in the xindi-port-test container (tests/e2e/build_image.sh); the normalised trace (screen
+Every scenario of harness/scenarios.py runs in the librescreen-port-test container (tests/e2e/build_image.sh); the normalised trace (screen
 instructions, Moonraker traffic, shell commands, touched files) is stored in golden/ or compared with it.
 A refactoring must leave the traces unchanged; a change of behaviour shows up as a diff and is recorded on purpose.
 
@@ -20,8 +20,8 @@ import tempfile
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.environ.get("XINDI_SRC") or os.path.dirname(os.path.dirname(HERE))   # src_py (or another checkout)
-IMAGE = "xindi-port-test:latest"
+ROOT = os.environ.get("LIBRESCREEN_SRC") or os.path.dirname(os.path.dirname(HERE))   # src_py (or another checkout)
+IMAGE = "librescreen-port-test:latest"
 GOLDEN = os.path.join(HERE, "golden")
 SECTIONS = ("pages", "screen", "ws", "http", "shell", "wpa", "files", "alive")
 

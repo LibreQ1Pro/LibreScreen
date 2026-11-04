@@ -9,7 +9,7 @@ The id of a page is its position in project.json, so a new order changes the num
   (``page <name>``, ``<name>.<object>``), ``Program.s`` (``${page:...}``);
 * the page numbers that the code of a page writes as literals (``prints 0x65,1`` followed by a number, ``prints 113,1`` followed by a number): in the pages and in
   the saved sources of the generator (``tools/migration_sources/``, they keep the stock names);
-* xindi/screen/pageids.py: the number of every page;
+* librescreen/screen/pageids.py: the number of every page;
 * tools/migrated.json (the hashes of the page files).
 tests/e2e/golden has to be recorded again, and the pages that name another page in the host (``preview.cp_data``) are renamed by hand once.
 """
@@ -23,7 +23,7 @@ import page_names as names
 from renumber import remap_node, save
 
 ROOT = names.ROOT
-PAGEIDS = ROOT.parent / "xindi" / "screen" / "pageids.py"
+PAGEIDS = ROOT.parent / "librescreen" / "screen" / "pageids.py"
 
 
 def main():

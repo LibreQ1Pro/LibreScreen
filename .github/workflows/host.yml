@@ -2,7 +2,7 @@ name: host
 
 on:
   push:
-    paths: [xindi/**, tests/unit/**, main.py, requirements.txt, .github/workflows/host.yml]
+    paths: [librescreen/**, tests/unit/**, main.py, requirements.txt, .github/workflows/host.yml]
   workflow_dispatch:
 
 jobs:

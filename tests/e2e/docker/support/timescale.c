@@ -3,8 +3,8 @@
  * scenarios run faster.  Applied identically to the C++ binary and to the
  * Python port (CPython's time.sleep() ends up in clock_nanosleep()).
  *
- *   XINDI_SLEEP_SCALE  multiplier applied to sleeps (default 1.0)
- *   XINDI_SLEEP_MIN    only sleeps >= this many seconds are scaled (default 0.5)
+ *   LIBRESCREEN_SLEEP_SCALE  multiplier applied to sleeps (default 1.0)
+ *   LIBRESCREEN_SLEEP_MIN    only sleeps >= this many seconds are scaled (default 0.5)
  *
  * It also makes write() to a pty slave (the virtual screen on /dev/ttyS1)
  * complete instead of failing with EAGAIN / short writes: on the printer the
@@ -26,8 +26,8 @@ static double scale = -1.0, min_s = 0.5;
 
 static void init(void) {
     if (scale >= 0) return;
-    const char *s = getenv("XINDI_SLEEP_SCALE");
-    const char *m = getenv("XINDI_SLEEP_MIN");
+    const char *s = getenv("LIBRESCREEN_SLEEP_SCALE");
+    const char *m = getenv("LIBRESCREEN_SLEEP_MIN");
     scale = s ? atof(s) : 1.0;
     if (m) min_s = atof(m);
 }

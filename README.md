@@ -1,8 +1,7 @@
-# xindi
+# librescreen
 
 Screen backend for the QIDI Q1 Pro: drives the printer's TJC touch display
-over its serial port from any Klipper + Moonraker installation (Armbian,
-KIAUH, …). LAN only.
+over its serial port from any Klipper + Moonraker installation.
 
 ## Requirements
 
@@ -12,14 +11,14 @@ Python ≥ 3.9, Pillow ≥ 9.1, NetworkManager. The service user needs `dialout`
 ## Installation
 
 ```sh
-sudo -u mks git clone https://github.com/LibreQ1Pro/xindi.git ~mks/xindi
-sudo install -m 644 contrib/systemd/xindi.service /etc/systemd/system/  # edit User= first
-sudo install -m 644 contrib/systemd/50-xindi.rules /etc/polkit-1/rules.d/  # edit mks in it to match User=
-sudo install -m 755 contrib/usb-automount/xindi-usb-mount /usr/local/sbin/
-sudo install -m 644 contrib/usb-automount/xindi-usb-mount@.service /etc/systemd/system/
-sudo install -m 644 contrib/usb-automount/99-xindi-usb.rules /etc/udev/rules.d/
-sudo install -m 644 contrib/usb-automount/xindi-usb.default /etc/default/xindi-usb  # edit XINDI_USER in it
-sudo systemctl daemon-reload && sudo udevadm control --reload && sudo systemctl enable --now xindi
+git clone https://github.com/LibreQ1Pro/librescreen.git ~/librescreen
+sudo install -m 644 contrib/systemd/librescreen.service /etc/systemd/system/  # edit User= first
+sudo install -m 644 contrib/systemd/50-librescreen.rules /etc/polkit-1/rules.d/  # edit mks in it to match User=
+sudo install -m 755 contrib/usb-automount/librescreen-usb-mount /usr/local/sbin/
+sudo install -m 644 contrib/usb-automount/librescreen-usb-mount@.service /etc/systemd/system/
+sudo install -m 644 contrib/usb-automount/99-librescreen-usb.rules /etc/udev/rules.d/
+sudo install -m 644 contrib/usb-automount/librescreen-usb.default /etc/default/librescreen-usb  # edit LIBRESCREEN_USER in it
+sudo systemctl daemon-reload && sudo udevadm control --reload && sudo systemctl enable --now librescreen
 ```
 
 Run by hand: `python3 main.py [--config FILE] [moonraker_host]`. A USB drive
@@ -29,7 +28,7 @@ is expected mounted at `<gcodes>/sda1`.
 
 Built in `display_firmware/` (generators → `.HMI`); the `.tft` is compiled
 from the `.HMI` in the USART HMI editor. Host and `.tft` must be the same
-version (`VERSION` in `xindi/screen/navigation.py`).
+version (`VERSION` in `librescreen/screen/navigation.py`).
 
 Stop the service, then:
 

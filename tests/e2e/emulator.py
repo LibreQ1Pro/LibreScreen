@@ -4,7 +4,7 @@ The port against the HMI emulator of hmi-builder (docs/EMULATOR.md): no printer 
 
     tests/e2e/emulator.py [--scenario boot_oobe] [--builder PATH] [--port 8765] [--shell]
 
-Starts the xindi-port-test container (tests/e2e/build_image.sh) with the port, the fake Moonraker of the E2E
+Starts the librescreen-port-test container (tests/e2e/build_image.sh) with the port, the fake Moonraker of the E2E
 tests and the emulator running the project of display_firmware with --watch. Open http://127.0.0.1:8765/ : the
 page is the touch screen. Edit display_firmware and save: the emulator reloads, the port keeps running (the pages
 the port sent are not resent: touch the screen or use the page selector to see the change).
@@ -50,7 +50,7 @@ def main():
            "-v", "%s:/opt/e2e:ro" % HERE,
            "-v", "%s:/opt/display_firmware:ro" % PROJECT,
            "-v", "%s:/opt/hmi-builder:ro" % builder,
-           "xindi-port-test:latest"]
+           "librescreen-port-test:latest"]
     if args.shell:
         cmd.append("bash")
     else:

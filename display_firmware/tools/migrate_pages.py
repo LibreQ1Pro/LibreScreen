@@ -127,11 +127,11 @@ SPINNER = {"drag": 0, "sendkey": 0, "aph": 127, "movex": 0, "movey": 0, "effect"
 
 
 def host_names():
-    """The names the host writes to (string literals of xindi/), the names it builds (``row3_txt``) and the readout fields: these texts change at run time,
+    """The names the host writes to (string literals of librescreen/), the names it builds (``row3_txt``) and the readout fields: these texts change at run time,
     so their box is solid (it erases the old text); every other text is written once by the page and is transparent (it can lie over a picture)."""
     import ast
     names = set()
-    for path in (ROOT.parent / "xindi").rglob("*.py"):
+    for path in (ROOT.parent / "librescreen").rglob("*.py"):
         for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
             if isinstance(node, ast.Constant) and isinstance(node.value, str) and re.fullmatch(r"[a-z_][a-z0-9_]*", node.value):
                 names.add(node.value)
@@ -457,7 +457,7 @@ class Migration:
         obj = gp.text_component(w, name, text)
         obj["attributes"].update(sta=3, bco=65535)           # no background of its own: the picture or the page under it shows (a box of a matte would show as a frame)
         # A scrolling text (type 55) has no layout in the portable project, so a long message is a plain wrapped text: the host cuts it
-        # to what fits (xindi/screen/text.py fit_lines) and the full message stays in its log.
+        # to what fits (librescreen/screen/text.py fit_lines) and the full message stays in its log.
         a = obj["attributes"]
         a["isbr"] = 0 if w.get("role") in Metrics.CELL and slot_height < 2 * Metrics.CELL[w["role"]] and not w.get("top") else 1
         a["ycen"] = 0 if w.get("top") else 2 if w.get("bottom") else 1

@@ -4,7 +4,7 @@
 
 One line per component: id, name, type, rectangle, texts (the English one set by codesload as EN=), pictures, and
 the event code (a button that only sends the frame `65 <page> <action>` is shown as ACT <action>, with the name of the
-constant in xindi/screen/pageids.py when there is one).
+constant in librescreen/screen/pageids.py when there is one).
 """
 import json
 import os
@@ -12,7 +12,7 @@ import re
 import sys
 
 R = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')) + '/'
-ui=open(R+'xindi/screen/pageids.py').read()
+ui=open(R+'librescreen/screen/pageids.py').read()
 consts={m.group(1):int(m.group(2),0) for m in re.finditer(r'^(TJC_PAGE_\w+)\s*=\s*(0x[0-9a-fA-F]+|\d+)',ui,re.M)}
 pj=json.load(open(R+'display_firmware/project.json')); keys=[p['key'] for p in pj['pages']]
 def k(v): return v['$ref'].split(':',1)[1] if isinstance(v,dict) else v

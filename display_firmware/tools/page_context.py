@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import english_copy as e
 import os
 R=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))+'/'
-ui=open(R+'xindi/screen/pageids.py').read()
+ui=open(R+'librescreen/screen/pageids.py').read()
 consts={m.group(1):int(m.group(2),0) for m in re.finditer(r'^(TJC_PAGE_\w+)\s*=\s*(0x[0-9a-fA-F]+|\d+)',ui,re.M)}
 pj=json.load(open('project.json')); keys=[p['key'] for p in pj['pages']]
 pages=sorted({p for p,_ in e.COPY}|{p for p,_ in e.BUTTON_COPY}, key=keys.index)

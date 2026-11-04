@@ -2,8 +2,8 @@
 import unittest
 import unittest.mock
 
-from xindi import state as g
-from xindi.pages import file_list, move, printing, refresh
+from librescreen import state as g
+from librescreen.pages import file_list, move, printing, refresh
 from support import PortRecorder
 
 
@@ -50,7 +50,7 @@ class ListPictureTest(PortRecorder):
         # the screen draws the rows of a JPEG whose width is not a multiple of 16 sheared (a staircase)
         import io
         from PIL import Image
-        from xindi.screen import thumbnail
+        from librescreen.screen import thumbnail
         png = io.BytesIO()
         Image.new("RGB", (160, 160), (200, 50, 50)).save(png, "PNG")
         thumb = thumbnail.Thumbnail("PNG", 160, 160, png.getvalue())
@@ -78,7 +78,7 @@ class ShownNameTest(unittest.TestCase):
 
 class WrapTextTest(unittest.TestCase):
     def test_words_are_not_cut(self):
-        from xindi.screen import text
+        from librescreen.screen import text
         message = "Shutdown due to webhooks request. Use the FIRMWARE_RESTART command to reset the firmware."
         wrapped = text.wrap_text(message, 190, 6)
         lines = wrapped.split("\\r")
@@ -87,11 +87,11 @@ class WrapTextTest(unittest.TestCase):
         self.assertEqual(" ".join(lines), message)          # no word was cut, nothing lost
 
     def test_a_new_line_of_the_message_is_kept(self):
-        from xindi.screen import text
+        from librescreen.screen import text
         self.assertEqual(text.wrap_text("one\ntwo", 190, 6), "one\\rtwo")
 
     def test_a_word_wider_than_the_line_is_cut_and_the_rest_ends_with_an_ellipsis(self):
-        from xindi.screen import text
+        from librescreen.screen import text
         wrapped = text.wrap_text("w" * 60, 100, 6).split("\\r")
         self.assertGreater(len(wrapped), 1)
         self.assertTrue(all(text.width(line) <= 100 for line in wrapped))
@@ -100,5 +100,5 @@ class WrapTextTest(unittest.TestCase):
         self.assertTrue(many[-1].endswith("…"))
 
     def test_text_that_fits_is_unchanged(self):
-        from xindi.screen import text
+        from librescreen.screen import text
         self.assertEqual(text.wrap_text("Printer is ready", 190, 6), "Printer is ready")

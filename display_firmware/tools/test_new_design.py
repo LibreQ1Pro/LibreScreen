@@ -18,11 +18,11 @@ from hmi_emu.project import Project
 from hmi_emu.render import Renderer
 import hmi_font
 
-from xindi import state as g
-from xindi.pages import home, file_list
-from xindi.screen import pageids as ids
-from xindi.screen.tx import ScreenPort
-from xindi.screen.text import WIDTHS, fit_name
+from librescreen import state as g
+from librescreen.pages import home, file_list
+from librescreen.screen import pageids as ids
+from librescreen.screen.tx import ScreenPort
+from librescreen.screen.text import WIDTHS, fit_name
 
 
 class DisplayTest(unittest.TestCase):
@@ -113,7 +113,7 @@ class DisplayTest(unittest.TestCase):
         self.assertTrue(next(obj for obj in self.device.objects() if obj.name == "last_file_pic").visible)
 
     def test_icon_update_does_not_paint_over_temperature(self):
-        from xindi.screen.faces import FACES
+        from librescreen.screen.faces import FACES
         self.send('nozzle_temp.txt="220"')
         before = Renderer(self.project).render(self.device)
         self.send("nozzle_icon.pic=" + FACES["nozzle_icon"]["on"][0])

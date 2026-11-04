@@ -1,25 +1,25 @@
-"""The configuration of the deployment (xindi/config/runtime.py)."""
+"""The configuration of the deployment (librescreen/config/runtime.py)."""
 
 import os
 import tempfile
 import unittest
 from unittest import mock
 
-from xindi.config import runtime
+from librescreen.config import runtime
 
 
 class RuntimeConfigTest(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.TemporaryDirectory()
         self.addCleanup(self.dir.cleanup)
-        env = {k: v for k, v in os.environ.items() if k != "XINDI_CONFIG"}
+        env = {k: v for k, v in os.environ.items() if k != "LIBRESCREEN_CONFIG"}
         patcher = mock.patch.dict(os.environ, env, clear=True)
         patcher.start()
         self.addCleanup(patcher.stop)
         self.addCleanup(lambda: setattr(runtime, "cfg", runtime.Runtime()))     # the other tests get the defaults
 
     def write(self, text):
-        path = os.path.join(self.dir.name, "xindi.ini")
+        path = os.path.join(self.dir.name, "librescreen.ini")
         with open(path, "w") as f:
             f.write(text)
         return path
@@ -57,7 +57,7 @@ class RuntimeConfigTest(unittest.TestCase):
 
     def test_the_environment_names_the_file(self):
         path = self.write("[screen]\nbaud = 9600\n")
-        with mock.patch.dict(os.environ, {"XINDI_CONFIG": path}):
+        with mock.patch.dict(os.environ, {"LIBRESCREEN_CONFIG": path}):
             self.assertEqual(runtime.load().screen_baud, 9600)
 
 

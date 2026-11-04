@@ -1,6 +1,6 @@
 import unittest
 
-from xindi.screen import navigation as ui
+from librescreen.screen import navigation as ui
 
 
 class UiVersionTest(unittest.TestCase):

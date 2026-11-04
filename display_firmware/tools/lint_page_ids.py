@@ -2,7 +2,7 @@
 """Checks the page ids that are written as numbers in the code of the pages.
 
 The keyboards send ``prints 113,1`` (0x71, a value) followed by the id of the page the value belongs to; the host
-dispatches on it (xindi/screen/events.py). The id is the position of the page in project.json, so it has to change
+dispatches on it (librescreen/screen/events.py). The id is the position of the page in project.json, so it has to change
 whenever pages are added or removed before it.
 The clicks written with a page number (``prints 0x65,1`` followed by a number instead of ``dp``) are checked too:
 the sleep timer of the pages sends the id of the sleep page, the language pages send the id of the language

@@ -6,7 +6,7 @@
 The stock pages were full-screen pictures with the English text drawn in. Now ``shutdown`` and ``restart`` have a plain
 colour as their background (the pictures bg_shutdown / bg_restart are gone), ``logo`` keeps the picture of the logo
 (now boot_logo, the text of its lower part is removed) and the texts are components in the 13 languages of the screen
-(xindi/util/netstrings.py: shutting_down, system_abnormal, restart_hint, booting_up).
+(librescreen/util/netstrings.py: shutting_down, system_abnormal, restart_hint, booting_up).
 """
 import json
 import os
@@ -17,7 +17,7 @@ from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from pictures import Pictures, ROOT                       # noqa: E402
-from xindi.util.netstrings import TEXT, LANGUAGES         # noqa: E402
+from librescreen.util.netstrings import TEXT, LANGUAGES         # noqa: E402
 
 BACKGROUND = 12710          # RGB565 of the (52, 52, 52) of the stock pictures
 WHITE = 65535

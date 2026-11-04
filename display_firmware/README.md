@@ -1,8 +1,7 @@
 # Screen firmware (TJC / USART HMI, 272x480)
 
-The unpacked stock V4.4.24 project in the portable format (see `PORTABLE_FORMAT.md` of
-[QSART_Linux_EN](../../../QSART_Linux_EN)), plus the network management pages made for the Python xindi
-(`xindi/pages/connections.py`, `xindi/system/network.py`). Compatibility with QIDI's xindi is not kept.
+The unpacked stock V4.4.24 project in the portable format, plus the network management pages made for the Python librescreen
+(`librescreen/pages/connections.py`, `librescreen/system/network.py`). Compatibility with QIDI's xindi is not kept.
 
 ## The screen project follows the mockup
 
@@ -10,7 +9,7 @@ Every page of the project (84 pages) is made from the design in `mockup/` (see `
 project: the same actions reach the host (`tools/test_behaviour.py` touches every component that both projects have and compares the frames).
 The pages the new design does not use (`open_video_3`, `open_heaterbed`, `open_calibrate`, `fila_set_fan`, `internet_page`: Settings > Network opens the network info) and the stock fonts (`font_title18`,
 `font_small14`, `font_digits24`), the blinking step animations and every picture no page refers to are gone; the numbers of the pages are the positions in
-`project.json`, so `xindi/screen/pageids.py`, the numbers in the code of the pages and the traces of `tests/e2e/golden` moved with them
+`project.json`, so `librescreen/screen/pageids.py`, the numbers in the code of the pages and the traces of `tests/e2e/golden` moved with them
 (`tools/renumber.py`).
 
 ### Names and order of the pages
@@ -18,7 +17,7 @@ The pages the new design does not use (`open_video_3`, `open_heaterbed`, `open_c
 The pages of the project have readable names (at most 14 characters, the limit of the editor) and are in the order of using the printer: boot, setup guide, home, filament, move,
 files, printing, calibration, settings, network, errors. The table is `mockup/pages.json` (`pages`: stock name -> the name of the mockup, `short`: the name of the mockup -> the
 name in the project where it is longer than 14 characters, `order`); `tools/page_names.py` reads it and `tools/rename_pages.py` applies a change of it (names, order, the page
-numbers in the code and in `xindi/screen/pageids.py`). The tools keep the stock names as the *source* names (`tools/migration_sources/`, `tools/migrated.json`, the rules).
+numbers in the code and in `librescreen/screen/pageids.py`). The tools keep the stock names as the *source* names (`tools/migration_sources/`, `tools/migrated.json`, the rules).
 
 ### The number keyboard of the print pages
 
@@ -51,19 +50,19 @@ sources in `tools/migration_sources/` (the stock pages) and `tools/migrated.json
 by hand, so port a change to the rules or the adapters (`tools/page_patches.py`: the value keyboards, the Wi-Fi keyboard, the print pages) instead.
 
 The screen breaks a long text at the last letter that fits, not at a space: `break_lines` of `migrate_pages.py` puts the line breaks (`\r`) at the spaces, for the real
-glyph widths and the width of the widget, into the text of the page and into the chain of translations. A text of the host is cut by `xindi/screen/text.py`.
+glyph widths and the width of the widget, into the text of the page and into the chain of translations. A text of the host is cut by `librescreen/screen/text.py`.
 
 States of a widget are looks of one picture or one widget that the screen or the host switches: a widget can be `selectable` (a look per variant or language of the
 mockup that shows it: the language tiles, the options of the sleep time, the steps of a distance), a `region` of the page can have a look per variant (the steps of a
 wizard `steps_bar`, the heater icons `nozzle_icon` ..., the segmented controls `step_seg`, `dist_seg`, `tabs_seg`). The host asks for a look with `g.port.face(widget, state)`
-(`tools/faces.json`, `xindi/screen/faces.py`).
+(`tools/faces.json`, `librescreen/screen/faces.py`).
 
 ### The fonts
 
 Six fonts, one size and weight each (`tools/make_fonts.py`, Noto Sans; Arabic and Hebrew from their Noto faces, kana, ideographs and hangul from Noto Sans CJK):
 text 13 / 400, 16 / 500, 19 / 600 and digits 20 / 28 / 32 (all with `-`, a value the host has not sent shows `---`). Text 16 is the one wide font (46 056 glyphs): every text
-that comes from the host (names of files, networks, messages) is drawn in it; `xindi/screen/font_t16.widths` has its advances, the host cuts a name to its slot with them
-(`xindi/screen/text.py`). The characters of the strings of the project and of the text the screen sets itself (`.txt="..."` in event code) are in the other fonts.
+that comes from the host (names of files, networks, messages) is drawn in it; `librescreen/screen/font_t16.widths` has its advances, the host cuts a name to its slot with them
+(`librescreen/screen/text.py`). The characters of the strings of the project and of the text the screen sets itself (`.txt="..."` in event code) are in the other fonts.
 The cell of text 13 / 16 / 19 is 18 / 20 / 26 px, of the digits 28 / 40 / 46; a text box is never shorter than the lines of its longest translation need.
 Arabic and Hebrew are single glyphs without joining and right-to-left layout (the browser of the mockup does both): that has to be tried on the screen.
 A scrolling text (type 55) has no layout in the portable project, so a long error message is a wrapped text that the host cuts to what fits.
@@ -72,7 +71,7 @@ A scrolling text (type 55) has no layout in the portable project, so a long erro
 
 Thumbnails are exactly the size of their widget with the colour of their card and the round corners in the pixels (ColPic and JPEG have no alpha):
 Home 140 (ColPic), the file list slots 104 (JPEG through `external_picture`), the preview 152, the print pages 132 and their number keyboard 72 (two ColPic texts
-`cp_data`, `cp_data_s` that the preview page holds), see `xindi/screen/thumbnail.py` (`prepare_picture`) and `xindi/pages/preview.py`.
+`cp_data`, `cp_data_s` that the preview page holds), see `librescreen/screen/thumbnail.py` (`prepare_picture`) and `librescreen/pages/preview.py`.
 
 ### Checks
 
@@ -118,7 +117,7 @@ twice); `tools/draw_source_switch.py` redraws the LAN / Wi-Fi switch of the netw
 `tools/draw_network_pictures.py` draws the backgrounds of the network pages (antialiased rounded corners, run it
 again after changing a layout). Helpers: `tools/page_dump.py` (a page as text), `tools/pic_sheet.py` (pictures by id on one
 image), `tools/name_pictures.py` (how the picture names were proposed); on the printer, `tests/printer/check_network.py`
-checks the NetworkManager part of xindi. `tools/preview_page.py OUT.png page...` draws a rough preview of pages (Noto Sans instead of the screen fonts).
+checks the NetworkManager part of librescreen. `tools/preview_page.py OUT.png page...` draws a rough preview of pages (Noto Sans instead of the screen fonts).
 
 ## Settings kept in the screen's EEPROM
 
@@ -146,7 +145,7 @@ for the fan names, the language buttons, the restart buttons and the shutdown / 
 - put the English text into the `txt` attribute, translations into `codesload`; a component whose text comes from the host at run time (the network pages: names, addresses, states) is left
   empty, so nothing wrong flashes while the page loads (`tools/preview_page.py` has its own sample data to draw them);
 - `txt_maxl` is in bytes: a Chinese character takes 3, an Arabic one 2; check the longest language;
-- the network pages take their texts from `xindi/util/netstrings.py` (the host uses the same table for the texts that depend on
+- the network pages take their texts from `librescreen/util/netstrings.py` (the host uses the same table for the texts that depend on
   the state): edit the table, then run `python3 tools/net_i18n.py` from this directory;
 - the translations of a page are the ones of the stock page (`tools/migration_sources/<page>.json`, written by `tools/english_copy.py` / `tools/translations.py` before the pages
   were generated) and, for a text that the new design added, the ones of the mockup (`mockup/texts.json`, `mockup/src/captions.js`). `tools/test_pages.py` reports a text
@@ -159,10 +158,10 @@ for the fan names, the language buttons, the restart buttons and the shutdown / 
 Everything the screen sends is a frame that ends with `ff ff ff`. The editor adds it by itself to the keys of
 "send key" components and to `get` / `sendme`, but `prints` and `printh` send exactly what they are told: every handler
 that prints a frame has to print the terminator itself (three `prints 0xff,1`, or `printh ... ff ff ff`). The host
-(`xindi/screen/rx.py`) cuts the stream at the terminators, so a frame without one is glued to the next frame and both are
+(`librescreen/screen/rx.py`) cuts the stream at the terminators, so a frame without one is glued to the next frame and both are
 lost. `python3 tools/lint_frames.py` finds such handlers (`--fix` adds the terminators); run it after every change of
 an event. Some frames carry a page id written as a number (the sleep timer, the language pages, the value
-keyboards); the host compares it with `xindi/screen/pageids.py`, so `python3 tools/lint_page_ids.py` has to be run
+keyboards); the host compares it with `librescreen/screen/pageids.py`, so `python3 tools/lint_page_ids.py` has to be run
 whenever pages are added or removed. Frames the host knows: `65 page widget [event]` (click), `70 mode row text` (keyboard), `71 page widget low high`
 (a number, 2 bytes, may be `ff ff`), `1a` (invalid variable name), `91` (the screen was updated). The only thing without
 a terminator is the single byte `05` the screen answers to every data packet of a picture transfer.
@@ -188,7 +187,7 @@ The host sets the globals `kbmode` (1 password of a scanned network, 2 new passw
 Components, pictures, fonts and animations have readable names (the stock project used `b0`, `t1`, `pic_25`, `anim_3`).
 `tools/names.json` maps the stock names to the current ones, page by page; `tools/rename_objects.py` applied it (it
 rewrites the names and every reference in event code, checks the result, and verifies that the inverse renaming gives
-the original project back; the compiled pages differ from the stock ones only in the names). The names the Python xindi
+the original project back; the compiled pages differ from the stock ones only in the names). The names the Python librescreen
 writes in instructions were changed with `tools/rename_host.py` (`--verify` re-checks that every name the host uses
 exists on the page it addresses).
 
@@ -216,7 +215,7 @@ pages still show are the animations of the setup guide (`animations/`, made by `
 tile tools (`tools/tile_*.py`, `tools/pictures.py`, `tools/unbake_*.py`, `tools/add_brightness.py`) and `tools/names.json` are the record of how the stock project was prepared; the
 resources they mention are gone.
 
-**Looks of the host.** The host (xindi/pages) does not send picture ids by name: `g.port.face("nozzle_icon", "on")` sends `nozzle_icon.pic=<tile>` and `nozzle_icon.pic2=<tile>` of that
-state. `tools/faces.json` lists the tiles of every `widget -> state`; `tools/gen_faces.py` writes `xindi/screen/faces.py` from it and the position of the pictures,
+**Looks of the host.** The host (librescreen/pages) does not send picture ids by name: `g.port.face("nozzle_icon", "on")` sends `nozzle_icon.pic=<tile>` and `nozzle_icon.pic2=<tile>` of that
+state. `tools/faces.json` lists the tiles of every `widget -> state`; `tools/gen_faces.py` writes `librescreen/screen/faces.py` from it and the position of the pictures,
 `tools/lint_faces.py` (part of `build_hmi.py`) checks that the tiles exist and are as big as the widget, `tests/unit/test_faces.py` finds a `face()` of the host that asks for
 a look that is not in the table. `tools/prune_resources.py` removes what nothing refers to (it writes `faces.py` again: the id of a picture is its position).

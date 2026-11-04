@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Runs the unit tests, in the order of the files or in a random one (a test that depends on the one before it shows up):
 
-    tests/run_unit.py                      # in docker (xindi-port-test), the tests in the order they are found
+    tests/run_unit.py                      # in docker (librescreen-port-test), the tests in the order they are found
     tests/run_unit.py --shuffle [SEED]     # in a random order (the seed is printed, the same seed gives the same order)
     tests/run_unit.py --shuffle --repeat 5 # five random orders
 
-Nothing of the printer is touched: the tests run in the xindi-port-test container with the source mounted read-only.
+Nothing of the printer is touched: the tests run in the librescreen-port-test container with the source mounted read-only.
 """
 import argparse
 import os
@@ -18,7 +18,7 @@ ROOT = os.path.dirname(HERE)
 
 
 def run_in_docker(extra):
-    cmd = ["docker", "run", "--rm", "-v", "%s:/opt/src_py:ro" % ROOT, "-w", "/opt/src_py", "-e", "PYTHONDONTWRITEBYTECODE=1", "xindi-port-test:latest",
+    cmd = ["docker", "run", "--rm", "-v", "%s:/opt/src_py:ro" % ROOT, "-w", "/opt/src_py", "-e", "PYTHONDONTWRITEBYTECODE=1", "librescreen-port-test:latest",
            "python3", "tests/run_unit.py", "--inside"] + extra
     return subprocess.call(cmd)
 

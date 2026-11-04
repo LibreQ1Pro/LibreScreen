@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Monkey test of the Python port: a virtual screen that touches everything in a random order with random pauses while the fake Moonraker changes the state of
-the printer (harness/monkey.py). Every seed is one run in its own xindi-port-test container; a seed that fails is repeated with
+the printer (harness/monkey.py). Every seed is one run in its own librescreen-port-test container; a seed that fails is repeated with
 the same actions (the timing of the program is not under control, so a race may need more than one run).
 
     tests/e2e/monkey.py [--seeds 8] [--first 1] [--steps 150] [--hostile] [-j 4]      # seeds first .. first+seeds-1
@@ -18,8 +18,8 @@ import sys
 import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.environ.get("XINDI_SRC") or os.path.dirname(os.path.dirname(HERE))
-IMAGE = "xindi-port-test:latest"
+ROOT = os.environ.get("LIBRESCREEN_SRC") or os.path.dirname(os.path.dirname(HERE))
+IMAGE = "librescreen-port-test:latest"
 
 
 def run_seed(seed, steps, hostile, out_dir, timeout):

@@ -2,8 +2,8 @@
 import logging
 import unittest
 
-from xindi import state as g
-from xindi.moonraker import printer_status
+from librescreen import state as g
+from librescreen.moonraker import printer_status
 from support import IsolatedState
 
 

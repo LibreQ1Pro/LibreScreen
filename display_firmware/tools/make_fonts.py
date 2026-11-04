@@ -31,7 +31,7 @@ BASE_K = 0.388
 ROLES = {"t13": (13, "Regular"), "t16": (16, "Medium"), "t19": (19, "SemiBold"),
          "d20": (20, "SemiBold"), "d28": (28, "SemiBold"), "d32": (32, "SemiBold")}
 DIGITS = " 0123456789.-/%+*:"
-WIDTHS = ROOT.parent / "xindi" / "screen" / "font_t16.widths"
+WIDTHS = ROOT.parent / "librescreen" / "screen" / "font_t16.widths"
 
 
 def hmi_font():
@@ -160,7 +160,7 @@ def make(role, static, hf):
         # The line break of a text is the control character CR (the "\\r" of the instructions). The device asks the font for its width when it measures a line
         # to centre it: a font without the glyph made every line that ends in a break look pushed to one side. The stock fonts have it (an empty glyph, 1 px).
         glyphs[0x0D] = {"width": 1, "left": 0, "right": 0, "alpha": [0] * cell}
-    data = hf.encode_font(glyphs, cell, "xindi_" + role, "ascii" if digits else "bmp", 3, _allow_controls=not digits)
+    data = hf.encode_font(glyphs, cell, "librescreen_" + role, "ascii" if digits else "bmp", 3, _allow_controls=not digits)
     hf.validate_font(data)
     return data, glyphs, cell, skipped
 

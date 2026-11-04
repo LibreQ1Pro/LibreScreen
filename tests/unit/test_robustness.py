@@ -3,9 +3,9 @@ import logging
 import unittest
 from unittest.mock import patch
 
-from xindi.moonraker import rpc_messages
-from xindi.pages import connections
-from xindi.util import guard
+from librescreen.moonraker import rpc_messages
+from librescreen.pages import connections
+from librescreen.util import guard
 from support import IsolatedState
 
 

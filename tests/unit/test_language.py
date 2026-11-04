@@ -3,9 +3,9 @@ import json
 import os
 import unittest
 
-from xindi import state as g
-from xindi.pages import connections
-from xindi.screen import events, navigation
+from librescreen import state as g
+from librescreen.pages import connections
+from librescreen.screen import events, navigation
 
 PAGES = os.path.join(os.path.dirname(__file__), "..", "..", "display_firmware", "pages")
 

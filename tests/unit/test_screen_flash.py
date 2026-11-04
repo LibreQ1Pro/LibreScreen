@@ -12,9 +12,9 @@ import time
 import unittest
 from unittest import mock
 
-from xindi import main
-from xindi.config import runtime
-from xindi.screen import flash
+from librescreen import main
+from librescreen.config import runtime
+from librescreen.screen import flash
 
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -371,7 +371,7 @@ class FlashEntryPointTest(unittest.TestCase):
     def test_both_real_entrypoints_return_file_and_uart_errors(self):
         with tempfile.TemporaryDirectory() as directory:
             path = os.path.join(directory, "screen.tft")
-            config = os.path.join(directory, "xindi.ini")
+            config = os.path.join(directory, "librescreen.ini")
             for data, baud, status, message in (
                 (None, 115200, 2, "is not a file"),
                 (b"", 115200, 2, "firmware file is empty"),
@@ -384,7 +384,7 @@ class FlashEntryPointTest(unittest.TestCase):
                 if data is not None:
                     with open(path, "wb") as source:
                         source.write(data)
-                for entrypoint in (["main.py"], ["-m", "xindi"]):
+                for entrypoint in (["main.py"], ["-m", "librescreen"]):
                     with self.subTest(entrypoint=entrypoint, data=data, baud=baud):
                         result = subprocess.run([sys.executable] + entrypoint + ["--config", config, "--flash-screen", path],
                                                 cwd=ROOT, capture_output=True, text=True, timeout=10)
@@ -393,11 +393,11 @@ class FlashEntryPointTest(unittest.TestCase):
                         self.assertNotIn("Traceback", result.stderr)
 
     def test_both_entrypoints_propagate_all_run_return_values(self):
-        for runner in ("runpy.run_path('main.py', run_name='__main__')", "runpy.run_module('xindi', run_name='__main__')"):
+        for runner in ("runpy.run_path('main.py', run_name='__main__')", "runpy.run_module('librescreen', run_name='__main__')"):
             for status in (None, 0, 1, 2, 130):
                 with self.subTest(runner=runner, status=status):
                     code = ("import runpy\nfrom unittest import mock\n"
-                            "with mock.patch('xindi.main.run', return_value=%r):\n    %s\n" % (status, runner))
+                            "with mock.patch('librescreen.main.run', return_value=%r):\n    %s\n" % (status, runner))
                     result = subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, timeout=10)
                     self.assertEqual(result.returncode, status or 0, result.stderr)
                     self.assertNotIn("Traceback", result.stderr)

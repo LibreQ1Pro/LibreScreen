@@ -2,7 +2,7 @@
 
 Plugins for the live agent of the USART HMI editor (`QSART_Linux_EN`, "Live agent" in its README): no mouse and no keyboard automation.
 
-1. Start the editor with the agent: `AGENT_DIR=/some/dir PROJECT=out/xindi_vNN.HMI ./run.sh` (in `QSART_Linux_EN`).
+1. Start the editor with the agent: `AGENT_DIR=/some/dir PROJECT=out/librescreen_vNN.HMI ./run.sh` (in `QSART_Linux_EN`).
 2. Compile the plugins into `AGENT_DIR` (the agent runs a DLL when it appears or changes, and writes `<name>.out`):
    `wine "C:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe" /target:library /r:System.Windows.Forms.dll /r:System.Drawing.dll /out:Z:\...\snap_pages.dll Z:\...\snap_pages.cs`
 3. `debug_open.cs`: presses *Debug* (the emulator opens; the editor must have finished loading the project).

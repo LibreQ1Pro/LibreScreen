@@ -11,7 +11,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HOST = os.path.join(os.path.dirname(ROOT), "xindi")
+HOST = os.path.join(os.path.dirname(ROOT), "librescreen")
 
 
 def declared(text):

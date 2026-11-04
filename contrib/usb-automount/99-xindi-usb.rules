@@ -1,3 +1,0 @@
-# Mount USB drive partitions (and whole drives without a partition table)
-# with xindi-usb-mount@<name>.service
-ACTION=="add", SUBSYSTEM=="block", KERNEL=="sd[a-z]*", ENV{ID_BUS}=="usb", ENV{ID_FS_USAGE}=="filesystem", TAG+="systemd", ENV{SYSTEMD_WANTS}+="xindi-usb-mount@%k.service"

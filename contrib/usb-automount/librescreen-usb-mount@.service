@@ -1,0 +1,15 @@
+# Mounts the USB drive /dev/%i in the gcode directory (<gcodes>/%i, "sda1" for
+# the first drive) where Moonraker lists its files and librescreen looks for the
+# drive.  Started by 99-librescreen-usb.rules when a drive is plugged in; stopped
+# (the drive is unmounted) when it is removed.
+[Unit]
+Description=Mount USB drive /dev/%i for librescreen
+BindsTo=dev-%i.device
+After=dev-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=-/etc/default/librescreen-usb
+ExecStart=/usr/local/sbin/librescreen-usb-mount add %i
+ExecStop=/usr/local/sbin/librescreen-usb-mount remove %i

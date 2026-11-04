@@ -12,10 +12,10 @@ import json
 import os
 import sys
 
-sys.path.insert(0, os.environ.get("XINDI_SRC_DIR", "/opt/src_py"))
-from xindi.screen import pageids as _ids        # noqa: E402
+sys.path.insert(0, os.environ.get("LIBRESCREEN_SRC_DIR", "/opt/src_py"))
+from librescreen.screen import pageids as _ids        # noqa: E402
 
-# pages (the numbers are the ones of xindi/screen/pageids.py, so they follow the screen project)
+# pages (the numbers are the ones of librescreen/screen/pageids.py, so they follow the screen project)
 LOGO = _ids.LOGO
 OPEN_LANGUAGE = _ids.OPEN_LANGUAGE
 OPEN_POP = _ids.OPEN_POP
@@ -525,13 +525,13 @@ def scenario_levelling(h):
     h.settle(1.5)
     h.touch(AUTO_HEATERBED, 0x04, settle=1.5)   # start
     h.wait_page(AUTO_MOVING)
-    h.mr.push_gcode("// action:xindi homed")
+    h.mr.push_gcode("// action:librescreen homed")
     h.settle(1.5)
-    h.mr.push_gcode("// action:xindi nozzle_cleared")
+    h.mr.push_gcode("// action:librescreen nozzle_cleared")
     h.settle(1.5)
-    h.mr.push_gcode("// action:xindi nozzle_cooled")
+    h.mr.push_gcode("// action:librescreen nozzle_cooled")
     h.settle(2.5)
-    h.mr.push_gcode("// action:xindi bed_mesh_done")
+    h.mr.push_gcode("// action:librescreen bed_mesh_done")
     h.settle(6.0)
     h.wait_page(AUTO_FINISH)
     h.touch(AUTO_FINISH, 0x00, settle=1.5)
@@ -547,7 +547,7 @@ def scenario_levelling(h):
     h.settle(1.0)
     h.mr.push_gcode("// Z position: 0.100 -> 0.125 <- 0.150")
     h.settle(1.0)
-    h.mr.push_gcode("// action:xindi input_shaping_done")
+    h.mr.push_gcode("// action:librescreen input_shaping_done")
     h.settle(6.0)
     h.wait_page(SYNTONY_FINISH)
     h.touch(SYNTONY_FINISH, 0x00, settle=2.0)
@@ -783,9 +783,9 @@ def scenario_filament(h):
     h.touch(FILAMENT_POP_3, 0x02, settle=1.5)   # next -> filament_load()
     h.mr.push_status({"extruder": {"temperature": 249.6, "target": 250.0}})
     h.settle(1.0)
-    h.mr.push_gcode("// action:xindi filament_heated")
+    h.mr.push_gcode("// action:librescreen filament_heated")
     h.settle(1.5)
-    h.mr.push_gcode("// action:xindi filament_loaded")
+    h.mr.push_gcode("// action:librescreen filament_loaded")
     h.settle(1.0)
     h.mr.push_status({"idle_timeout": {"state": "Ready"}})
     h.settle(1.5)
@@ -800,9 +800,9 @@ def scenario_filament(h):
     h.wait_page(UNLOAD_MODE)
     h.touch(UNLOAD_MODE, 0x01, settle=1.5)      # automatic
     h.wait_page(AUTO_UNLOAD)
-    h.mr.push_gcode("// action:xindi filament_heated")
+    h.mr.push_gcode("// action:librescreen filament_heated")
     h.settle(1.5)
-    h.mr.push_gcode("// action:xindi filament_unloaded")
+    h.mr.push_gcode("// action:librescreen filament_unloaded")
     h.settle(1.5)
     h.touch(AUTO_UNLOAD, 0x00, settle=1.5)      # to load
     h.touch(PRE_HEAT, 0x04, settle=1.5)         # back
@@ -811,7 +811,7 @@ def scenario_filament(h):
     h.touch(UNLOAD_MODE, 0x00, settle=1.5)      # manual
     h.wait_page(FILAMENT_POP_2)
     h.touch(FILAMENT_POP_2, 0x02, settle=1.5)   # next -> load
-    h.mr.push_gcode("// action:xindi filament_heated")
+    h.mr.push_gcode("// action:librescreen filament_heated")
     h.settle(1.5)
     h.touch(FILAMENT_POP_2, 0x01, settle=1.5)   # to load
     h.touch(PRE_HEAT, 0x04, settle=1.5)
@@ -827,7 +827,7 @@ def scenario_filament(h):
     h.touch(FILAMENT_POP_2, 0x00, settle=1.5)   # done
     h.mr.push_gcode("// Filament NOT present")
     h.settle(1.0)
-    h.mr.push_gcode("// action:xindi filament_runout")
+    h.mr.push_gcode("// action:librescreen filament_runout")
     h.settle(1.0)
     h.settle(1.0)
 

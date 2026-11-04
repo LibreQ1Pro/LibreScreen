@@ -24,7 +24,7 @@ HOT = (255, 121, 90)
 PANEL = (41, 40, 41)
 
 
-TOGGLE = {"nozzle": 7, "bed": 8, "chamber": 9}         # xindi/screen/pageids.py MAIN_TOGGLE_*
+TOGGLE = {"nozzle": 7, "bed": 8, "chamber": 9}         # librescreen/screen/pageids.py MAIN_TOGGLE_*
 
 
 def slashed(image, ink, background):

@@ -2,7 +2,7 @@
 """Checks tools/faces.json (the looks the host gives its widgets with ``g.port.face(widget, state)``).
 
 Every tile has to exist, every widget has to be a button / text / picture of some page whose size is the size of the tile,
-and xindi/screen/faces.py has to be what gen_faces.py writes from the file and the position of the pictures.
+and librescreen/screen/faces.py has to be what gen_faces.py writes from the file and the position of the pictures.
 Run from display_firmware/:  python3 tools/lint_faces.py
 """
 import glob
@@ -50,7 +50,7 @@ def main():
                         widget, state, tile, *png_size(tile), sorted(sizes[widget])))
     with open(gen_faces.FACES_PY, encoding="utf-8") as f:
         if gen_faces.render() != f.read():
-            problems.append("xindi/screen/faces.py is out of date: run tools/gen_faces.py")
+            problems.append("librescreen/screen/faces.py is out of date: run tools/gen_faces.py")
     for problem in sorted(set(problems)):
         print(problem)
     print("%d problems" % len(set(problems)))

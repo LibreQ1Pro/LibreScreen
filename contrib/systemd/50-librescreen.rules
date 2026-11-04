@@ -1,0 +1,12 @@
+// /etc/polkit-1/rules.d/50-librescreen.rules
+// Let the user of the librescreen service (the screen backend) stop and start that
+// one unit without root — for contrib/flash-screen.sh and normal maintenance.
+// Anything else on the system stays root-only for this user.
+
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.systemd1.manage-units" &&
+        subject.user == "mks" &&
+        action.lookup("unit") == "librescreen.service") {
+        return polkit.Result.YES;
+    }
+});
