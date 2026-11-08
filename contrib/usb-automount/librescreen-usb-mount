@@ -29,6 +29,12 @@ MOUNTPOINT=$GCODES/$NAME
 
 case "$ACTION" in
 add)
+    # Leave a partition alone that is mounted elsewhere, e.g. when the system
+    # itself runs from this USB drive (/ and /boot). Moonraker would otherwise
+    # watch the whole root file system as part of the gcode directory.
+    if findmnt -rn -S "/dev/$NAME" -o TARGET | grep -qvxF "$MOUNTPOINT"; then
+        exit 0
+    fi
     if mountpoint -q "$MOUNTPOINT"; then
         umount -l "$MOUNTPOINT"
     fi
