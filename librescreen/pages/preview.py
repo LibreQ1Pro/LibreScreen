@@ -144,7 +144,7 @@ def preview_pop():
         time.sleep(1)
         job.set_print_pause()
         page_to(ids.PRINT_NO_FILAMENT)
-    if g.klippy.print_stats_state == "standby":
+    if g.klippy.print_stats_state in ("standby", "cancelled"):
         page_to(ids.PRINT_STOPPING)
     if g.klippy.print_stats_state == "error":
         page_to(ids.GCODE_ERROR)

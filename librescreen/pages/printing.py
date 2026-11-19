@@ -51,7 +51,7 @@ def print_filament():
             g.klippy.ready = False
             page_to(ids.PRINTING)
 
-    if g.klippy.print_stats_state == "standby":
+    if g.klippy.print_stats_state in ("standby", "cancelled"):
         page_to(ids.PRINT_STOPPING)
 
     if g.klippy.print_stats_state == "error":
@@ -112,7 +112,7 @@ def printing_zoffset():
         job.set_print_pause()
         page_to(ids.PRINT_NO_FILAMENT)
 
-    if g.klippy.print_stats_state == "standby":
+    if g.klippy.print_stats_state in ("standby", "cancelled"):
         page_to(ids.PRINT_STOPPING)
 
     if g.klippy.print_stats_state == "paused":
@@ -188,7 +188,7 @@ def printing_state_changes():
         if g.klippy.ready:
             g.klippy.ready = False
             page_to(ids.PRINT_FILAMENT)
-    elif state == "standby":
+    elif state in ("standby", "cancelled"):
         page_to(ids.PRINT_STOPPING)
     elif state == "error":
         page_to(ids.GCODE_ERROR)
