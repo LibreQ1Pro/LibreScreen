@@ -55,7 +55,7 @@ The screen is a TJC4827X243_011 (X2 series): 512 KB of memory, 272 × 480 (the e
 ## States and pages
 
 * Keyboards: `print_kb` (`keybdB`) has the modes of the stock page (nozzle, bed, chamber, speed, flow, three fans; the empty and the filled input; speed has the silent button and
-  while it is on the keys are off), `keypad` (`filament_kb`) the three temperatures with the limit written on the stock picture (350 / 120 / 60; the stock page does not clamp the value), `wifi_kb`
+  while it is on the keys are off), `keypad` (`filament_kb`) the three temperatures with the limit written on the stock picture (350 / 120 / 60; the stock page does not clamp the value, the service clamps it to `max_temp` of the Klipper config), `wifi_kb`
   a password (asterisks) or a network name (as typed).
 * There is no fans page: the fan tiles of the filament page open the number keyboard, as the fan tiles of the print page do (modes Fan 1-3 of `keypad`).
 * `home` has the warning that the UI and the firmware differ; it has no button. `klipper_err`, `detect_error` and `gcode_error` have a long error to show the scrolling area.

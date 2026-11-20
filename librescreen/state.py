@@ -315,6 +315,15 @@ class Config(object):
         self.serial_by_id = ""
 
 
+class Limits(object):
+    """The highest targets (°C) the keyboards accept: ``max_temp`` of the Klipper config; the defaults are used until it is read."""
+
+    def __init__(self):
+        self.extruder = 350
+        self.heater_bed = 120
+        self.chamber = 60
+
+
 class Update(object):
     """The screen firmware file at start-up, and the answers of the screen to the picture / firmware transfers."""
 
@@ -359,6 +368,7 @@ levelling = Levelling()
 files = Files()
 net = Net()
 config = Config()
+limits = Limits()
 update = Update()
 pictures = Pictures()
 rpc = Rpc()

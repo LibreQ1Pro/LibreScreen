@@ -86,7 +86,7 @@ def _printing_target(action, widget, limit, store=None, prefix=""):
     """Value of a printing page widget: clamp, apply, echo it back to the widget (``prefix`` is the "/ " of a target) and store it."""
     def handle(number):
         g.screen.printing_keyboard_enabled = False
-        number = min(number, limit)
+        number = min(number, limit() if callable(limit) else limit)
         action(number)
         if widget:
             g.port.txt(widget, prefix + to_string(number))
@@ -98,7 +98,7 @@ def _printing_target(action, widget, limit, store=None, prefix=""):
 def _filament_target(action, limit, store=None, reopen=True):
     """Value of a filament page widget: clamp and apply, then redraw the page."""
     def handle(number):
-        number = min(number, limit)
+        number = min(number, limit() if callable(limit) else limit)
         action(number)
         if store:
             store(number)
@@ -112,25 +112,25 @@ def _filament_target(action, limit, store=None, reopen=True):
 # values, they live on the second printing page (printing_2.n2 / n3)
 SETTED = {
     (ids.PRINTING, ids.PRINTING_EXTRUDER): _printing_target(
-        lambda n: heating.set_extruder_target(n), "nozzle_set", 350, lambda n: settings.set_extruder_target(n), "/ "),
+        lambda n: heating.set_extruder_target(n), "nozzle_set", lambda: g.limits.extruder, lambda n: settings.set_extruder_target(n), "/ "),
     (ids.PRINTING, ids.PRINTING_HEATER_BED): _printing_target(
-        lambda n: heating.set_heater_bed_target(n), "bed_set", 120, lambda n: settings.set_heater_bed_target(n), "/ "),
+        lambda n: heating.set_heater_bed_target(n), "bed_set", lambda: g.limits.heater_bed, lambda n: settings.set_heater_bed_target(n), "/ "),
     (ids.PRINTING, ids.PRINTING_FAN_1): _printing_target(lambda n: heating.set_fan0(n), None, 100),
     (ids.PRINTING, ids.PRINTING_FAN_2): _printing_target(lambda n: heating.set_fan2(n), None, 100),      # 4.4.2 CLL fan2 added
     (ids.PRINTING, ids.PRINTING_FAN_3): _printing_target(lambda n: heating.set_fan3(n), None, 100),
     (ids.PRINTING, ids.PRINTING_2_SPEED): _printing_target(lambda n: heating.set_printer_speed(n), "speed_val", 150),
     (ids.PRINTING, ids.PRINTING_2_FLOW): _printing_target(lambda n: heating.set_printer_flow(n), "flow_val", 150),
     (ids.PRINTING, ids.PRINTING_HOT): _printing_target(
-        lambda n: heating.set_hot_target(n), None, 60, lambda n: settings.set_hot_target(n)),
+        lambda n: heating.set_hot_target(n), None, lambda: g.limits.chamber, lambda n: settings.set_hot_target(n)),
     (ids.FILAMENT, ids.FILAMENT_SET_EXTRUDER): _filament_target(
-        lambda n: heating.set_extruder_target(n), 350, lambda n: settings.set_extruder_target(n)),
+        lambda n: heating.set_extruder_target(n), lambda: g.limits.extruder, lambda n: settings.set_extruder_target(n)),
     (ids.FILAMENT, ids.FILAMENT_SET_HEATERBED): _filament_target(
-        lambda n: heating.set_heater_bed_target(n), 120, lambda n: settings.set_heater_bed_target(n)),
+        lambda n: heating.set_heater_bed_target(n), lambda: g.limits.heater_bed, lambda n: settings.set_heater_bed_target(n)),
     (ids.FILAMENT, ids.FILAMENT_SET_FAN_1): _filament_target(lambda n: heating.set_fan0(n), 100),
     (ids.FILAMENT, ids.FILAMENT_SET_FAN_2): _filament_target(lambda n: heating.set_fan2(n), 100),
     (ids.FILAMENT, ids.FILAMENT_SET_FAN_3): _filament_target(lambda n: heating.set_fan3(n), 100),
     (ids.FILAMENT, ids.FILAMENT_SET_HOT): _filament_target(
-        lambda n: heating.set_hot_target(n), 60, lambda n: settings.set_hot_target(n)),
+        lambda n: heating.set_hot_target(n), lambda: g.limits.chamber, lambda n: settings.set_hot_target(n)),
 }
 
 

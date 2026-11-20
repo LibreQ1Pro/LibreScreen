@@ -177,7 +177,11 @@
    "page": 17
   },
   {
-   "attrs": {},
+   "attrs": {
+    "input_max.txt": [
+     "\"MAX : 350\""
+    ]
+   },
    "page": 21
   },
   {

@@ -166,9 +166,20 @@ def parse_pause_resume(pause_resume):
 
 
 # object of the "status" of a subscription -> its parser
-def parse_configfile(configfile):
-    """The screws of the bed screws pages from [bed_screws] (screw1..3: x, y)"""
-    screws = jpath(configfile, "settings", "bed_screws")
+def parse_max_temps(settings):
+    """``max_temp`` of the extruder, the bed and the chamber heaters: the limits of the keyboards"""
+    for section, attr in (("extruder", "extruder"), ("heater_bed", "heater_bed"), ("heater_generic chamber", "chamber")):
+        value = jpath(settings, section, "max_temp")
+        try:
+            value = int(float(value))
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            setattr(g.limits, attr, value)
+
+
+def parse_bed_screws(settings):
+    screws = jpath(settings, "bed_screws")
     if not isinstance(screws, dict):
         return
     for i in range(len(g.levelling.bed_screws)):
@@ -179,6 +190,15 @@ def parse_configfile(configfile):
             g.levelling.bed_screws[i] = (float(xy[0]), float(xy[1]))
         except (TypeError, ValueError, IndexError):
             log.warning("[bed_screws] screw%d: %s", i + 1, xy)
+
+
+def parse_configfile(configfile):
+    """What the pages take from the config: the screws of [bed_screws] (screw1..3: x, y) and the max_temp of the heaters"""
+    settings = jpath(configfile, "settings")
+    if not isinstance(settings, dict):
+        return
+    parse_max_temps(settings)
+    parse_bed_screws(settings)
 
 
 STATUS_PARSERS = {

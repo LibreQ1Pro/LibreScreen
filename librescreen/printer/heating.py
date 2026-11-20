@@ -127,8 +127,8 @@ def set_auto_level_heater_bed_target(positive):
         g.levelling.auto_level_heater_bed_target += 3
     else:
         g.levelling.auto_level_heater_bed_target -= 3
-    if g.levelling.auto_level_heater_bed_target > 120:
-        g.levelling.auto_level_heater_bed_target = 120
+    if g.levelling.auto_level_heater_bed_target > g.limits.heater_bed:
+        g.levelling.auto_level_heater_bed_target = g.limits.heater_bed
     if g.levelling.auto_level_heater_bed_target < 0:
         g.levelling.auto_level_heater_bed_target = 0
     set_heater_bed_target(g.levelling.auto_level_heater_bed_target)

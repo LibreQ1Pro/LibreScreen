@@ -164,13 +164,20 @@
    "page": 17
   },
   {
-   "attrs": {},
+   "attrs": {
+    "input_max.txt": [
+     "\"MAX : 350\""
+    ]
+   },
    "page": 21
   },
   {
    "attrs": {
     "boot_logo.version.val": [
      "100"
+    ],
+    "input_max.txt": [
+     "\"MAX : 350\""
     ]
    },
    "page": 21

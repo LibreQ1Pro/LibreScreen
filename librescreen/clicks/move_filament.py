@@ -4,7 +4,7 @@ from librescreen import state as g
 from librescreen.pages import file_list, navigation
 from librescreen.printer import heating, job, klipper, motion
 from librescreen.screen import pageids as ids
-from librescreen.screen.navigation import page_to
+from librescreen.screen.navigation import open_temperature_keyboard, page_to
 
 
 def move(page_id, widget_id):
@@ -87,8 +87,13 @@ def filament(page_id, widget_id):
         pass
     elif widget_id == ids.ALL_TO_SETTING:
         navigation.go_to_setting()
-    elif widget_id in (ids.FILAMENT_SET_EXTRUDER, ids.FILAMENT_SET_HEATERBED, ids.FILAMENT_SET_HOT,
-                       ids.FILAMENT_OPEN_FAN_1, ids.FILAMENT_OPEN_FAN_2, ids.FILAMENT_OPEN_FAN_3):
+    elif widget_id == ids.FILAMENT_SET_EXTRUDER:
+        open_temperature_keyboard(g.limits.extruder)
+    elif widget_id == ids.FILAMENT_SET_HEATERBED:
+        open_temperature_keyboard(g.limits.heater_bed)
+    elif widget_id == ids.FILAMENT_SET_HOT:
+        open_temperature_keyboard(g.limits.chamber)
+    elif widget_id in (ids.FILAMENT_OPEN_FAN_1, ids.FILAMENT_OPEN_FAN_2, ids.FILAMENT_OPEN_FAN_3):
         page_to(ids.FILAMENT_KB)
     elif widget_id == ids.FILAMENT_EXTRUDER_UP:
         g.klippy.idle_timeout_state = "Printing"

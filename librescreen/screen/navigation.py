@@ -63,6 +63,13 @@ def page_to(page_id):
     g.port.page(to_string(page_id))
 
 
+def open_temperature_keyboard(limit):
+    """Opens the number keyboard (``keypad``) of a temperature and writes its limit (max_temp of the Klipper config) over the "MAX : N" the page sets at load;
+    the screen runs the instructions in order, so the text comes after the one of the page."""
+    page_to(ids.FILAMENT_KB)
+    g.port.txt("input_max", "MAX : %d" % limit)
+
+
 def ask_page():
     g.port.sendme()
 

@@ -10,7 +10,7 @@ from unittest.mock import patch
 from librescreen import state as g
 from librescreen.screen.tx import END, ScreenPort
 
-GLOBALS = ("screen", "klippy", "shown", "levelling", "files", "net", "config", "update", "pictures", "rpc")
+GLOBALS = ("screen", "klippy", "shown", "levelling", "files", "net", "config", "limits", "update", "pictures", "rpc")
 
 
 def _snapshot(obj):

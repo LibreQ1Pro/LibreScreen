@@ -164,15 +164,36 @@ class ListRowTest(Recorder):
 class TemperatureFromHomeTest(Recorder):
     def test_a_heater_tile_opens_the_keyboard_in_its_mode_and_the_value_returns_home(self):
         from librescreen.clicks import printing
-        with patch.object(printing, "page_to") as page:
+        g.limits.heater_bed = 110
+        with patch("librescreen.screen.navigation.page_to") as page:
             printing.main(events.ids.MAIN, events.ids.MAIN_SET_TEMP_2)
         page.assert_called_once_with(events.ids.FILAMENT_KB)
         self.assertIn("sys1=1", self.sent())
+        self.assertIn('input_max.txt="MAX : 110"', self.sent())
         self.assertTrue(g.screen.temperature_from_main)
         with patch.object(events.heating, "set_heater_bed_target"), patch.object(events.settings, "set_heater_bed_target"), patch.object(events, "page_to") as page:
             events.tjc_event_setted_handler(events.ids.FILAMENT, events.ids.FILAMENT_SET_HEATERBED, 60, 0)
         page.assert_called_once_with(events.ids.MAIN)
         self.assertFalse(g.screen.temperature_from_main)
+
+
+class KeyboardLimitTest(Recorder):
+    def test_the_filament_page_writes_the_limit_of_the_heater_over_the_one_of_the_page(self):
+        from librescreen.clicks import move_filament
+        g.limits.extruder, g.limits.chamber = 300, 65
+        for widget, text in ((events.ids.FILAMENT_SET_EXTRUDER, "MAX : 300"), (events.ids.FILAMENT_SET_HOT, "MAX : 65")):
+            self.commands.clear()
+            with patch("librescreen.screen.navigation.page_to") as page:
+                move_filament.filament(events.ids.FILAMENT, widget)
+            page.assert_called_once_with(events.ids.FILAMENT_KB)
+            self.assertEqual(self.sent(), ['input_max.txt="%s"' % text])
+
+    def test_a_fan_keeps_the_limit_of_the_page(self):
+        from librescreen.clicks import move_filament
+        with patch.object(move_filament, "page_to") as page:
+            move_filament.filament(events.ids.FILAMENT, events.ids.FILAMENT_OPEN_FAN_1)
+        page.assert_called_once_with(events.ids.FILAMENT_KB)
+        self.assertEqual(self.sent(), [])
 
 
 class NetworkInfoTest(Recorder):

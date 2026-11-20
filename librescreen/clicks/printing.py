@@ -8,7 +8,7 @@ from librescreen.moonraker import gcode_files
 from librescreen.pages import file_list as pages_file_list, navigation, preview as pages_preview, printing as pages_printing
 from librescreen.printer import heating, job, klipper, motion
 from librescreen.screen import pageids as ids
-from librescreen.screen.navigation import page_to
+from librescreen.screen.navigation import open_temperature_keyboard, page_to
 
 log = logging.getLogger(__name__)
 
@@ -32,8 +32,9 @@ def main(page_id, widget_id):
         # the heater tiles open the temperature keyboard (its mode is sys1: 0 nozzle, 1 bed, 2 chamber); it returns to Home
         g.screen.adjust_mode = "Filament"
         g.screen.temperature_from_main = True
-        g.port.raw("sys1=%d" % (widget_id - ids.MAIN_SET_TEMP))
-        page_to(ids.FILAMENT_KB)
+        mode = widget_id - ids.MAIN_SET_TEMP
+        g.port.raw("sys1=%d" % mode)
+        open_temperature_keyboard((g.limits.extruder, g.limits.heater_bed, g.limits.chamber)[mode])
     elif widget_id == ids.MAIN_TOGGLE_NOZZLE:
         heating.filament_extruder_target()
     elif widget_id == ids.MAIN_TOGGLE_BED:
