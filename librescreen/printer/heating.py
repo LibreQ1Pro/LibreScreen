@@ -77,7 +77,7 @@ def beep_on_off():
 
 
 def led_on_off():
-    g.ep.run_gcode("light_off" if g.klippy.caselight_value else "light_on")
+    g.ep.run_gcode("caselight_off" if g.klippy.caselight_value else "caselight_on")
 
 
 def filament_extruder_target():
