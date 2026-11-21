@@ -2,6 +2,7 @@
 
 import json as _json
 import logging
+import re
 import time
 import urllib.request
 
@@ -153,7 +154,8 @@ def check_print_interrupted():
     if printer_variables is None:
         log.error("Can't open the file %s", paths.klipper_config() + "/saved_variables.cfg")
         return
-    print_interrupted_status = substr(printer_variables, printer_variables.find("was_interrupted =") + 18, 5)
-    if print_interrupted_status != "False":
+    # A fresh install has an empty saved_variables.cfg without the key: that is "not interrupted".
+    m = re.search(r"^\s*was_interrupted\s*=\s*(\w+)", printer_variables, re.MULTILINE)
+    if m is not None and m.group(1) != "False":
         g.ep.run_gcode("_LIBRESCREEN_DETECT_INTERRUPTION\n")
         g.screen.jump_resume_print = True
